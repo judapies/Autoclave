@@ -1,0 +1,128 @@
+
+ROM used: 21852 (22%)
+          21852 (22%) including unused fragments
+
+          11 Average locations per line
+          17 Average locations per statement
+
+RAM used: 625 (19%) at main() level
+          647 (19%) worst case
+
+Stack used: 6 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+ 1134   976  77  GLCD_Controller.c
+  461     0   0  C:\Program Files (x86)\PICC\Devices\18F4685.h
+  170    72   6  LCD420.c
+  286   223  18  Funciones.h
+----- -----
+ 2051  1271 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   0   1             @delay_ms1
+0     34   0   0             @const73
+0     34   0   1   134  2.2  lcd_send_nibble
+0     62   0   3   287  3.9  lcd_send_byte
+0    116   0   2   422  4.7  lcd_init
+0     70   0   3   321  5.5  lcd_gotoxy
+0     50   0   0             @goto10090
+0    128   0   1   472  6.6  lcd_putc
+0     60   0   0             @const215
+0    108   0   0             @const218
+0      8   0   0             @const221
+0    110   0   2   142  3.9  ActualizaRecta
+0    632   1  16             @ADDFF
+0     88   0   5   100  2.1  sensores
+0     54   0   2             @ITOF
+0    942   2   5   694  7.7  LeerPT100
+0    350   1  14             @DIVFF
+0     34   0   5             @MUL1616
+0    246   1  11             @MULFF
+0    502   1   5   561  7.5  Leer_Sensor_Presion_Camara
+0    122   0  10             @FLT
+0   1422   3   4  1207  7.2  Controla
+0     60   0   4             @SFTOI
+0    796   2   4  1656  6.4  LeeEEPROM
+0    710   2   0  1108  3.4  LimitaValores
+0    832   2   2  1159  5.4  resetParams
+0     84   0   0   282  5.0  temp0s
+0    212   0   0  1043  7.3  temp1s
+0  12314  28   4 48713 13.5  MAIN
+0     68   0   5             @FTOSD
+0    128   0  13             @DIV3232
+0    426   1  13             @PRINTF_L32D_95FPFPF
+0    188   0   9             @PRINTF_LU_95
+0     40   0   3             @PSTRINGC_95
+0      6   0   0             @const274
+0      6   0   0             @const275
+0      6   0   0             @const278
+0     44   0   3             @DIV88
+0    124   0   2             @PRINTF_U_95
+0     12   0   0             @const287
+0     22   0   0             @const288
+0     50   0   4             @PSTRINGCN_95
+0      6   0   0             @const295
+0     18   0   0             @const302
+0     10   0   0             @const315
+0     16   0   0             @const320
+0     16   0   0             @const322
+0     18   0   0             @const324
+0     16   0   0             @const326
+0     16   0   0             @const328
+0     18   0   0             @const330
+0     18   0   0             @const332
+0      6   0   0             @const334
+0      6   0   0             @const335
+0      6   0   0             @const336
+0      6   0   0             @const337
+0      6   0   0             @const338
+0      6   0   0             @const339
+0      6   0   0             @const340
+0      6   0   0             @const341
+0      6   0   0             @const342
+0      6   0   0             @const343
+0      6   0   0             @const344
+0      6   0   0             @const345
+0      6   0   0             @const346
+0      6   0   0             @const347
+0      6   0   0             @const348
+0      6   0   0             @const349
+0      6   0   0             @const350
+0      6   0   0             @const352
+0      6   0   0             @const353
+0      6   0   0             @const354
+0      6   0   0             @const356
+0      6   0   0             @const357
+0      6   0   0             @const361
+0      6   0   0             @const363
+0      6   0   0             @const364
+0      6   0   0             @const365
+0      6   0   0             @const366
+0      6   0   0             @const367
+0     18   0   0             @const370
+0      8   0   0             @const377
+
+Program metrics:
+    Functions               16
+    Statements              1271
+    Comments                223
+    Volume (V)              69180
+    Difficilty (D)          93.1
+    Effort to implement (E) 6437430
+    Time to implement (T)   99 hours, 21 minutes
+    Est Delivered Bugs (B)  12
+    Cyclomatic Complexity   225
+    Maintainability (MI)    29
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000A8   162  0  
+000AA-0FFFE  21686  43680  
+10000-17FFE     0  32768  
+
+
+

@@ -1,0 +1,121 @@
+
+ROM used: 7932 (24%)
+          7932 (24%) including unused fragments
+
+          8 Average locations per line
+          18 Average locations per statement
+
+RAM used: 284 (14%) at main() level
+          313 (15%) worst case
+
+Stack used: 4 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  383   287  66  USB_I2C.c
+  392     0   0  18F2550.h
+  178   145  34  Funciones.h
+----- -----
+  953   432 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     42   0   1             @delay_ms1
+0      8   0   0             @PUTCHARI_BIU_1
+0     24   0   1             @I2C_WRITE_1
+0    234   1   0             @const126
+0     54   0   0   134  1.3  SendDataDisplay
+0      6   0   0    31  1.7  Carga_Vector
+0    320   2   0  1359  5.4  Lee_Vector
+0     54   0   2             @ITOF
+0    352   2  14             @DIVFF
+0    634   4  16             @ADDFF
+0    300   2   0  2526  5.9  LeeDisplay
+0    110   1   3   255  3.6  ssp_interupt
+0     96   1   2   564  5.2  serial_rx_isr
+0     52   0   0   147  3.0  temp1s
+0   2532  16   4  8639 10.4  MAIN
+0     16   0   0             @const163
+0     34   0   2             @PSTRINGC_9600_31766_31767
+0     16   0   0             @const165
+0      8   0   0             @const166
+0     16   0   0             @const167
+0     20   0   0             @const168
+0     16   0   0             @const169
+0     16   0   0             @const170
+0     48   0   0             @const171
+0     36   0   0             @const172
+0     42   0   0             @const173
+0     34   0   0             @const174
+0     40   0   0             @const175
+0     36   0   0             @const176
+0     38   0   0             @const177
+0     36   0   0             @const178
+0     44   0   0             @const179
+0     36   0   0             @const180
+0     44   0   0             @const181
+0     36   0   0             @const182
+0     40   0   0             @const183
+0     36   0   0             @const184
+0     38   0   0             @const185
+0     36   0   0             @const186
+0     38   0   0             @const187
+0     36   0   0             @const188
+0     34   0   0             @const189
+0     40   0   0             @const190
+0     34   0   0             @const191
+0     36   0   0             @const192
+0     34   0   0             @const193
+0     38   0   0             @const194
+0     34   0   0             @const195
+0     42   0   0             @const196
+0     34   0   0             @const197
+0     38   0   0             @const198
+0     34   0   0             @const199
+0     34   0   0             @const200
+0     34   0   0             @const201
+0     40   0   0             @const202
+0     16   0   0             @const203
+0    246   2  11             @MULFF
+0     42   0   3             @PSTRINGCN_9600_31766_31767
+0     68   0   5             @FTOSD
+0    128   1  13             @DIV3232
+0    418   3  13             @PRINTF_L32D_9600_31766_31767FPFPF
+0     16   0   0             @const217
+0     16   0   0             @const218
+0     14   0   0             @const219
+0     44   0   3             @DIV88
+0    126   1   2             @PRINTF_U_9600_31766_31767
+0     14   0   0             @const226
+0     14   0   0             @const227
+0     24   0   0             @const228
+0     18   0   0             @const229
+0     34   0   0             @const230
+0    170   1   9             @PRINTF_LU_9600_31766_31767
+0     36   0   0             @const233
+0     32   0   0             @const234
+0     36   0   0             @const235
+0     36   0   0             @const236
+0     54   0   0             @const237
+
+Program metrics:
+    Functions               8
+    Statements              432
+    Comments                197
+    Volume (V)              17244
+    Difficilty (D)          34.9
+    Effort to implement (E) 602281
+    Time to implement (T)   9 hours, 18 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   74
+    Maintainability (MI)    114
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE  7762  24832  
+
+
+

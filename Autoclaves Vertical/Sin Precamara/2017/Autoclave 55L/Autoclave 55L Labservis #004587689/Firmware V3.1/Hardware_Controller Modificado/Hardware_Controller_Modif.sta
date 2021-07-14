@@ -1,0 +1,121 @@
+
+ROM used: 14810 (45%)
+          14810 (45%) including unused fragments
+
+          3 Average locations per line
+          14 Average locations per statement
+
+RAM used: 1049 (51%) at main() level
+          1084 (53%) worst case
+
+Stack used: 13 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  782   509  49  Hardware_Controller_Modif.c
+  451     0   0  C:\Program Files (x86)\PICC\Devices\18F4550.h
+  222     0   0  pic18_usb.h
+  328     0   0  usb_hw_layer.h
+  156     0   0  header.h
+ 1063     0   0  usb.h
+  808   218  21  usb.c
+ 1281   320  31  pic18_usb.c
+----- -----
+ 5091  1047 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     44   0   1             @delay_ms1
+0     24   0   1             @I2C_WRITE_1
+0     32   0   0             @const162
+0     66   0   0             @const166
+0     48   0   0             @const170
+0     18   0   0             @const172
+0     34   0   0             @const174
+0     20   0   0             @const176
+0     70   0   0             @const178
+0     60   0   3   133  4.3  usb_kbhit
+0     68   0   3   133  4.3  usb_tbe
+0     40   0   1   134  2.5  usb_detach
+0     34   0   0   136  2.2  usb_attach
+0      6   0   0    16  1.0  usb_init_cs
+0     34   0   1   346  4.6  usb_task
+0     14   0   0    61  2.5  usb_init
+0    220   1   7  1083  5.4  usb_flush_in
+0    176   1  10   320  5.5  usb_put_packet
+0    202   1   7   899  4.9  usb_flush_out
+0    202   1  12   632  5.7  usb_get_packet_buffer
+0     74   0   5   145  3.5  usb_get_packet
+0     74   0   4   251  4.6  usb_stall_ep
+0     72   0   4   258  4.6  usb_unstall_ep
+0     90   0   5   360  5.8  usb_endpoint_stalled
+0     26   0   1    88  2.7  usb_set_address
+0    466   2  10  1722  9.8  usb_set_configured
+0     84   0   3   192  3.2  usb_disable_endpoint
+0     30   0   1    93  2.9  usb_disable_endpoints
+0      4   0   0    39  2.0  usb_clear_trn
+0    136   0   2   638  6.6  usb_isr
+0      6   0   0    43  2.0  usb_isr_sof
+0     42   0   0   357  4.2  usb_isr_rst
+0     32   0   0   508  4.0  usb_init_ep0_setup
+0      8   0   0    74  2.8  usb_isr_uerr
+0     10   0   0    82  2.8  usb_isr_uidle
+0     16   0   0   102  3.3  usb_isr_activity
+0     14   0   0   151  3.9  usb_isr_stall
+0      6   0   1    30  1.7  usb_request_send_response
+0      6   0   0    22  1.2  usb_request_stall
+0    378   1   5  2031  7.9  usb_isr_tok_dne
+0      8   0   0    29  1.9  usb_enumerated
+0     40   0   3   231  4.0  usb_token_reset
+0    100   0   3   267  5.9  usb_endpoint_is_valid
+0     34   0   1   152  3.0  usb_isr_tok_in_dne
+0     10   0   1    48  1.9  usb_isr_tok_out_dne
+0     44   0   0   285  5.4  usb_isr_tok_setup_dne
+0    184   1   0  1454  8.3  usb_isr_tkn_setup_StandardDevice
+0    170   1   3   930  7.7  usb_isr_tkn_setup_StandardInterface
+0    106   0   0   753  5.8  usb_isr_tkn_setup_StandardEndpoint
+0    126   0   1   790  7.7  usb_Get_Descriptor
+0     14   0   0    76  1.8  usb_finish_set_address
+0    154   1   4   591  8.6  usb_copy_desc_seg_to_ep
+0    110   0   3   255  3.6  ssp_interupt
+0    108   0   2   142  3.9  ActualizaRecta
+0    632   2  16             @ADDFF
+0     84   0   5   100  2.1  sensores
+0     54   0   2             @ITOF
+0    962   3   5   736  7.7  Leer_Sensor
+0    350   1  14             @DIVFF
+0     34   0   5             @MUL1616
+0    246   1  11             @MULFF
+0    504   2   5   561  7.5  Leer_Sensor_Presion_Camara
+0    122   0  10             @FLT
+0    504   2   5   561  7.5  Leer_Sensor_Presion_PreCamara
+0    122   0   0   675  2.9  Carga_Vector
+0     60   0   4             @SFTOI
+0     86   0   0   450  2.4  Lee_Vector
+0    138   0   0   524  6.7  temp0s
+0    118   0   1   486  4.2  temp1s
+0    910   3   4   948  8.2  Controla
+0     36   0   0   110  2.9  ControlaPresion
+0   5472  18   2 16941 10.9  MAIN
+
+Program metrics:
+    Functions               56
+    Statements              1047
+    Comments                2141
+    Volume (V)              64567
+    Difficilty (D)          268.0
+    Effort to implement (E) 17301051
+    Time to implement (T)   266 hours, 59 minutes
+    Est Delivered Bugs (B)  22
+    Cyclomatic Complexity   176
+    Maintainability (MI)    78
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     4  0  
+00008-000B8   178  0  
+000BA-07FFE  14624  17958  
+
+
+

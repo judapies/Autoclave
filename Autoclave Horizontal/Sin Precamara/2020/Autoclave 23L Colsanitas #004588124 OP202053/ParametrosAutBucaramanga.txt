@@ -1,0 +1,11 @@
+P.5->8
+ciclos.00770->1062
+Ttrampa.88->91->93
+RT. 0.5
+Media. 80
+Aj+.3
+Aj-.0
+Tciclo.10
+I.1->3
+D.8
+

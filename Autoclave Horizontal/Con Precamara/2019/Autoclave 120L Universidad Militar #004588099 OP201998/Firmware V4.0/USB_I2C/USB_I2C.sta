@@ -1,0 +1,178 @@
+
+ROM used: 17402 (53%)
+          17402 (53%) including unused fragments
+
+          4 Average locations per line
+          16 Average locations per statement
+
+RAM used: 898 (44%) at main() level
+          933 (46%) worst case
+
+Stack used: 13 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  561   470  44  USB_I2C.c
+  392     0   0  18F2550.h
+  143    53   5  DS1302.c
+  222     0   0  pic18_usb.h
+  328     0   0  usb_hw_layer.h
+  156     0   0  header.h
+ 1063     0   0  usb.h
+  808   218  21  usb.c
+ 1281   320  30  pic18_usb.c
+----- -----
+ 4954  1061 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     42   0   1             @delay_ms1
+0      8   0   0             @PUTCHARI_BIU_1
+0     24   0   1             @I2C_WRITE_1
+0     40   0   2   199  4.3  write_ds1302_byte
+0     22   0   2    94  1.8  write_ds1302
+0     90   0   3   401  4.9  read_ds1302
+0     48   0   4   160  5.0  get_bcd
+0     44   0   3             @DIV88
+0     50   0   3   160  4.2  rm_bcd
+0    174   0   7   402  2.2  rtc_set_datetime
+ Inline        5   238  3.1  rtc_get_date
+ Inline        4   170  3.0  rtc_get_time
+0     32   0   0             @const207
+0     66   0   0             @const211
+0     48   0   0             @const215
+0     18   0   0             @const217
+0     34   0   0             @const219
+0     20   0   0             @const221
+0     70   0   0             @const223
+0     60   0   3   133  4.3  usb_kbhit
+0     68   0   3   133  4.3  usb_tbe
+0     40   0   1   134  2.5  usb_detach
+0     34   0   0   136  2.2  usb_attach
+0      6   0   0    16  1.0  usb_init_cs
+0     34   0   1   346  4.6  usb_task
+0     14   0   0    61  2.5  usb_init
+0    220   1   7  1083  5.4  usb_flush_in
+0    176   1  10   320  5.5  usb_put_packet
+0    202   1   7   899  4.9  usb_flush_out
+0    202   1  12   632  5.7  usb_get_packet_buffer
+0     74   0   5   145  3.5  usb_get_packet
+0     74   0   4   251  4.6  usb_stall_ep
+0     72   0   4   258  4.6  usb_unstall_ep
+0     90   0   5   360  5.8  usb_endpoint_stalled
+0     26   0   1    88  2.7  usb_set_address
+0    466   1  10  1722  9.8  usb_set_configured
+0     84   0   3   192  3.2  usb_disable_endpoint
+0     30   0   1    93  2.9  usb_disable_endpoints
+0      4   0   0    39  2.0  usb_clear_trn
+0    136   0   2   638  6.6  usb_isr
+0      6   0   0    43  2.0  usb_isr_sof
+0     42   0   0   357  4.2  usb_isr_rst
+0     32   0   0   508  4.0  usb_init_ep0_setup
+0      8   0   0    74  2.8  usb_isr_uerr
+0     10   0   0    82  2.8  usb_isr_uidle
+0     16   0   0   102  3.3  usb_isr_activity
+0     14   0   0   151  3.9  usb_isr_stall
+0      6   0   1    30  1.7  usb_request_send_response
+0      6   0   0    22  1.2  usb_request_stall
+0    378   1   5  2031  7.9  usb_isr_tok_dne
+0      8   0   0    29  1.9  usb_enumerated
+0     40   0   3   231  4.0  usb_token_reset
+0    100   0   3   267  5.9  usb_endpoint_is_valid
+0     34   0   1   152  3.0  usb_isr_tok_in_dne
+0     10   0   1    48  1.9  usb_isr_tok_out_dne
+0     44   0   0   285  5.4  usb_isr_tok_setup_dne
+0    184   1   0  1454  8.3  usb_isr_tkn_setup_StandardDevice
+0    170   0   3   930  7.7  usb_isr_tkn_setup_StandardInterface
+0    106   0   0   753  5.8  usb_isr_tkn_setup_StandardEndpoint
+0    126   0   1   790  7.7  usb_Get_Descriptor
+0     14   0   0    76  1.8  usb_finish_set_address
+0    154   0   4   591  8.6  usb_copy_desc_seg_to_ep
+0    278   1   0             @const465
+0    188   1   0             @const468
+0    384   1   3   964  7.3  ssp_interupt
+0     42   0   0   292  2.3  Carga_Vector
+0    308   1   0  1162  3.9  Lee_Vector
+0     54   0   2             @ITOF
+0    350   1  14             @DIVFF
+0    632   2  16             @ADDFF
+0     68   0   5    64  2.4  inttofloat
+0     84   0   3   111  3.8  esBisiesto
+0     72   0   5             @DIV1616
+0   7638  22   7 23565 11.6  MAIN
+0     32   0   0             @const494
+0     34   0   2             @PSTRINGC_19200_31766_31767
+0     24   0   0             @const497
+0     48   0   0             @const498
+0    126   0   2             @PRINTF_U_19200_31766_31767
+0    246   1  11             @MULFF
+0     68   0   5             @FTOSD
+0    128   0  13             @DIV3232
+0    418   1  13             @PRINTF_L32D_19200_31766_31767FPFPF
+0     42   0   3             @PSTRINGCN_19200_31766_31767
+0    170   0   9             @PRINTF_LU_19200_31766_31767
+0     48   0   0             @const517
+0     36   0   0             @const518
+0     34   0   0             @const519
+0     34   0   0             @const520
+0     34   0   5             @MUL1616
+0     20   0   0             @const525
+0     14   0   0             @const526
+0     24   0   0             @const527
+0     30   0   0             @const528
+0     40   0   0             @const529
+0     40   0   0             @const530
+0     34   0   0             @const531
+0     26   0   0             @const532
+0     34   0   0             @const535
+0     28   0   0             @const536
+0     28   0   0             @const539
+0     28   0   0             @const540
+0     34   0   0             @const543
+0     28   0   0             @const544
+0     30   0   0             @const547
+0     28   0   0             @const548
+0     26   0   0             @const551
+0     28   0   0             @const552
+0     26   0   0             @const555
+0     28   0   0             @const556
+0     28   0   0             @const559
+0     28   0   0             @const560
+0     26   0   0             @const563
+0     24   0   0             @const564
+0     36   0   0             @const565
+0     26   0   0             @const568
+0     28   0   0             @const569
+0     36   0   0             @const572
+0     16   0   0             @const573
+0     34   0   0             @const574
+0     20   0   0             @const576
+0     14   0   0             @const577
+0     24   0   0             @const578
+0     32   0   0             @const579
+0    122   0  10             @FLT
+0     22   0   0             @const587
+0     24   0   0             @const588
+0     60   0   4             @SFTOI
+
+Program metrics:
+    Functions               57
+    Statements              1061
+    Comments                2097
+    Volume (V)              69976
+    Difficilty (D)          250.4
+    Effort to implement (E) 17522468
+    Time to implement (T)   270 hours, 25 minutes
+    Est Delivered Bugs (B)  22
+    Cyclomatic Complexity   166
+    Maintainability (MI)    87
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     4  0  
+00008-000A0   154  0  
+000A2-07FFE  17240  15366  
+
+
+

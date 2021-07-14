@@ -1,0 +1,7 @@
+>>> Warning 203 "D:\Laboratorio\Autoclave\Autoclave Horizontal\Con Precamara\2019\Autoclave 680L-V3.1 VM #004587960\Firmware V4.0\I2C_Reloj\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "USB_I2C.c" Line 561(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "USB_I2C.c" Line 561(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "USB_I2C.c" Line 561(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "USB_I2C.c" Line 561(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+      Memory usage:   ROM=53%      RAM=44% - 46%
+      0 Errors,  5 Warnings.

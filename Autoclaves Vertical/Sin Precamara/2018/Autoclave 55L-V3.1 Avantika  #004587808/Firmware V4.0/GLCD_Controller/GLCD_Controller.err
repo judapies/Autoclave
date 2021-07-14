@@ -1,0 +1,31 @@
+>>> Warning 216 "GLCD_Controller.c" Line 2833(0,1): Interrupts disabled during call to prevent re-entrancy:  (@MUL1616)
+>>> Warning 202 "GLCD_Controller.c" Line 78(27,35): Variable never used:   Prevacio
+>>> Warning 202 "GLCD_Controller.c" Line 78(39,51): Variable never used:   flagprevacio
+>>> Warning 202 "GLCD_Controller.c" Line 78(55,63): Variable never used:   Calentar
+>>> Warning 202 "GLCD_Controller.c" Line 79(17,28): Variable never used:   Atmosferica
+>>> Warning 202 "GLCD_Controller.c" Line 79(32,41): Variable never used:   fin_ciclo
+>>> Warning 202 "GLCD_Controller.c" Line 79(93,100): Variable never used:   Exhaust
+>>> Warning 202 "GLCD_Controller.c" Line 80(41,48): Variable never used:   Minutos
+>>> Warning 202 "GLCD_Controller.c" Line 80(60,75): Variable never used:   tiempo_desfogue
+>>> Warning 202 "GLCD_Controller.c" Line 81(7,16): Variable never used:   ADC_Pt100
+>>> Warning 202 "GLCD_Controller.c" Line 84(6,12): Variable never used:   datoRx
+>>> Warning 202 "GLCD_Controller.c" Line 85(40,44): Variable never used:   Frio
+>>> Warning 202 "GLCD_Controller.c" Line 85(47,52): Variable never used:   llena
+>>> Warning 202 "GLCD_Controller.c" Line 85(55,68): Variable never used:   PulsoPositivo
+>>> Warning 202 "GLCD_Controller.c" Line 85(72,83): Variable never used:   PulsosVacio
+>>> Warning 202 "GLCD_Controller.c" Line 85(86,96): Variable never used:   flag_pulso
+>>> Warning 202 "GLCD_Controller.c" Line 86(6,17): Variable never used:   Resistencia
+>>> Warning 202 "GLCD_Controller.c" Line 86(20,31): Variable never used:   MotorPuerta
+>>> Warning 202 "GLCD_Controller.c" Line 86(34,47): Variable never used:   EVEntradaAgua
+>>> Warning 202 "GLCD_Controller.c" Line 86(50,59): Variable never used:   BombaAgua
+>>> Warning 202 "GLCD_Controller.c" Line 87(6,21): Variable never used:   NivelReservorio
+>>> Warning 202 "GLCD_Controller.c" Line 87(24,34): Variable never used:   Presostato
+>>> Warning 202 "GLCD_Controller.c" Line 87(41,47): Variable never used:   Chksum
+>>> Warning 202 "GLCD_Controller.c" Line 87(50,59): Variable never used:   flagvacio
+>>> Warning 202 "GLCD_Controller.c" Line 88(19,24): Variable never used:   tagua
+>>> Warning 202 "GLCD_Controller.c" Line 88(27,38): Variable never used:   treservorio
+>>> Warning 202 "GLCD_Controller.c" Line 88(41,56): Variable never used:   PresionCamara16
+>>> Warning 202 "GLCD_Controller.c" Line 88(59,77): Variable never used:   PresionPreCamara16
+>>> Warning 202 "GLCD_Controller.c" Line 88(80,86): Variable never used:   tvacio
+      Memory usage:   ROM=51%      RAM=56% - 58%
+      0 Errors,  29 Warnings.

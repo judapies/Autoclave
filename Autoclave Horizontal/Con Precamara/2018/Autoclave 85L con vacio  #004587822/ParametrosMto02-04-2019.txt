@@ -1,0 +1,14 @@
+Ciclos:29;
+P:15
+I:2
+D:15
+Tciclo:10
+Aj+:0
+Aj-:0
+Nivel Vacio:25kPa-45kPa
+Pulsos Vacio:4
+RPT100:0.3
+R51:6210
+Ganancia:40.5
+Media:80
+Presion Atmosferica:72kPa

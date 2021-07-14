@@ -1,0 +1,5 @@
+-1 B68 3/8(Anillo y tuerca) x 1/2(Macho NPT)
+-1 B64 3/8
+-1 B109 1/4
+-1 B109 3/8
+

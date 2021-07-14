@@ -1,0 +1,108 @@
+
+ROM used: 6518 (20%)
+          6518 (20%) including unused fragments
+
+          1 Average locations per line
+          11 Average locations per statement
+
+RAM used: 486 (24%) at main() level
+          517 (25%) worst case
+
+Stack used: 13 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  156    72  12  USB_I2C.c
+  392     0   0  18F2550.h
+  222     0   0  pic18_usb.h
+  328     0   0  usb_hw_layer.h
+  156     0   0  header.h
+ 1063     0   0  usb.h
+  808   218  36  usb.c
+ 1281   320  52  pic18_usb.c
+----- -----
+ 4406   610 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     24   0   1             @I2C_WRITE_1
+0     32   0   0             @const161
+0     66   1   0             @const165
+0     48   0   0             @const169
+0     18   0   0             @const171
+0     34   0   0             @const173
+0     20   0   0             @const175
+0     70   1   0             @const177
+0     60   0   3   133  4.3  usb_kbhit
+0     68   1   3   133  4.3  usb_tbe
+0     40   0   1   134  2.5  usb_detach
+0     34   0   0   136  2.2  usb_attach
+0      6   0   0    16  1.0  usb_init_cs
+0     34   0   1   346  4.6  usb_task
+0     14   0   0    61  2.5  usb_init
+0    220   2   7  1083  5.4  usb_flush_in
+0    176   1  10   320  5.5  usb_put_packet
+0    202   2   7   899  4.9  usb_flush_out
+0    202   2  12   632  5.7  usb_get_packet_buffer
+0     74   1   5   145  3.5  usb_get_packet
+0     74   1   4   251  4.6  usb_stall_ep
+0     72   1   4   258  4.6  usb_unstall_ep
+0     90   1   5   360  5.8  usb_endpoint_stalled
+0     26   0   1    88  2.7  usb_set_address
+0    466   4  10  1722  9.8  usb_set_configured
+0     84   1   3   192  3.2  usb_disable_endpoint
+0     30   0   1    93  2.9  usb_disable_endpoints
+0      4   0   0    39  2.0  usb_clear_trn
+0    136   1   2   638  6.6  usb_isr
+0      6   0   0    43  2.0  usb_isr_sof
+0     42   0   0   357  4.2  usb_isr_rst
+0     32   0   0   508  4.0  usb_init_ep0_setup
+0      8   0   0    74  2.8  usb_isr_uerr
+0     10   0   0    82  2.8  usb_isr_uidle
+0     16   0   0   102  3.3  usb_isr_activity
+0     14   0   0   151  3.9  usb_isr_stall
+0      6   0   1    30  1.7  usb_request_send_response
+0      6   0   0    22  1.2  usb_request_stall
+0    378   3   5  2031  7.9  usb_isr_tok_dne
+0      8   0   0    29  1.9  usb_enumerated
+0     40   0   3   231  4.0  usb_token_reset
+0    100   1   3   267  5.9  usb_endpoint_is_valid
+0     34   0   1   152  3.0  usb_isr_tok_in_dne
+0     10   0   1    48  1.9  usb_isr_tok_out_dne
+0     44   0   0   285  5.4  usb_isr_tok_setup_dne
+0    184   1   0  1454  8.3  usb_isr_tkn_setup_StandardDevice
+0    170   1   3   930  7.7  usb_isr_tkn_setup_StandardInterface
+0    106   1   0   753  5.8  usb_isr_tkn_setup_StandardEndpoint
+0    126   1   1   790  7.7  usb_Get_Descriptor
+0     14   0   0    76  1.8  usb_finish_set_address
+0    154   1   4   591  8.6  usb_copy_desc_seg_to_ep
+0    110   1   3   255  3.6  ssp_interupt
+0    292   2   0   913  3.9  Lee_Vector
+0     54   0   2             @ITOF
+0    352   3  14             @DIVFF
+0    632   5  16             @ADDFF
+0    680   5   2  1536  6.9  MAIN
+0     60   0   4             @SFTOI
+0    248   2  11             @MULFF
+
+Program metrics:
+    Functions               46
+    Statements              610
+    Comments                2062
+    Volume (V)              35681
+    Difficilty (D)          205.4
+    Effort to implement (E) 7327207
+    Time to implement (T)   113 hours, 4 minutes
+    Est Delivered Bugs (B)  13
+    Cyclomatic Complexity   109
+    Maintainability (MI)    53
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     4  0  
+00008-000A0   154  0  
+000A2-07FFE  6356  26250  
+
+
+

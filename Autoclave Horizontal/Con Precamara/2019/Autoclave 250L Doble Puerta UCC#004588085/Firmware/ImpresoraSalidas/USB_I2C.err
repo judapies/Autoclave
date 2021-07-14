@@ -1,0 +1,9 @@
+>>> Warning 202 "USB_I2C.c" Line 55(49,58): Variable never used:   NivelAlto
+>>> Warning 202 "USB_I2C.c" Line 56(28,30): Variable never used:   d3
+>>> Warning 202 "USB_I2C.c" Line 57(23,30): Variable never used:   TempUSB
+>>> Warning 202 "USB_I2C.c" Line 58(13,16): Variable never used:   Mes
+>>> Warning 202 "USB_I2C.c" Line 59(63,68): Variable never used:   dowRx
+>>> Warning 202 "USB_I2C.c" Line 59(71,77): Variable never used:   Modulo
+>>> Warning 202 "USB_I2C.c" Line 71(6,12): Variable never used:   buffer
+      Memory usage:   ROM=11%      RAM=19% - 19%
+      0 Errors,  7 Warnings.

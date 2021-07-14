@@ -1,0 +1,6 @@
+>>> Warning 202 "GLCD_Controller.c" Line 82(138,149): Variable never used:   AlarmaBomba
+>>> Warning 202 "GLCD_Controller.c" Line 83(7,18): Variable never used:   AlarmaVacio
+>>> Warning 202 "GLCD_Controller.c" Line 111(43,54): Variable never used:   difPresionC
+>>> Warning 202 "GLCD_Controller.c" Line 111(57,69): Variable never used:   difPresionPC
+      Memory usage:   ROM=60%      RAM=60% - 60%
+      0 Errors,  4 Warnings.

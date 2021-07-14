@@ -1,0 +1,16 @@
+>>> Warning 202 "ch376s.c" Line 21(5,6): Variable never used:   i
+>>> Warning 202 "ch376s.c" Line 22(6,10): Variable never used:   plan
+>>> Warning 202 "ch376s.c" Line 25(6,12): Variable never used:   string
+>>> Warning 202 "ch376s.c" Line 25(17,21): Variable never used:   data
+>>> Warning 202 "ch376s.c" Line 27(7,23): Variable never used:   PresionPreCamara
+>>> Warning 202 "ch376s.c" Line 27(28,41): Variable never used:   PresionCamara
+>>> Warning 202 "ch376s.c" Line 27(46,52): Variable never used:   Alarma
+>>> Warning 202 "ch376s.c" Line 28(6,11): Variable never used:   punto
+>>> Warning 202 "ch376s.c" Line 29(6,10): Variable never used:   back
+>>> Warning 202 "ch376s.c" Line 30(6,9): Variable never used:   tab
+>>> Warning 202 "ch376s.c" Line 31(7,20): Variable never used:   usb_connected
+>>> Warning 202 "ch376s.c" Line 34(15,24): Variable never used:   respuesta
+>>> Warning 202 "ch376s.c" Line 34(25,32): Variable never used:   comando
+>>> Warning 202 "ch376s.c" Line 34(42,48): Variable never used:   status
+      Memory usage:   ROM=4%      RAM=27% - 27%
+      0 Errors,  14 Warnings.

@@ -1,0 +1,11 @@
+1 Autoclave
+113.8
+216kpa  20Psi
+
+2
+115.6
+206kpa   19psi
+116.7
+215kpa   19psi
+
+

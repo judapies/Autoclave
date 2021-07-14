@@ -1,0 +1,68 @@
+-------------Racores Autoclave Vertical--------------------------
+-4 B101 1/4
+-2 B101 1/2
+-2 B122 3/8 X 1/4
+-4 B122 3/8 X 1/2
+-3 B122 1/4 X 1/4
+-5 B68 1/4 X 1/4
+-5 B66 1/4 X 1/4
+-2 B3 3/16 (ESPIGO) X 1/4(MACHO NPT)
+-16 B68 3/8 (ANILLO Y TUERCA) X 1/2 (MACHO NPT)
+-7 B116 1/2 X 1/2
+-10 B122 1/2 X 1/2
+-4 B66 3/8 X 3/8
+-5 B68 3/8 X 3/8
+-4 B68 1/4 (MACHO NPT) X 5/16 (ANILLO Y TUERCA)
+-1 TAPON DE 1/4 NPT MACHO
+
+
+Iconos
+
+Plastico:36
+Clave:38
+Fecha:40
+InicioCiclo:41
+Instrumental:37
+Libre:44
+LiquidosA:45
+LiquidosB:46
+Nivel:47
+Test:52
+Temperatura:56
+Test:57
+Tsec:58
+
+GranClave:83
+GranFecha:84
+GranInicia:85
+GranInst:86
+GranLibre:87
+GranLiqA:88
+GranLiqB:89
+GranNive:90
+GranPlast:91
+GranTem:92
+GranTest:93
+GranTeste:94
+GraTsec:95
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

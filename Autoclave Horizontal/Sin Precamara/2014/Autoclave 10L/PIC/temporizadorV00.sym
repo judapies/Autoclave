@@ -1,0 +1,187 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     line
+018     contador
+019     i
+01A     tmp
+01B     cursor_x
+01C     cursor_y
+01D     inicio
+01E     indice
+01F     ventana
+020     solidos
+021     inicio_tmp
+022     tiempos
+023     estado_T_secado
+024     estado_T_esteril
+025     estado_trampa
+026     cont_trampas
+027     flanco_trampa
+028     estado_rampa
+029     fin
+02A-03D matriz
+03E     proceso
+03F     minutos
+040-043 tiempo1
+044-047 tiempo2
+048     hold_esteril
+049     hold_secado
+04A-04B ContadorL
+04C-04D ContadorH
+04E     MAIN.j
+04F     MAIN.k
+050     MAIN.leer121
+051     MAIN.x
+052     lcd_init.i
+052     mostrar_menu.m
+052     funcionStop.@SCRATCH1
+052     MAIN.@SCRATCH1
+053     @PSTRINGC_85.@SCRATCH1
+053     MAIN.@SCRATCH2
+054     @PSTRINGC_85.@SCRATCH2
+061     @PRINTF_D_85.P1
+061     @DIVS88.P2
+062     @DIVS88.P1
+062     @PRINTF_D_85.P2
+063     @PRINTF_D_85.@SCRATCH1
+063     @DIVS88.@SCRATCH1
+064     @PRINTF_D_85.@SCRATCH2
+064     @DIVS88.@SCRATCH2
+065     @PRINTF_D_85.@SCRATCH3
+066     @PRINTF_D_85.@SCRATCH4
+067     lcd_putc.c
+067     @DIV88.P1
+068     @delay_ms1.P1
+068     lcd_gotoxy.x
+068     @DIV88.P1
+069     lcd_gotoxy.y
+069     @DIV88.@SCRATCH1
+06A     lcd_gotoxy.dir
+06B     lcd_gotoxy.@SCRATCH1
+06C     lcd_enviar.dir
+06D     lcd_enviar.valor
+06E     lcd_leer.valor
+06E     lcd_enviar.@SCRATCH1
+F81     lcd_b
+F83     PSP_DATA
+F83.5   lcd_rs
+F83.6   lcd_rw
+F83.7   lcd_enable
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0186  @delay_ms1
+0096  lcd_leer
+00BE  lcd_enviar
+0642  lcd_init
+00F8  lcd_gotoxy
+01AE  lcd_putc
+031C  tempo1
+015E  @DIV88
+020C  @PRINTF_D_85
+02D4  @DIVS88
+0716  mostrar_menu
+04CC  @const135
+06EA  @PSTRINGC_85
+04DC  @const137
+04F0  @const138
+04FA  @const139
+0504  @const141
+050E  @const142
+0516  @const143
+0520  @const144
+0532  @const148
+0542  @const149
+0554  @const153
+0566  @const154
+0576  @const155
+0588  @const156
+0592  @const159
+05A0  @const160
+05A8  @const161
+05B4  @const162
+05BC  @const164
+0DB6  funcionStop
+05CE  @const168
+05E0  @const169
+100C  MAIN
+05F2  @const175
+0608  @const176
+0614  @const177
+0620  @const178
+062E  @const191
+0636  @const192
+100C  @cinit
+132F  salida
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    D:\Faiver\JPING\2013\24 Fermentador\Autoclave\
+
+Project Files:
+    temporizadorV00.c
+    C:\Program Files (x86)\PICC\devices\18F4550.h
+    lcd.h
+
+Units:
+    D:\Faiver\JPING\2013\24 Fermentador\Autoclave\temporizadorV00 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      temporizadorV00.err
+    Ext Symbols: temporizadorV00.esym
+    INHX32:      temporizadorV00.hex
+    Symbols:     temporizadorV00.sym
+    List:        temporizadorV00.lst
+    Debug/COFF:  temporizadorV00.cof
+    Project:     temporizadorV00.PJT
+    Call Tree:   temporizadorV00.tre
+    Statistics:  temporizadorV00.sta

@@ -1,0 +1,115 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     fstate
+017     posicion
+018-037 buffer
+038-057 txbuf
+058-077 rxbuf
+078     conteo
+079     accion
+07A     conteoAnt
+07B.0   nuevoDato
+07B.1   flagSubePuerta
+07B.2   flagBajaPuerta
+07B.3   flagSubePuertaOff
+07B.4   flagBajaPuertaOff
+07C-07D tSubePuerta
+07E-07F tSubePuertaOff
+080-081 tBajaPuerta
+082-083 tBajaPuertaOff
+084-085 tiempos
+086     @I2C_STATE
+087-088 @MUL1616.P1
+087     MAIN.@SCRATCH1
+088     MAIN.@SCRATCH2
+089-08A @MUL1616.P1
+08B     @MUL1616.@SCRATCH1
+08C     ssp_interupt.incoming
+08D     ssp_interupt.@SCRATCH1
+08E     @I2C_WRITE_1.P1
+08E     ssp_interupt.@SCRATCH2
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+00EC  @I2C_WRITE_1
+019C  subePuerta
+017E  @MUL1616
+026A  borraSubePuerta
+01FC  bajaPuerta
+025C  borraBajaPuerta
+00A2  temp1s
+0104  ssp_interupt
+0168  Lee_Vector
+0172  CargaVector
+0278  MAIN
+0278  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    D:\Laboratorio\Autoclave\Autoclaves Vertical\Con Precamara\2020\Autoclave 160L Sociedad Integral Suministros OP202055 #0045881XX\Firmware V4.0\I2C_MotorDriver\
+
+Project Files:
+    I2C_MotorDriver_V1.0.0.c
+    18F2550.h
+
+Units:
+    D:\Laboratorio\Autoclave\Autoclaves Vertical\Con Precamara\2020\Autoclave 160L Sociedad Integral Suministros OP202055 #0045881XX\Firmware V4.0\I2C_MotorDriver\I2C_MotorDriver_V1.0.0 (main)
+
+Compiler Settings:
+    Processor:      PIC18F2550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      I2C_MotorDriver_V1.0.0.err
+    Ext Symbols: I2C_MotorDriver_V1.0.0.esym
+    INHX32:      I2C_MotorDriver_V1.0.0.hex
+    Symbols:     I2C_MotorDriver_V1.0.0.sym
+    List:        I2C_MotorDriver_V1.0.0.lst
+    Debug/COFF:  I2C_MotorDriver_V1.0.0.cof
+    Project:     I2C_MotorDriver_V1.0.0.PJT
+    Call Tree:   I2C_MotorDriver_V1.0.0.tre
+    Statistics:  I2C_MotorDriver_V1.0.0.sta

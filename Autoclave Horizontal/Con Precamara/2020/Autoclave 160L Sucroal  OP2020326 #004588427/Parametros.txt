@@ -1,0 +1,8 @@
+160L
+Ttrampa:100
+desvio:1.1
+Histeresis:0.8
+Aj+:0
+Aj-:10;
+Media:60
+Atm:87

@@ -1,0 +1,4619 @@
+CCS PCH C Compiler, Version 4.104, 5967               01-jul.-21 08:44
+
+               Filename: D:\Laboratorio\Autoclave\Autoclave Horizontal\Con Precamara\2021\Autoclave 62L Dempharma SAS OP2021108 #0045885XX\FirmwareV3.0.2-Pulsos-Alarmas-NivelVacio\ImpresoraSalidas\USB_I2C.lst
+
+               ROM used: 13568 bytes (14%)
+                         Largest free fragment is 51964
+               RAM used: 666 (20%) at main() level
+                         688 (21%) worst case
+               Stack:    4 worst case (2 in main + 2 for interrupts)
+
+*
+00000:  GOTO   162E
+*
+00008:  MOVWF  04
+0000A:  MOVFF  FD8,05
+0000E:  MOVFF  FE0,06
+00012:  MOVLB  0
+00014:  MOVFF  FE9,0C
+00018:  MOVFF  FEA,07
+0001C:  MOVFF  FE1,08
+00020:  MOVFF  FE2,09
+00024:  MOVFF  FD9,0A
+00028:  MOVFF  FDA,0B
+0002C:  MOVFF  FF3,12
+00030:  MOVFF  FF4,13
+00034:  MOVFF  FFA,14
+00038:  MOVFF  FFB,15
+0003C:  MOVFF  00,0E
+00040:  MOVFF  01,0F
+00044:  MOVFF  02,10
+00048:  MOVFF  03,11
+0004C:  BTFSS  F9D.3
+0004E:  GOTO   0058
+00052:  BTFSC  F9E.3
+00054:  GOTO   025C
+00058:  MOVFF  0E,00
+0005C:  MOVFF  0F,01
+00060:  MOVFF  10,02
+00064:  MOVFF  11,03
+00068:  MOVFF  0C,FE9
+0006C:  MOVFF  07,FEA
+00070:  BSF    07.7
+00072:  MOVFF  08,FE1
+00076:  MOVFF  09,FE2
+0007A:  MOVFF  0A,FD9
+0007E:  MOVFF  0B,FDA
+00082:  MOVFF  12,FF3
+00086:  MOVFF  13,FF4
+0008A:  MOVFF  14,FFA
+0008E:  MOVFF  15,FFB
+00092:  MOVF   04,W
+00094:  MOVFF  06,FE0
+00098:  MOVFF  05,FD8
+0009C:  RETFIE 0
+.................... // Falta configurar impresion con lectura de datos en memoria EEPROM 
+.................... //#include <16F877A.h> 
+.................... //#fuses HS,NOWDT,NOPROTECT,NOLVP,NODEBUG,NOBROWNOUT, NOPUT//  
+.................... #include <18F4685.h> 
+.................... //////// Standard Header file for the PIC18F4685 device //////////////// 
+.................... #device PIC18F4685 
+.................... #list 
+....................  
+.................... #fuses HS,WDT4096,NOPROTECT,NOLVP,NODEBUG,NOSTVREN,PUT,NOCPD,NOWRT,NOIESO,NOFCMEN,NOPBADEN,NOWRTC,NOWRTB,NOEBTR,NOEBTRB,NOCPB,NOXINST,NOLPT1OSC,NOMCLR,NOBROWNOUT,BORV42 
+.................... #use delay(clock=20000000) 
+*
+00A9A:  MOVLW  02
+00A9C:  MOVWF  FEA
+00A9E:  MOVLW  94
+00AA0:  MOVWF  FE9
+00AA2:  MOVF   FEF,W
+00AA4:  BZ    0AC0
+00AA6:  MOVLW  06
+00AA8:  MOVWF  01
+00AAA:  CLRF   00
+00AAC:  DECFSZ 00,F
+00AAE:  BRA    0AAC
+00AB0:  DECFSZ 01,F
+00AB2:  BRA    0AAA
+00AB4:  MOVLW  7B
+00AB6:  MOVWF  00
+00AB8:  DECFSZ 00,F
+00ABA:  BRA    0AB8
+00ABC:  DECFSZ FEF,F
+00ABE:  BRA    0AA6
+00AC0:  RETLW  00
+.................... #use RS232(BAUD=19200, BITS=8, PARITY=N, XMIT=PIN_C6, RCV=PIN_C7, stream=Printer) 
+*
+00A92:  BTFSS  F9E.4
+00A94:  BRA    0A92
+00A96:  MOVWF  FAD
+00A98:  RETLW  00
+.................... #use i2c(slave, slow, sda=PIN_C4, scl=PIN_C3, address=0xB0) 
+*
+00244:  MOVF   FC9,W
+00246:  MOVFF  2AF,FC9
+0024A:  BSF    FC6.4
+0024C:  BCF    F9E.3
+0024E:  BTFSC  FC7.0
+00250:  BRA    024E
+00252:  CLRF   01
+00254:  BTFSC  FC6.4
+00256:  INCF   01,F
+00258:  GOTO   028E (RETURN)
+....................  
+.................... #define   In0       input(PIN_A0) 
+.................... #define   In1       input(PIN_A1) 
+.................... #define   In2       input(PIN_A2) 
+.................... #define   In3       input(PIN_A3) 
+.................... #define   In5       input(PIN_A5) 
+....................  
+.................... #define   Aux1_on   output_bit(PIN_D1,0) 
+.................... #define   Aux1_off  output_bit(PIN_D1,1) 
+.................... #define   Aux2_on   output_bit(PIN_D0,0) 
+.................... #define   Aux2_off  output_bit(PIN_D0,1) 
+.................... #define   EV1_on    output_bit(PIN_C5,0) 
+.................... #define   EV1_off   output_bit(PIN_C5,1) 
+.................... #define   EV2_on    output_bit(PIN_D3,0) 
+.................... #define   EV2_off   output_bit(PIN_D3,1) 
+.................... #define   EV3_on    output_bit(PIN_D2,0) 
+.................... #define   EV3_off   output_bit(PIN_D2,1) 
+.................... #define   EV4_on    output_bit(PIN_B7,1) 
+.................... #define   EV4_off   output_bit(PIN_B7,0) 
+.................... #define   EV5_on    output_bit(PIN_B6,1) 
+.................... #define   EV5_off   output_bit(PIN_B6,0) 
+.................... #define   EV6_on    output_bit(PIN_B5,1) 
+.................... #define   EV6_off   output_bit(PIN_B5,0) 
+.................... #define   EV7_on    output_bit(PIN_B4,1) 
+.................... #define   EV7_off   output_bit(PIN_B4,0) 
+.................... #define   EV8_on    output_bit(PIN_B3,1) 
+.................... #define   EV8_off   output_bit(PIN_B3,0) 
+.................... #define   EV9_on    output_bit(PIN_B2,1) 
+.................... #define   EV9_off   output_bit(PIN_B2,0) 
+.................... #define   EV10_on   output_bit(PIN_B1,1) 
+.................... #define   EV10_off  output_bit(PIN_B1,0) 
+.................... #define   EV11_on   output_bit(PIN_B0,1) 
+.................... #define   EV11_off  output_bit(PIN_B0,0) 
+.................... #define   EV12_on   output_bit(PIN_D7,1) 
+.................... #define   EV12_off  output_bit(PIN_D7,0) 
+.................... #define   EV13_on   output_bit(PIN_D6,1) 
+.................... #define   EV13_off  output_bit(PIN_D6,0) 
+.................... #define   EV14_on   output_bit(PIN_D5,1) 
+.................... #define   EV14_off  output_bit(PIN_D5,0) 
+.................... #define   EV15_on   output_bit(PIN_D4,1) 
+.................... #define   EV15_off  output_bit(PIN_D4,0) 
+....................  
+.................... #define   Buzzer_on    output_bit(PIN_C2,1) 
+.................... #define   Buzzer_off   output_bit(PIN_C2,0) 
+....................  
+.................... #define ON 1 
+.................... #define OFF 0 
+....................  
+.................... // Variables para Pt100 
+.................... int8 Termostato=0,Puerta=0,Parada=0,NivelBajo=0,NivelAlto=0,Codigo=0,posicionl=0,posicionh=0,Alarma=0,respuesta=0; 
+.................... float Tpulso=0.0,error=0.0,d3=0.0,Tmax=0.0,Tmin=0.0,promedioT=0.0; 
+.................... float Temperatura=0.0,TempUSB=0.0,Temporal=0.0; 
+.................... int8 Year=0,Mes=0,Dia=0,Hora=0,Minuto=0,Segundo=0,dow=0,Ciclo=0,SetTime=0;// dow=Day Of Week 
+.................... int8 YearRx=0,MesRx=0,DiaRx=0,HoraRx=0,MinutoRx=0,SegundoRx=0,dowRx=0,Modulo=0,Imprime=0,CiclosL=0,CiclosH=0,i=0; 
+.................... short flagImprime=0,flagImprime2=0,Configura=0,Finalizo=0,estadoBuzzer=0,Desfogando=OFF,Esterilizando=OFF,Secando=OFF; 
+.................... int16 PresionCamara=0,PresionPreCamara=0,CiclosTotales=0,posicion=0,Pmax=0,Pmin=0,promedioP=0,mEst=0,sEst=0,sSec=0,mSec=0,Setpoint=0,codigoUsuario=0; 
+.................... int8 EstadoSuministroA=0,estadoAgua=0,estadoBombaVacio=0,estadoEmpaqueL=0,estadoEmpaqueS=0,estadoCilindroS=0,estadoCilindroL=0,estadoSuministroV=0,estadoPaso=0,estadoVacio=0,estadoDesfogue=0,estadoAire=0; 
+.................... int8 EstadoAux1=0,EstadoAux2=0,codigoAlarma=0,codigoAnt=1; 
+....................  
+.................... int8 rxbuf1[100]; 
+.................... int8 rxbuf2[100]; 
+.................... int8 rxbuf3[100]; 
+.................... int8 rxbuf4[100]; 
+....................  
+.................... byte fstate;                     //Guardara el estado del bus I2C 
+.................... byte buffer[0x25], txbuf[0x25],rxbuf[50];     //Buffer de memoria 
+.................... const char texto[12][20]={"CALENTAMIENTO","NO ENVUELTOS 134","NO ENVUELTOS 121","ENVUELTOS 134","ENVUELTOS 121","ENVUELTO DOBLE 1", 
+.................... "ENVUELTO DOBLE 2","PRION","BOWIE & DICK","TEST DE FUGAS","TEST DE COMPONENTES","HORA Y FECHA"}; 
+....................  
+.................... const char user[10][20]={"Admin","Operador 1","Operador 2","Operador 3","Operador 4","Operador 5","Operador 6","Operador 7","Operador 8","Tecnico"}; 
+....................  
+.................... #INT_SSP 
+.................... void ssp_interupt (){ 
+....................     
+....................    int incoming;                //Variable donde se recibe el byte que manda el maestro 
+....................     
+....................    fstate = i2c_isr_state();    //Lectura del estado del bus I2c la interrupción 
+0025C:  BTFSC  FC7.5
+0025E:  BRA    0268
+00260:  MOVLB  2
+00262:  CLRF   x92
+00264:  BTFSC  FC7.2
+00266:  BSF    x92.7
+00268:  MOVLB  2
+0026A:  MOVF   x92,W
+0026C:  INCF   x92,F
+0026E:  MOVWF  x15
+....................    
+....................   if(fstate == 0x80) {         
+00270:  MOVF   x15,W
+00272:  SUBLW  80
+00274:  BNZ   0292
+....................        //Manda al maestro la información contenida en la posición de memoria que le ha solicitado 
+....................       i2c_write (txbuf[posicion]); 
+00276:  MOVLW  3B
+00278:  MOVLB  0
+0027A:  ADDWF  x61,W
+0027C:  MOVWF  FE9
+0027E:  MOVLW  02
+00280:  ADDWFC x62,W
+00282:  MOVWF  FEA
+00284:  MOVFF  FEF,2AE
+00288:  MOVFF  2AE,2AF
+0028C:  BRA    0244
+....................    }else{/* Sino está solicitando lectura es que está enviando algo *///Sino es que hay dato en el bus I2C... 
+0028E:  BRA    03D6
+00290:  MOVLB  2
+....................       incoming = i2c_read();           //... lo lee 
+00292:  BCF    FC6.6
+00294:  BTFSS  F9E.3
+00296:  BRA    0294
+00298:  MOVF   FC9,W
+0029A:  BSF    FC6.4
+0029C:  MOVWF  xAD
+....................       if (fState == 1) {          //Información recibida corresponde a la posicion 
+0029E:  DECFSZ x15,W
+002A0:  BRA    02A8
+....................          posicionl = incoming;          //Se guarda posición 
+002A2:  MOVFF  2AD,1D
+....................       }else if (fState == 2) {          //Información recibida corresponde al dato 
+002A6:  BRA    03D4
+002A8:  MOVF   x15,W
+002AA:  SUBLW  02
+002AC:  BNZ   02BC
+....................          posicionh = incoming; 
+002AE:  MOVFF  2AD,1E
+....................          posicion=make16(posicionh,posicionl); 
+002B2:  MOVFF  1E,62
+002B6:  MOVFF  1D,61
+....................       }else if (fState == 3) {          //Información recibida corresponde al dato          
+002BA:  BRA    03D4
+002BC:  MOVF   x15,W
+002BE:  SUBLW  03
+002C0:  BTFSS  FD8.2
+002C2:  BRA    03D4
+....................          if(posicion<40){ 
+002C4:  MOVLB  0
+002C6:  MOVF   x62,F
+002C8:  BNZ   02E2
+002CA:  MOVF   x61,W
+002CC:  SUBLW  27
+002CE:  BNC   02E2
+....................             rxbuf[posicion] = incoming; 
+002D0:  MOVLW  60
+002D2:  ADDWF  x61,W
+002D4:  MOVWF  FE9
+002D6:  MOVLW  02
+002D8:  ADDWFC x62,W
+002DA:  MOVWF  FEA
+002DC:  MOVFF  2AD,FEF
+....................          }else if(posicion>=40 && posicion<=136){ 
+002E0:  BRA    03D6
+002E2:  MOVF   x62,F
+002E4:  BNZ   02EC
+002E6:  MOVF   x61,W
+002E8:  SUBLW  27
+002EA:  BC    031C
+002EC:  MOVF   x62,F
+002EE:  BNZ   031C
+002F0:  MOVF   x61,W
+002F2:  SUBLW  88
+002F4:  BNC   031C
+....................             rxbuf1[posicion-40] = incoming; 
+002F6:  MOVLW  28
+002F8:  SUBWF  x61,W
+002FA:  MOVLB  2
+002FC:  MOVWF  xAE
+002FE:  MOVLW  00
+00300:  MOVLB  0
+00302:  SUBWFB x62,W
+00304:  MOVLB  2
+00306:  MOVWF  xAF
+00308:  MOVLW  85
+0030A:  ADDWF  xAE,W
+0030C:  MOVWF  FE9
+0030E:  MOVLW  00
+00310:  ADDWFC xAF,W
+00312:  MOVWF  FEA
+00314:  MOVFF  2AD,FEF
+....................          }else if(posicion>136 && posicion<=235){ 
+00318:  BRA    03D4
+0031A:  MOVLB  0
+0031C:  MOVF   x62,F
+0031E:  BNZ   0326
+00320:  MOVF   x61,W
+00322:  SUBLW  88
+00324:  BC    0356
+00326:  MOVF   x62,F
+00328:  BNZ   0356
+0032A:  MOVF   x61,W
+0032C:  SUBLW  EB
+0032E:  BNC   0356
+....................             rxbuf2[posicion-137] = incoming; 
+00330:  MOVLW  89
+00332:  SUBWF  x61,W
+00334:  MOVLB  2
+00336:  MOVWF  xAE
+00338:  MOVLW  00
+0033A:  MOVLB  0
+0033C:  SUBWFB x62,W
+0033E:  MOVLB  2
+00340:  MOVWF  xAF
+00342:  MOVLW  E9
+00344:  ADDWF  xAE,W
+00346:  MOVWF  FE9
+00348:  MOVLW  00
+0034A:  ADDWFC xAF,W
+0034C:  MOVWF  FEA
+0034E:  MOVFF  2AD,FEF
+....................          }else if(posicion>235 && posicion<=334){ 
+00352:  BRA    03D4
+00354:  MOVLB  0
+00356:  MOVF   x62,F
+00358:  BNZ   0360
+0035A:  MOVF   x61,W
+0035C:  SUBLW  EB
+0035E:  BC    0394
+00360:  MOVF   x62,W
+00362:  SUBLW  01
+00364:  BNC   0394
+00366:  BNZ   036E
+00368:  MOVF   x61,W
+0036A:  SUBLW  4E
+0036C:  BNC   0394
+....................             rxbuf3[posicion-236] = incoming; 
+0036E:  MOVLW  EC
+00370:  SUBWF  x61,W
+00372:  MOVLB  2
+00374:  MOVWF  xAE
+00376:  MOVLW  00
+00378:  MOVLB  0
+0037A:  SUBWFB x62,W
+0037C:  MOVLB  2
+0037E:  MOVWF  xAF
+00380:  MOVLW  4D
+00382:  ADDWF  xAE,W
+00384:  MOVWF  FE9
+00386:  MOVLW  01
+00388:  ADDWFC xAF,W
+0038A:  MOVWF  FEA
+0038C:  MOVFF  2AD,FEF
+....................          }else if(posicion>334 && posicion<=360){ 
+00390:  BRA    03D4
+00392:  MOVLB  0
+00394:  MOVF   x62,W
+00396:  SUBLW  00
+00398:  BC    03D6
+0039A:  XORLW  FF
+0039C:  BNZ   03A4
+0039E:  MOVF   x61,W
+003A0:  SUBLW  4E
+003A2:  BC    03D6
+003A4:  MOVF   x62,W
+003A6:  SUBLW  01
+003A8:  BNC   03D6
+003AA:  BNZ   03B2
+003AC:  MOVF   x61,W
+003AE:  SUBLW  68
+003B0:  BNC   03D6
+....................             rxbuf4[posicion-335] = incoming;             
+003B2:  MOVLW  4F
+003B4:  SUBWF  x61,W
+003B6:  MOVLB  2
+003B8:  MOVWF  xAE
+003BA:  MOVLW  01
+003BC:  MOVLB  0
+003BE:  SUBWFB x62,W
+003C0:  MOVLB  2
+003C2:  MOVWF  xAF
+003C4:  MOVLW  B1
+003C6:  ADDWF  xAE,W
+003C8:  MOVWF  FE9
+003CA:  MOVLW  01
+003CC:  ADDWFC xAF,W
+003CE:  MOVWF  FEA
+003D0:  MOVFF  2AD,FEF
+003D4:  MOVLB  0
+....................          } 
+....................       } 
+....................   } 
+.................... } 
+....................  
+....................  
+....................  
+003D6:  BCF    F9E.3
+003D8:  GOTO   0058
+.................... void Carga_Vector(void){ 
+....................    txbuf[0]=Dia; 
+*
+0100E:  MOVFF  47,23B
+....................    txbuf[1]=Codigo; 
+01012:  MOVFF  1C,23C
+....................    txbuf[2]=Year; 
+01016:  MOVFF  45,23D
+....................    txbuf[3]=Hora; 
+0101A:  MOVFF  48,23E
+....................    txbuf[4]=Minuto; 
+0101E:  MOVFF  49,23F
+....................    txbuf[5]=Segundo; 
+01022:  MOVFF  4A,240
+....................    txbuf[6]=dow; 
+01026:  MOVFF  4B,241
+....................    txbuf[7]=Dia; 
+0102A:  MOVFF  47,242
+....................    txbuf[8]=44; 
+0102E:  MOVLW  2C
+01030:  MOVLB  2
+01032:  MOVWF  x43
+....................    txbuf[9]=respuesta; 
+01034:  MOVFF  20,244
+.................... } 
+01038:  MOVLB  0
+0103A:  GOTO   189C (RETURN)
+....................  
+.................... void Lee_Vector(void){ 
+....................    Temporal=rxbuf[1]; 
+*
+00ECE:  MOVLB  2
+00ED0:  CLRF   x9B
+00ED2:  MOVFF  261,29A
+00ED6:  MOVLB  0
+00ED8:  RCALL  0AC2
+00EDA:  MOVFF  03,44
+00EDE:  MOVFF  02,43
+00EE2:  MOVFF  01,42
+00EE6:  MOVFF  00,41
+....................    Temperatura=rxbuf[0]; 
+00EEA:  MOVLB  2
+00EEC:  CLRF   x9B
+00EEE:  MOVFF  260,29A
+00EF2:  MOVLB  0
+00EF4:  RCALL  0AC2
+00EF6:  MOVFF  03,3C
+00EFA:  MOVFF  02,3B
+00EFE:  MOVFF  01,3A
+00F02:  MOVFF  00,39
+....................    Temperatura=Temperatura+(Temporal/10); 
+00F06:  MOVFF  44,29D
+00F0A:  MOVFF  43,29C
+00F0E:  MOVFF  42,29B
+00F12:  MOVFF  41,29A
+00F16:  MOVLB  2
+00F18:  CLRF   xA1
+00F1A:  CLRF   xA0
+00F1C:  MOVLW  20
+00F1E:  MOVWF  x9F
+00F20:  MOVLW  82
+00F22:  MOVWF  x9E
+00F24:  MOVLB  0
+00F26:  RCALL  0AF8
+00F28:  BCF    FD8.1
+00F2A:  MOVFF  3C,29D
+00F2E:  MOVFF  3B,29C
+00F32:  MOVFF  3A,29B
+00F36:  MOVFF  39,29A
+00F3A:  MOVFF  03,2A1
+00F3E:  MOVFF  02,2A0
+00F42:  MOVFF  01,29F
+00F46:  MOVFF  00,29E
+00F4A:  RCALL  0C56
+00F4C:  MOVFF  03,3C
+00F50:  MOVFF  02,3B
+00F54:  MOVFF  01,3A
+00F58:  MOVFF  00,39
+....................    PresionCamara=make16(rxbuf[3],rxbuf[2]); 
+00F5C:  MOVFF  263,5C
+00F60:  MOVFF  262,5B
+....................    PresionPreCamara=make16(rxbuf[5],rxbuf[4]); 
+00F64:  MOVFF  265,5E
+00F68:  MOVFF  264,5D
+....................    Setpoint=rxbuf[6]; 
+00F6C:  CLRF   x72
+00F6E:  MOVFF  266,71
+....................    EstadoAux1=rxbuf[7]; 
+00F72:  MOVFF  267,81
+....................    EstadoAux2=rxbuf[8]; 
+00F76:  MOVFF  268,82
+....................    mEst=rxbuf[9]; 
+00F7A:  CLRF   x6A
+00F7C:  MOVFF  269,69
+....................    sEst=rxbuf[10]; 
+00F80:  CLRF   x6C
+00F82:  MOVFF  26A,6B
+....................    mSec=rxbuf[11]; 
+00F86:  CLRF   x70
+00F88:  MOVFF  26B,6F
+....................    sSec=rxbuf[12]; 
+00F8C:  CLRF   x6E
+00F8E:  MOVFF  26C,6D
+....................    Ciclo=rxbuf[13]; 
+00F92:  MOVFF  26D,4C
+....................    SetTime=rxbuf[14]; 
+00F96:  MOVFF  26E,4D
+....................    DiaRx=rxbuf[15]; 
+00F9A:  MOVFF  26F,50
+....................    MesRx=rxbuf[16]; 
+00F9E:  MOVFF  270,4F
+....................    YearRx=rxbuf[17]; 
+00FA2:  MOVFF  271,4E
+....................    HoraRx=rxbuf[18]; 
+00FA6:  MOVFF  272,51
+....................    MinutoRx=rxbuf[19]; 
+00FAA:  MOVFF  273,52
+....................    SegundoRx=rxbuf[20]; 
+00FAE:  MOVFF  274,53
+....................    Imprime=rxbuf[21]; 
+00FB2:  MOVFF  275,56
+....................    CiclosL=rxbuf[22]; 
+00FB6:  MOVFF  276,57
+....................    CiclosH=rxbuf[23]; 
+00FBA:  MOVFF  277,58
+....................    estadoBuzzer=rxbuf[24]; 
+00FBE:  BCF    5A.4
+00FC0:  MOVLB  2
+00FC2:  BTFSC  x78.0
+00FC4:  BSF    5A.4
+....................    estadoSuministroA=rxbuf[25]; 
+00FC6:  MOVFF  279,75
+....................    estadoAgua=rxbuf[26]; 
+00FCA:  MOVFF  27A,76
+....................    estadoBombaVacio=rxbuf[27]; 
+00FCE:  MOVFF  27B,77
+....................    estadoEmpaqueL=rxbuf[28]; 
+00FD2:  MOVFF  27C,78
+....................    estadoEmpaqueS=rxbuf[29]; 
+00FD6:  MOVFF  27D,79
+....................    estadoCilindroS=rxbuf[30]; 
+00FDA:  MOVFF  27E,7A
+....................    estadoCilindroL=rxbuf[31]; 
+00FDE:  MOVFF  27F,7B
+....................    estadoSuministroV=rxbuf[32]; 
+00FE2:  MOVFF  280,7C
+....................    estadoPaso=rxbuf[33]; 
+00FE6:  MOVFF  281,7D
+....................    estadoVacio=rxbuf[34]; 
+00FEA:  MOVFF  282,7E
+....................    estadoDesfogue=rxbuf[35]; 
+00FEE:  MOVFF  283,7F
+....................    estadoAire=rxbuf[36]; 
+00FF2:  MOVFF  284,80
+....................    codigoAlarma=rxbuf[38]; 
+00FF6:  MOVFF  286,83
+....................    codigoUsuario=rxbuf[39]; 
+00FFA:  MOVLB  0
+00FFC:  CLRF   x74
+00FFE:  MOVFF  287,73
+....................    CiclosTotales=make16(CiclosH,CiclosL); 
+01002:  MOVFF  58,60
+01006:  MOVFF  57,5F
+.................... } 
+0100A:  GOTO   188C (RETURN)
+....................  
+.................... float inttofloat(int8 decimal){ 
+....................    float tmp; 
+....................    tmp=decimal; 
+*
+015EA:  MOVLB  2
+015EC:  CLRF   x9B
+015EE:  MOVFF  295,29A
+015F2:  MOVLB  0
+015F4:  CALL   0AC2
+015F8:  MOVFF  03,299
+015FC:  MOVFF  02,298
+01600:  MOVFF  01,297
+01604:  MOVFF  00,296
+....................    return tmp/10; 
+01608:  MOVFF  299,29D
+0160C:  MOVFF  298,29C
+01610:  MOVFF  297,29B
+01614:  MOVFF  296,29A
+01618:  MOVLB  2
+0161A:  CLRF   xA1
+0161C:  CLRF   xA0
+0161E:  MOVLW  20
+01620:  MOVWF  x9F
+01622:  MOVLW  82
+01624:  MOVWF  x9E
+01626:  MOVLB  0
+01628:  CALL   0AF8
+.................... } 
+0162C:  RETLW  00
+....................  
+.................... void main() 
+.................... { 
+0162E:  CLRF   FF8
+01630:  BCF    FD0.7
+01632:  BSF    07.7
+01634:  CLRF   FEA
+01636:  CLRF   FE9
+01638:  BCF    FB8.3
+0163A:  MOVLW  40
+0163C:  MOVWF  FAF
+0163E:  MOVLW  A6
+01640:  MOVWF  FAC
+01642:  MOVLW  90
+01644:  MOVWF  FAB
+01646:  BSF    F94.3
+01648:  BSF    F94.4
+0164A:  MOVLW  B0
+0164C:  MOVWF  FC8
+0164E:  MOVLW  36
+01650:  MOVWF  FC6
+01652:  CLRF   17
+01654:  CLRF   18
+01656:  CLRF   19
+01658:  CLRF   1A
+0165A:  CLRF   1B
+0165C:  CLRF   1C
+0165E:  CLRF   1D
+01660:  CLRF   1E
+01662:  CLRF   1F
+01664:  CLRF   20
+01666:  CLRF   24
+01668:  CLRF   23
+0166A:  CLRF   22
+0166C:  CLRF   21
+0166E:  CLRF   28
+01670:  CLRF   27
+01672:  CLRF   26
+01674:  CLRF   25
+01676:  CLRF   2C
+01678:  CLRF   2B
+0167A:  CLRF   2A
+0167C:  CLRF   29
+0167E:  CLRF   30
+01680:  CLRF   2F
+01682:  CLRF   2E
+01684:  CLRF   2D
+01686:  CLRF   34
+01688:  CLRF   33
+0168A:  CLRF   32
+0168C:  CLRF   31
+0168E:  CLRF   38
+01690:  CLRF   37
+01692:  CLRF   36
+01694:  CLRF   35
+01696:  CLRF   3C
+01698:  CLRF   3B
+0169A:  CLRF   3A
+0169C:  CLRF   39
+0169E:  CLRF   40
+016A0:  CLRF   3F
+016A2:  CLRF   3E
+016A4:  CLRF   3D
+016A6:  CLRF   44
+016A8:  CLRF   43
+016AA:  CLRF   42
+016AC:  CLRF   41
+016AE:  CLRF   45
+016B0:  CLRF   46
+016B2:  CLRF   47
+016B4:  CLRF   48
+016B6:  CLRF   49
+016B8:  CLRF   4A
+016BA:  CLRF   4B
+016BC:  CLRF   4C
+016BE:  CLRF   4D
+016C0:  CLRF   4E
+016C2:  CLRF   4F
+016C4:  CLRF   50
+016C6:  CLRF   51
+016C8:  CLRF   52
+016CA:  CLRF   53
+016CC:  CLRF   54
+016CE:  CLRF   55
+016D0:  CLRF   56
+016D2:  CLRF   57
+016D4:  CLRF   58
+016D6:  CLRF   59
+016D8:  BCF    5A.0
+016DA:  BCF    5A.1
+016DC:  BCF    5A.2
+016DE:  BCF    5A.3
+016E0:  BCF    5A.4
+016E2:  BCF    5A.5
+016E4:  BCF    5A.6
+016E6:  BCF    5A.7
+016E8:  CLRF   5C
+016EA:  CLRF   5B
+016EC:  CLRF   5E
+016EE:  CLRF   5D
+016F0:  CLRF   x60
+016F2:  CLRF   5F
+016F4:  CLRF   x62
+016F6:  CLRF   x61
+016F8:  CLRF   x64
+016FA:  CLRF   x63
+016FC:  CLRF   x66
+016FE:  CLRF   x65
+01700:  CLRF   x68
+01702:  CLRF   x67
+01704:  CLRF   x6A
+01706:  CLRF   x69
+01708:  CLRF   x6C
+0170A:  CLRF   x6B
+0170C:  CLRF   x6E
+0170E:  CLRF   x6D
+01710:  CLRF   x70
+01712:  CLRF   x6F
+01714:  CLRF   x72
+01716:  CLRF   x71
+01718:  CLRF   x74
+0171A:  CLRF   x73
+0171C:  CLRF   x75
+0171E:  CLRF   x76
+01720:  CLRF   x77
+01722:  CLRF   x78
+01724:  CLRF   x79
+01726:  CLRF   x7A
+01728:  CLRF   x7B
+0172A:  CLRF   x7C
+0172C:  CLRF   x7D
+0172E:  CLRF   x7E
+01730:  CLRF   x7F
+01732:  CLRF   x80
+01734:  CLRF   x81
+01736:  CLRF   x82
+01738:  CLRF   x83
+0173A:  MOVLW  01
+0173C:  MOVWF  x84
+0173E:  MOVF   FC1,W
+01740:  ANDLW  C0
+01742:  IORLW  0F
+01744:  MOVWF  FC1
+01746:  MOVLW  07
+01748:  MOVWF  FB4
+0174A:  MOVLW  03
+0174C:  MOVLB  2
+0174E:  MOVWF  x92
+....................    set_tris_d(0); 
+01750:  MOVLW  00
+01752:  MOVWF  F95
+....................    set_tris_b(0); 
+01754:  MOVWF  F93
+....................    set_tris_a(255); 
+01756:  MOVLW  FF
+01758:  MOVWF  F92
+....................    EV1_off;EV2_off;EV3_off;EV4_off;EV5_off;EV6_off;EV7_off;EV8_off;EV9_off;EV10_off;EV11_off;EV12_off;EV13_off;EV14_off;EV15_off; 
+0175A:  BSF    F8B.5
+0175C:  BCF    F94.5
+0175E:  BSF    F8C.3
+01760:  BCF    F95.3
+01762:  BSF    F8C.2
+01764:  BCF    F95.2
+01766:  BCF    F8A.7
+01768:  BCF    F93.7
+0176A:  BCF    F8A.6
+0176C:  BCF    F93.6
+0176E:  BCF    F8A.5
+01770:  BCF    F93.5
+01772:  BCF    F8A.4
+01774:  BCF    F93.4
+01776:  BCF    F8A.3
+01778:  BCF    F93.3
+0177A:  BCF    F8A.2
+0177C:  BCF    F93.2
+0177E:  BCF    F8A.1
+01780:  BCF    F93.1
+01782:  BCF    F8A.0
+01784:  BCF    F93.0
+01786:  BCF    F8C.7
+01788:  BCF    F95.7
+0178A:  BCF    F8C.6
+0178C:  BCF    F95.6
+0178E:  BCF    F8C.5
+01790:  BCF    F95.5
+01792:  BCF    F8C.4
+01794:  BCF    F95.4
+....................    Aux1_off;Aux2_off; 
+01796:  BSF    F8C.1
+01798:  BCF    F95.1
+0179A:  BSF    F8C.0
+0179C:  BCF    F95.0
+....................    enable_interrupts(INT_SSP);  
+0179E:  BSF    F9D.3
+....................    setup_wdt(WDT_ON); 
+017A0:  BSF    FD1.0
+....................    enable_interrupts(global); 
+017A2:  MOVLW  C0
+017A4:  IORWF  FF2,F
+....................    Buzzer_on; 
+017A6:  BSF    F8B.2
+017A8:  BCF    F94.2
+.................... //Inicio de Impresora 
+....................    putc(27); 
+017AA:  MOVLW  1B
+017AC:  MOVLB  0
+017AE:  CALL   0A92
+....................    delay_us(10); 
+017B2:  MOVLW  10
+017B4:  MOVWF  00
+017B6:  DECFSZ 00,F
+017B8:  BRA    17B6
+017BA:  NOP   
+....................    putc(64); 
+017BC:  MOVLW  40
+017BE:  CALL   0A92
+....................    delay_us(10); 
+017C2:  MOVLW  10
+017C4:  MOVWF  00
+017C6:  DECFSZ 00,F
+017C8:  BRA    17C6
+017CA:  NOP   
+....................    putc(10); 
+017CC:  MOVLW  0A
+017CE:  CALL   0A92
+....................    //32 Caracteres se pueden escribir en una linea de la impresora 
+....................  //fprintf(printer,"                                \n"); 
+....................    delay_ms(500); 
+017D2:  MOVLW  02
+017D4:  MOVLB  2
+017D6:  MOVWF  x93
+017D8:  MOVLW  FA
+017DA:  MOVWF  x94
+017DC:  MOVLB  0
+017DE:  CALL   0A9A
+017E2:  MOVLB  2
+017E4:  DECFSZ x93,F
+017E6:  BRA    17D8
+....................    Buzzer_off; 
+017E8:  BCF    F8B.2
+017EA:  BCF    F94.2
+....................    EV4_off; 
+017EC:  BCF    F8A.7
+017EE:  BCF    F93.7
+....................    EV1_off;EV2_off;EV3_off;EV4_off;EV5_off;EV6_off;EV7_off;EV8_off;EV9_off;EV10_off;EV11_off;EV12_off;EV13_off;EV14_off;EV15_off; 
+017F0:  BSF    F8B.5
+017F2:  BCF    F94.5
+017F4:  BSF    F8C.3
+017F6:  BCF    F95.3
+017F8:  BSF    F8C.2
+017FA:  BCF    F95.2
+017FC:  BCF    F8A.7
+017FE:  BCF    F93.7
+01800:  BCF    F8A.6
+01802:  BCF    F93.6
+01804:  BCF    F8A.5
+01806:  BCF    F93.5
+01808:  BCF    F8A.4
+0180A:  BCF    F93.4
+0180C:  BCF    F8A.3
+0180E:  BCF    F93.3
+01810:  BCF    F8A.2
+01812:  BCF    F93.2
+01814:  BCF    F8A.1
+01816:  BCF    F93.1
+01818:  BCF    F8A.0
+0181A:  BCF    F93.0
+0181C:  BCF    F8C.7
+0181E:  BCF    F95.7
+01820:  BCF    F8C.6
+01822:  BCF    F95.6
+01824:  BCF    F8C.5
+01826:  BCF    F95.5
+01828:  BCF    F8C.4
+0182A:  BCF    F95.4
+....................    Aux1_off;Aux2_off; 
+0182C:  BSF    F8C.1
+0182E:  BCF    F95.1
+01830:  BSF    F8C.0
+01832:  BCF    F95.0
+....................    fprintf(printer," \n"); 
+01834:  MOVLW  20
+01836:  BTFSS  F9E.4
+01838:  BRA    1836
+0183A:  MOVWF  FAD
+0183C:  MOVLW  0A
+0183E:  BTFSS  F9E.4
+01840:  BRA    183E
+01842:  MOVWF  FAD
+....................    delay_us(10); 
+01844:  MOVLW  10
+01846:  MOVWF  00
+01848:  DECFSZ 00,F
+0184A:  BRA    1848
+0184C:  NOP   
+....................    fprintf(printer,"  \n"); 
+0184E:  MOVLW  20
+01850:  BTFSS  F9E.4
+01852:  BRA    1850
+01854:  MOVWF  FAD
+01856:  MOVLW  20
+01858:  BTFSS  F9E.4
+0185A:  BRA    1858
+0185C:  MOVWF  FAD
+0185E:  MOVLW  0A
+01860:  BTFSS  F9E.4
+01862:  BRA    1860
+01864:  MOVWF  FAD
+....................    delay_us(10); 
+01866:  MOVLW  10
+01868:  MOVWF  00
+0186A:  DECFSZ 00,F
+0186C:  BRA    186A
+0186E:  NOP   
+....................    delay_ms(3500); 
+01870:  MOVLW  0E
+01872:  MOVWF  x93
+01874:  MOVLW  FA
+01876:  MOVWF  x94
+01878:  MOVLB  0
+0187A:  CALL   0A9A
+0187E:  MOVLB  2
+01880:  DECFSZ x93,F
+01882:  BRA    1874
+....................    restart_wdt();    
+01884:  CLRWDT
+....................     
+.................... while(true) 
+.................... { 
+....................    Lee_Vector(); 
+01886:  MOVLB  0
+01888:  GOTO   0ECE
+....................    delay_ms(1); 
+0188C:  MOVLW  01
+0188E:  MOVLB  2
+01890:  MOVWF  x94
+01892:  MOVLB  0
+01894:  CALL   0A9A
+....................    Carga_Vector(); 
+01898:  GOTO   100E
+....................    restart_wdt();    
+0189C:  CLRWDT
+....................     
+....................    if(EstadoAux1==1) 
+0189E:  DECFSZ x81,W
+018A0:  BRA    18A8
+....................       Aux1_on; 
+018A2:  BCF    F8C.1
+018A4:  BCF    F95.1
+....................    else 
+018A6:  BRA    18AC
+....................       Aux1_off; 
+018A8:  BSF    F8C.1
+018AA:  BCF    F95.1
+....................     
+....................    if(EstadoAux2==1) 
+018AC:  DECFSZ x82,W
+018AE:  BRA    18B6
+....................       Aux2_on; 
+018B0:  BCF    F8C.0
+018B2:  BCF    F95.0
+....................    else 
+018B4:  BRA    18BA
+....................       Aux2_off; 
+018B6:  BSF    F8C.0
+018B8:  BCF    F95.0
+....................     
+....................    if(estadoAgua==1) 
+018BA:  DECFSZ x76,W
+018BC:  BRA    18C4
+....................       EV1_on; 
+018BE:  BCF    F8B.5
+018C0:  BCF    F94.5
+....................    else 
+018C2:  BRA    18C8
+....................       EV1_off; 
+018C4:  BSF    F8B.5
+018C6:  BCF    F94.5
+....................     
+....................    if(estadoSuministroA==1) 
+018C8:  DECFSZ x75,W
+018CA:  BRA    18D2
+....................       EV2_on; 
+018CC:  BCF    F8C.3
+018CE:  BCF    F95.3
+....................    else 
+018D0:  BRA    18D6
+....................       EV2_off; 
+018D2:  BSF    F8C.3
+018D4:  BCF    F95.3
+....................        
+....................    if(estadoBombaVacio==1) 
+018D6:  DECFSZ x77,W
+018D8:  BRA    18E0
+....................       EV3_on; 
+018DA:  BCF    F8C.2
+018DC:  BCF    F95.2
+....................    else 
+018DE:  BRA    18E4
+....................       EV3_off;    
+018E0:  BSF    F8C.2
+018E2:  BCF    F95.2
+....................     
+....................    if(estadoEmpaqueL==1){ 
+018E4:  DECFSZ x78,W
+018E6:  BRA    18EE
+....................       EV4_on; 
+018E8:  BSF    F8A.7
+018EA:  BCF    F93.7
+....................       /* 
+....................       if(!input_state(PIN_B7)){ 
+....................          EV4_on; 
+....................          delay_ms(1000); 
+....................          EV4_off; 
+....................          delay_ms(1000); 
+....................          EV4_on; 
+....................       } 
+....................       */ 
+....................    }else{ 
+018EC:  BRA    18F2
+....................       EV4_off; 
+018EE:  BCF    F8A.7
+018F0:  BCF    F93.7
+....................    } 
+....................        
+....................    if(estadoEmpaqueS==1){ 
+018F2:  DECFSZ x79,W
+018F4:  BRA    18FC
+....................       EV5_on; 
+018F6:  BSF    F8A.6
+018F8:  BCF    F93.6
+....................       /* 
+....................       if(!input_state(PIN_B6)){ 
+....................          EV5_on; 
+....................          delay_ms(1000); 
+....................          EV5_off; 
+....................          delay_ms(1000); 
+....................          EV5_on; 
+....................       } 
+....................       */ 
+....................    }else{ 
+018FA:  BRA    1900
+....................       EV5_off;    
+018FC:  BCF    F8A.6
+018FE:  BCF    F93.6
+....................    } 
+....................     
+....................    if(estadoCilindroS==1){ 
+01900:  DECFSZ x7A,W
+01902:  BRA    190E
+....................       EV6_on; 
+01904:  BSF    F8A.5
+01906:  BCF    F93.5
+....................       EV7_on; 
+01908:  BSF    F8A.4
+0190A:  BCF    F93.4
+....................    }else{ 
+0190C:  BRA    1916
+....................       EV6_off;    
+0190E:  BCF    F8A.5
+01910:  BCF    F93.5
+....................       EV7_off; 
+01912:  BCF    F8A.4
+01914:  BCF    F93.4
+....................    } 
+....................     
+....................    if(estadoCilindroL==1){ 
+01916:  DECFSZ x7B,W
+01918:  BRA    1924
+....................       EV8_on; 
+0191A:  BSF    F8A.3
+0191C:  BCF    F93.3
+....................       EV9_on; 
+0191E:  BSF    F8A.2
+01920:  BCF    F93.2
+....................    }else{ 
+01922:  BRA    192C
+....................       EV8_off;    
+01924:  BCF    F8A.3
+01926:  BCF    F93.3
+....................       EV9_off; 
+01928:  BCF    F8A.2
+0192A:  BCF    F93.2
+....................    } 
+....................     
+....................    if(estadoSuministroV==1) 
+0192C:  DECFSZ x7C,W
+0192E:  BRA    1936
+....................       EV10_on; 
+01930:  BSF    F8A.1
+01932:  BCF    F93.1
+....................    else 
+01934:  BRA    193A
+....................       EV10_off;    
+01936:  BCF    F8A.1
+01938:  BCF    F93.1
+....................     
+....................    if(estadoPaso==1) 
+0193A:  DECFSZ x7D,W
+0193C:  BRA    1944
+....................       EV11_on; 
+0193E:  BSF    F8A.0
+01940:  BCF    F93.0
+....................    else 
+01942:  BRA    1948
+....................       EV11_off;    
+01944:  BCF    F8A.0
+01946:  BCF    F93.0
+....................        
+....................    if(estadoVacio==1) 
+01948:  DECFSZ x7E,W
+0194A:  BRA    1952
+....................       EV12_on; 
+0194C:  BSF    F8C.7
+0194E:  BCF    F95.7
+....................    else 
+01950:  BRA    1956
+....................       EV12_off;       
+01952:  BCF    F8C.7
+01954:  BCF    F95.7
+....................        
+....................    if(estadoDesfogue==1) 
+01956:  DECFSZ x7F,W
+01958:  BRA    1960
+....................       EV13_on; 
+0195A:  BSF    F8C.6
+0195C:  BCF    F95.6
+....................    else 
+0195E:  BRA    1964
+....................       EV13_off;    
+01960:  BCF    F8C.6
+01962:  BCF    F95.6
+....................        
+....................    if(estadoAire==1){ 
+01964:  DECFSZ x80,W
+01966:  BRA    197E
+....................       if(PresionCamara<100) 
+01968:  MOVF   5C,F
+0196A:  BNZ   1978
+0196C:  MOVF   5B,W
+0196E:  SUBLW  63
+01970:  BNC   1978
+....................          EV14_on; 
+01972:  BSF    F8C.5
+01974:  BCF    F95.5
+....................       else 
+01976:  BRA    197C
+....................          EV14_off; 
+01978:  BCF    F8C.5
+0197A:  BCF    F95.5
+....................    }else{ 
+0197C:  BRA    1982
+....................       EV14_off;       
+0197E:  BCF    F8C.5
+01980:  BCF    F95.5
+....................    } 
+....................  
+.................... //----------------------------------------------- Impresora----------------------------------------------------------------------------------------------------------- 
+....................     
+....................    if(SetTime==5 && !Configura){ 
+01982:  MOVF   4D,W
+01984:  SUBLW  05
+01986:  BTFSS  FD8.2
+01988:  BRA    1AB8
+0198A:  BTFSC  5A.2
+0198C:  BRA    1AB8
+....................       fprintf(printer,"  \n"); 
+0198E:  MOVLW  20
+01990:  BTFSS  F9E.4
+01992:  BRA    1990
+01994:  MOVWF  FAD
+01996:  MOVLW  20
+01998:  BTFSS  F9E.4
+0199A:  BRA    1998
+0199C:  MOVWF  FAD
+0199E:  MOVLW  0A
+019A0:  BTFSS  F9E.4
+019A2:  BRA    19A0
+019A4:  MOVWF  FAD
+....................       delay_us(10); 
+019A6:  MOVLW  10
+019A8:  MOVWF  00
+019AA:  DECFSZ 00,F
+019AC:  BRA    19AA
+019AE:  NOP   
+....................       fprintf(printer,"  Ajusto Fecha y hora \n"); 
+019B0:  MOVLW  DC
+019B2:  MOVWF  FF6
+019B4:  MOVLW  03
+019B6:  MOVWF  FF7
+019B8:  MOVLW  00
+019BA:  MOVWF  FF8
+019BC:  CALL   103E
+....................       delay_us(10); 
+019C0:  MOVLW  10
+019C2:  MOVWF  00
+019C4:  DECFSZ 00,F
+019C6:  BRA    19C4
+019C8:  NOP   
+....................       fprintf(printer,"%02u-%02u-%02u  %02u:%02u  %03.1f°C  %03LukPa \n",DiaRx,MesRx,YearRx,HoraRx,MinutoRx,Temperatura,PresionCamara);  
+019CA:  MOVFF  50,293
+019CE:  MOVLW  01
+019D0:  MOVLB  2
+019D2:  MOVWF  x94
+019D4:  MOVLB  0
+019D6:  CALL   1094
+019DA:  MOVLW  2D
+019DC:  BTFSS  F9E.4
+019DE:  BRA    19DC
+019E0:  MOVWF  FAD
+019E2:  MOVFF  4F,293
+019E6:  MOVLW  01
+019E8:  MOVLB  2
+019EA:  MOVWF  x94
+019EC:  MOVLB  0
+019EE:  CALL   1094
+019F2:  MOVLW  2D
+019F4:  BTFSS  F9E.4
+019F6:  BRA    19F4
+019F8:  MOVWF  FAD
+019FA:  MOVFF  4E,293
+019FE:  MOVLW  01
+01A00:  MOVLB  2
+01A02:  MOVWF  x94
+01A04:  MOVLB  0
+01A06:  CALL   1094
+01A0A:  MOVLW  20
+01A0C:  BTFSS  F9E.4
+01A0E:  BRA    1A0C
+01A10:  MOVWF  FAD
+01A12:  MOVLW  20
+01A14:  BTFSS  F9E.4
+01A16:  BRA    1A14
+01A18:  MOVWF  FAD
+01A1A:  MOVFF  51,293
+01A1E:  MOVLW  01
+01A20:  MOVLB  2
+01A22:  MOVWF  x94
+01A24:  MOVLB  0
+01A26:  CALL   1094
+01A2A:  MOVLW  3A
+01A2C:  BTFSS  F9E.4
+01A2E:  BRA    1A2C
+01A30:  MOVWF  FAD
+01A32:  MOVFF  52,293
+01A36:  MOVLW  01
+01A38:  MOVLB  2
+01A3A:  MOVWF  x94
+01A3C:  MOVLB  0
+01A3E:  CALL   1094
+01A42:  MOVLW  20
+01A44:  BTFSS  F9E.4
+01A46:  BRA    1A44
+01A48:  MOVWF  FAD
+01A4A:  MOVLW  20
+01A4C:  BTFSS  F9E.4
+01A4E:  BRA    1A4C
+01A50:  MOVWF  FAD
+01A52:  MOVLW  42
+01A54:  MOVWF  FE9
+01A56:  MOVFF  3C,296
+01A5A:  MOVFF  3B,295
+01A5E:  MOVFF  3A,294
+01A62:  MOVFF  39,293
+01A66:  MOVLW  01
+01A68:  MOVLB  2
+01A6A:  MOVWF  x97
+01A6C:  MOVLB  0
+01A6E:  RCALL  12CE
+01A70:  MOVLW  15
+01A72:  MOVWF  FF6
+01A74:  MOVLW  04
+01A76:  MOVWF  FF7
+01A78:  MOVLW  00
+01A7A:  MOVWF  FF8
+01A7C:  MOVLW  04
+01A7E:  MOVLB  2
+01A80:  MOVWF  x94
+01A82:  MOVLB  0
+01A84:  RCALL  1470
+01A86:  MOVLW  0A
+01A88:  MOVWF  FE9
+01A8A:  MOVFF  5C,294
+01A8E:  MOVFF  5B,293
+01A92:  RCALL  14A2
+01A94:  MOVLW  1E
+01A96:  MOVWF  FF6
+01A98:  MOVLW  04
+01A9A:  MOVWF  FF7
+01A9C:  MOVLW  00
+01A9E:  MOVWF  FF8
+01AA0:  MOVLW  05
+01AA2:  MOVLB  2
+01AA4:  MOVWF  x94
+01AA6:  MOVLB  0
+01AA8:  RCALL  1470
+....................       delay_us(10); 
+01AAA:  MOVLW  10
+01AAC:  MOVWF  00
+01AAE:  DECFSZ 00,F
+01AB0:  BRA    1AAE
+01AB2:  NOP   
+....................       Configura=1; 
+01AB4:  BSF    5A.2
+....................    }else if(SetTime!=5){ 
+01AB6:  BRA    1AC0
+01AB8:  MOVF   4D,W
+01ABA:  SUBLW  05
+01ABC:  BZ    1AC0
+....................       Configura=0; 
+01ABE:  BCF    5A.2
+....................    } 
+....................     
+....................    if(codigoAlarma==10){ 
+01AC0:  MOVF   x83,W
+01AC2:  SUBLW  0A
+01AC4:  BNZ   1AEC
+....................       if(codigoAnt!=codigoAlarma){ 
+01AC6:  MOVF   x83,W
+01AC8:  SUBWF  x84,W
+01ACA:  BZ    1AEA
+....................          codigoAnt=codigoAlarma; 
+01ACC:  MOVFF  83,84
+....................          fprintf(printer,"------Precalentando ---------- \n"); 
+01AD0:  MOVLW  24
+01AD2:  MOVWF  FF6
+01AD4:  MOVLW  04
+01AD6:  MOVWF  FF7
+01AD8:  MOVLW  00
+01ADA:  MOVWF  FF8
+01ADC:  CALL   103E
+....................          delay_us(10); 
+01AE0:  MOVLW  10
+01AE2:  MOVWF  00
+01AE4:  DECFSZ 00,F
+01AE6:  BRA    1AE4
+01AE8:  NOP   
+....................       } 
+....................    }else if(codigoAlarma==11){ 
+01AEA:  BRA    1D5E
+01AEC:  MOVF   x83,W
+01AEE:  SUBLW  0B
+01AF0:  BNZ   1B18
+....................       if(codigoAnt!=codigoAlarma){ 
+01AF2:  MOVF   x83,W
+01AF4:  SUBWF  x84,W
+01AF6:  BZ    1B16
+....................          codigoAnt=codigoAlarma; 
+01AF8:  MOVFF  83,84
+....................          fprintf(printer,"--------- Pre-Vacio ---------- \n"); 
+01AFC:  MOVLW  46
+01AFE:  MOVWF  FF6
+01B00:  MOVLW  04
+01B02:  MOVWF  FF7
+01B04:  MOVLW  00
+01B06:  MOVWF  FF8
+01B08:  CALL   103E
+....................          delay_us(10); 
+01B0C:  MOVLW  10
+01B0E:  MOVWF  00
+01B10:  DECFSZ 00,F
+01B12:  BRA    1B10
+01B14:  NOP   
+....................       } 
+....................    }else if(codigoAlarma==12){ 
+01B16:  BRA    1D5E
+01B18:  MOVF   x83,W
+01B1A:  SUBLW  0C
+01B1C:  BNZ   1B44
+....................       if(codigoAnt!=codigoAlarma){ 
+01B1E:  MOVF   x83,W
+01B20:  SUBWF  x84,W
+01B22:  BZ    1B42
+....................          codigoAnt=codigoAlarma; 
+01B24:  MOVFF  83,84
+....................          fprintf(printer,"--------- Calentando ---------- \n"); 
+01B28:  MOVLW  68
+01B2A:  MOVWF  FF6
+01B2C:  MOVLW  04
+01B2E:  MOVWF  FF7
+01B30:  MOVLW  00
+01B32:  MOVWF  FF8
+01B34:  CALL   103E
+....................          delay_us(10); 
+01B38:  MOVLW  10
+01B3A:  MOVWF  00
+01B3C:  DECFSZ 00,F
+01B3E:  BRA    1B3C
+01B40:  NOP   
+....................       } 
+....................    }else if(codigoAlarma==13){ 
+01B42:  BRA    1D5E
+01B44:  MOVF   x83,W
+01B46:  SUBLW  0D
+01B48:  BTFSS  FD8.2
+01B4A:  BRA    1CCC
+....................       if(codigoAnt!=codigoAlarma){ 
+01B4C:  MOVF   x83,W
+01B4E:  SUBWF  x84,W
+01B50:  BTFSC  FD8.2
+01B52:  BRA    1CCA
+....................          codigoAnt=codigoAlarma; 
+01B54:  MOVFF  83,84
+....................          promedioT=(Tmax+Tmin)/2.0; 
+01B58:  BCF    FD8.1
+01B5A:  MOVFF  30,29D
+01B5E:  MOVFF  2F,29C
+01B62:  MOVFF  2E,29B
+01B66:  MOVFF  2D,29A
+01B6A:  MOVFF  34,2A1
+01B6E:  MOVFF  33,2A0
+01B72:  MOVFF  32,29F
+01B76:  MOVFF  31,29E
+01B7A:  CALL   0C56
+01B7E:  MOVFF  00,293
+01B82:  MOVFF  01,294
+01B86:  MOVFF  02,295
+01B8A:  MOVFF  03,296
+01B8E:  MOVFF  03,29D
+01B92:  MOVFF  02,29C
+01B96:  MOVFF  01,29B
+01B9A:  MOVFF  00,29A
+01B9E:  MOVLB  2
+01BA0:  CLRF   xA1
+01BA2:  CLRF   xA0
+01BA4:  CLRF   x9F
+01BA6:  MOVLW  80
+01BA8:  MOVWF  x9E
+01BAA:  MOVLB  0
+01BAC:  CALL   0AF8
+01BB0:  MOVFF  03,38
+01BB4:  MOVFF  02,37
+01BB8:  MOVFF  01,36
+01BBC:  MOVFF  00,35
+....................          promedioP=(Pmax+Pmin)/2; 
+01BC0:  MOVF   x65,W
+01BC2:  ADDWF  x63,W
+01BC4:  MOVLB  2
+01BC6:  MOVWF  x93
+01BC8:  MOVLB  0
+01BCA:  MOVF   x66,W
+01BCC:  ADDWFC x64,W
+01BCE:  MOVLB  2
+01BD0:  MOVWF  x94
+01BD2:  BCF    FD8.0
+01BD4:  RRCF   x94,W
+01BD6:  MOVLB  0
+01BD8:  MOVWF  x68
+01BDA:  MOVLB  2
+01BDC:  RRCF   x93,W
+01BDE:  MOVLB  0
+01BE0:  MOVWF  x67
+....................          fprintf(printer,"------------------------------- \n"); 
+01BE2:  MOVLW  8A
+01BE4:  MOVWF  FF6
+01BE6:  MOVLW  04
+01BE8:  MOVWF  FF7
+01BEA:  MOVLW  00
+01BEC:  MOVWF  FF8
+01BEE:  CALL   103E
+....................          fprintf(printer,"Promedio de Temperatura:%2.1f°C\n",promedioT); 
+01BF2:  MOVLW  AC
+01BF4:  MOVWF  FF6
+01BF6:  MOVLW  04
+01BF8:  MOVWF  FF7
+01BFA:  MOVLW  00
+01BFC:  MOVWF  FF8
+01BFE:  MOVLW  18
+01C00:  MOVLB  2
+01C02:  MOVWF  x94
+01C04:  MOVLB  0
+01C06:  RCALL  1470
+01C08:  MOVLW  01
+01C0A:  MOVWF  FE9
+01C0C:  MOVFF  38,296
+01C10:  MOVFF  37,295
+01C14:  MOVFF  36,294
+01C18:  MOVFF  35,293
+01C1C:  MOVLB  2
+01C1E:  MOVWF  x97
+01C20:  MOVLB  0
+01C22:  CALL   12CE
+01C26:  MOVLW  B0
+01C28:  BTFSS  F9E.4
+01C2A:  BRA    1C28
+01C2C:  MOVWF  FAD
+01C2E:  MOVLW  43
+01C30:  BTFSS  F9E.4
+01C32:  BRA    1C30
+01C34:  MOVWF  FAD
+01C36:  MOVLW  0A
+01C38:  BTFSS  F9E.4
+01C3A:  BRA    1C38
+01C3C:  MOVWF  FAD
+....................          delay_us(10); 
+01C3E:  MOVLW  10
+01C40:  MOVWF  00
+01C42:  DECFSZ 00,F
+01C44:  BRA    1C42
+01C46:  NOP   
+....................          fprintf(printer,"------------------------------- \n"); 
+01C48:  MOVLW  CE
+01C4A:  MOVWF  FF6
+01C4C:  MOVLW  04
+01C4E:  MOVWF  FF7
+01C50:  MOVLW  00
+01C52:  MOVWF  FF8
+01C54:  CALL   103E
+....................          delay_us(10); 
+01C58:  MOVLW  10
+01C5A:  MOVWF  00
+01C5C:  DECFSZ 00,F
+01C5E:  BRA    1C5C
+01C60:  NOP   
+....................          fprintf(printer,"Promedio Presion:%03Lu kPa   \n",promedioP); 
+01C62:  MOVLW  F0
+01C64:  MOVWF  FF6
+01C66:  MOVLW  04
+01C68:  MOVWF  FF7
+01C6A:  MOVLW  00
+01C6C:  MOVWF  FF8
+01C6E:  MOVLW  11
+01C70:  MOVLB  2
+01C72:  MOVWF  x94
+01C74:  MOVLB  0
+01C76:  CALL   1470
+01C7A:  MOVLW  0A
+01C7C:  MOVWF  FE9
+01C7E:  MOVFF  68,294
+01C82:  MOVFF  67,293
+01C86:  RCALL  14A2
+01C88:  MOVLW  06
+01C8A:  MOVWF  FF6
+01C8C:  MOVLW  05
+01C8E:  MOVWF  FF7
+01C90:  MOVLW  00
+01C92:  MOVWF  FF8
+01C94:  MOVLW  08
+01C96:  MOVLB  2
+01C98:  MOVWF  x94
+01C9A:  MOVLB  0
+01C9C:  CALL   1470
+....................          delay_us(10); 
+01CA0:  MOVLW  10
+01CA2:  MOVWF  00
+01CA4:  DECFSZ 00,F
+01CA6:  BRA    1CA4
+01CA8:  NOP   
+....................          fprintf(printer,"------- Despresurizando ------- \n"); 
+01CAA:  MOVLW  10
+01CAC:  MOVWF  FF6
+01CAE:  MOVLW  05
+01CB0:  MOVWF  FF7
+01CB2:  MOVLW  00
+01CB4:  MOVWF  FF8
+01CB6:  CALL   103E
+....................          delay_us(10); 
+01CBA:  MOVLW  10
+01CBC:  MOVWF  00
+01CBE:  DECFSZ 00,F
+01CC0:  BRA    1CBE
+01CC2:  NOP   
+....................          Esterilizando=OFF; 
+01CC4:  BCF    5A.6
+....................          Secando=OFF; 
+01CC6:  BCF    5A.7
+....................          Desfogando=ON; 
+01CC8:  BSF    5A.5
+....................       } 
+....................    }else if(codigoAlarma==15){ 
+01CCA:  BRA    1D5E
+01CCC:  MOVF   x83,W
+01CCE:  SUBLW  0F
+01CD0:  BNZ   1CFE
+....................       if(codigoAnt!=codigoAlarma){ 
+01CD2:  MOVF   x83,W
+01CD4:  SUBWF  x84,W
+01CD6:  BZ    1CFC
+....................          codigoAnt=codigoAlarma; 
+01CD8:  MOVFF  83,84
+....................          fprintf(printer,"----------- Secando ---------- \n"); 
+01CDC:  MOVLW  32
+01CDE:  MOVWF  FF6
+01CE0:  MOVLW  05
+01CE2:  MOVWF  FF7
+01CE4:  MOVLW  00
+01CE6:  MOVWF  FF8
+01CE8:  CALL   103E
+....................          delay_us(10); 
+01CEC:  MOVLW  10
+01CEE:  MOVWF  00
+01CF0:  DECFSZ 00,F
+01CF2:  BRA    1CF0
+01CF4:  NOP   
+....................          Esterilizando=OFF; 
+01CF6:  BCF    5A.6
+....................          Secando=ON; 
+01CF8:  BSF    5A.7
+....................          Desfogando=OFF; 
+01CFA:  BCF    5A.5
+....................       } 
+....................    }else if(codigoAlarma==16){ 
+01CFC:  BRA    1D5E
+01CFE:  MOVF   x83,W
+01D00:  SUBLW  10
+01D02:  BNZ   1D5E
+....................       if(codigoAnt!=codigoAlarma){ 
+01D04:  MOVF   x83,W
+01D06:  SUBWF  x84,W
+01D08:  BZ    1D5E
+....................          codigoAnt=codigoAlarma; 
+01D0A:  MOVFF  83,84
+....................          fprintf(printer,"------- Esterilizando -------- \n"); 
+01D0E:  MOVLW  54
+01D10:  MOVWF  FF6
+01D12:  MOVLW  05
+01D14:  MOVWF  FF7
+01D16:  MOVLW  00
+01D18:  MOVWF  FF8
+01D1A:  CALL   103E
+....................          delay_us(10); 
+01D1E:  MOVLW  10
+01D20:  MOVWF  00
+01D22:  DECFSZ 00,F
+01D24:  BRA    1D22
+01D26:  NOP   
+....................          Tmin=Temperatura; 
+01D28:  MOVFF  3C,34
+01D2C:  MOVFF  3B,33
+01D30:  MOVFF  3A,32
+01D34:  MOVFF  39,31
+....................          Tmax=Temperatura; 
+01D38:  MOVFF  3C,30
+01D3C:  MOVFF  3B,2F
+01D40:  MOVFF  3A,2E
+01D44:  MOVFF  39,2D
+....................          Pmin=PresionCamara; 
+01D48:  MOVFF  5C,66
+01D4C:  MOVFF  5B,65
+....................          Pmax=PresionCamara; 
+01D50:  MOVFF  5C,64
+01D54:  MOVFF  5B,63
+....................          Esterilizando=ON; 
+01D58:  BSF    5A.6
+....................          Secando=OFF; 
+01D5A:  BCF    5A.7
+....................          Desfogando=OFF; 
+01D5C:  BCF    5A.5
+....................       } 
+....................    } 
+....................     
+....................    if(Esterilizando){ 
+01D5E:  BTFSS  5A.6
+01D60:  BRA    1DFA
+....................       if(Temperatura<Tmin){ 
+01D62:  MOVFF  3C,296
+01D66:  MOVFF  3B,295
+01D6A:  MOVFF  3A,294
+01D6E:  MOVFF  39,293
+01D72:  MOVFF  34,29A
+01D76:  MOVFF  33,299
+01D7A:  MOVFF  32,298
+01D7E:  MOVFF  31,297
+01D82:  CALL   154C
+01D86:  BNC   1D98
+....................          Tmin=Temperatura; 
+01D88:  MOVFF  3C,34
+01D8C:  MOVFF  3B,33
+01D90:  MOVFF  3A,32
+01D94:  MOVFF  39,31
+....................       } 
+....................       if(Temperatura>Tmax){ 
+01D98:  MOVFF  30,296
+01D9C:  MOVFF  2F,295
+01DA0:  MOVFF  2E,294
+01DA4:  MOVFF  2D,293
+01DA8:  MOVFF  3C,29A
+01DAC:  MOVFF  3B,299
+01DB0:  MOVFF  3A,298
+01DB4:  MOVFF  39,297
+01DB8:  CALL   154C
+01DBC:  BNC   1DCE
+....................          Tmax=Temperatura; 
+01DBE:  MOVFF  3C,30
+01DC2:  MOVFF  3B,2F
+01DC6:  MOVFF  3A,2E
+01DCA:  MOVFF  39,2D
+....................       } 
+....................       if(PresionCamara<Pmin){ 
+01DCE:  MOVF   5C,W
+01DD0:  SUBWF  x66,W
+01DD2:  BNC   1DE4
+01DD4:  BNZ   1DDC
+01DD6:  MOVF   x65,W
+01DD8:  SUBWF  5B,W
+01DDA:  BC    1DE4
+....................          Pmin=PresionCamara; 
+01DDC:  MOVFF  5C,66
+01DE0:  MOVFF  5B,65
+....................       } 
+....................       if(PresionCamara>Pmax){ 
+01DE4:  MOVF   x64,W
+01DE6:  SUBWF  5C,W
+01DE8:  BNC   1DFA
+01DEA:  BNZ   1DF2
+01DEC:  MOVF   5B,W
+01DEE:  SUBWF  x63,W
+01DF0:  BC    1DFA
+....................          Pmax=PresionCamara; 
+01DF2:  MOVFF  5C,64
+01DF6:  MOVFF  5B,63
+....................       } 
+....................    } 
+....................     
+....................    if(Imprime==15 && !flagImprime2){ 
+01DFA:  MOVF   56,W
+01DFC:  SUBLW  0F
+01DFE:  BTFSS  FD8.2
+01E00:  BRA    213E
+01E02:  BTFSC  5A.1
+01E04:  BRA    213E
+....................       if(Ciclo>0 && Ciclo<31){ 
+01E06:  MOVF   4C,F
+01E08:  BTFSC  FD8.2
+01E0A:  BRA    2120
+01E0C:  MOVF   4C,W
+01E0E:  SUBLW  1E
+01E10:  BTFSS  FD8.0
+01E12:  BRA    2120
+....................          Tmin=0; 
+01E14:  CLRF   34
+01E16:  CLRF   33
+01E18:  CLRF   32
+01E1A:  CLRF   31
+....................          Tmax=0; 
+01E1C:  CLRF   30
+01E1E:  CLRF   2F
+01E20:  CLRF   2E
+01E22:  CLRF   2D
+....................          Pmin=0; 
+01E24:  CLRF   x66
+01E26:  CLRF   x65
+....................          Pmax=0; 
+01E28:  CLRF   x64
+01E2A:  CLRF   x63
+....................          promedioT=0; 
+01E2C:  CLRF   38
+01E2E:  CLRF   37
+01E30:  CLRF   36
+01E32:  CLRF   35
+....................          promedioP=0; 
+01E34:  CLRF   x68
+01E36:  CLRF   x67
+....................          fprintf(printer," AUTOCLAVE DIGITAL  JP INGLOBAL  \n"); 
+01E38:  MOVLW  76
+01E3A:  MOVWF  FF6
+01E3C:  MOVLW  05
+01E3E:  MOVWF  FF7
+01E40:  MOVLW  00
+01E42:  MOVWF  FF8
+01E44:  CALL   103E
+....................          delay_us(10); 
+01E48:  MOVLW  10
+01E4A:  MOVWF  00
+01E4C:  DECFSZ 00,F
+01E4E:  BRA    1E4C
+01E50:  NOP   
+....................          fprintf(printer," OPERADOR:______________________\n"); 
+01E52:  MOVLW  9A
+01E54:  MOVWF  FF6
+01E56:  MOVLW  05
+01E58:  MOVWF  FF7
+01E5A:  MOVLW  00
+01E5C:  MOVWF  FF8
+01E5E:  CALL   103E
+....................          delay_us(10); 
+01E62:  MOVLW  10
+01E64:  MOVWF  00
+01E66:  DECFSZ 00,F
+01E68:  BRA    1E66
+01E6A:  NOP   
+....................          fprintf(printer,"%s\n",user[codigoUsuario]); 
+01E6C:  MOVFF  74,294
+01E70:  MOVFF  73,293
+01E74:  MOVLB  2
+01E76:  CLRF   x96
+01E78:  MOVLW  14
+01E7A:  MOVWF  x95
+01E7C:  MOVLB  0
+01E7E:  GOTO   15C6
+01E82:  MOVFF  02,03
+01E86:  MOVFF  01,293
+01E8A:  MOVLB  2
+01E8C:  MOVLW  88
+01E8E:  MOVWF  FF6
+01E90:  MOVLW  01
+01E92:  MOVWF  FF7
+01E94:  MOVLW  00
+01E96:  MOVWF  FF8
+01E98:  MOVF   01,W
+01E9A:  ADDWF  FF6,F
+01E9C:  MOVLW  00
+01E9E:  ADDWFC FF7,F
+01EA0:  MOVLB  0
+01EA2:  CALL   103E
+01EA6:  MOVLW  0A
+01EA8:  BTFSS  F9E.4
+01EAA:  BRA    1EA8
+01EAC:  MOVWF  FAD
+....................          delay_us(10); 
+01EAE:  MOVLW  10
+01EB0:  MOVWF  00
+01EB2:  DECFSZ 00,F
+01EB4:  BRA    1EB2
+01EB6:  NOP   
+....................          fprintf(printer,"  Ciclo de Esterilizacion #%02u \n",Ciclo); 
+01EB8:  MOVLW  BC
+01EBA:  MOVWF  FF6
+01EBC:  MOVLW  05
+01EBE:  MOVWF  FF7
+01EC0:  MOVLW  00
+01EC2:  MOVWF  FF8
+01EC4:  MOVLW  1B
+01EC6:  MOVLB  2
+01EC8:  MOVWF  x94
+01ECA:  MOVLB  0
+01ECC:  CALL   1470
+01ED0:  MOVFF  4C,293
+01ED4:  MOVLW  01
+01ED6:  MOVLB  2
+01ED8:  MOVWF  x94
+01EDA:  MOVLB  0
+01EDC:  CALL   1094
+01EE0:  MOVLW  20
+01EE2:  BTFSS  F9E.4
+01EE4:  BRA    1EE2
+01EE6:  MOVWF  FAD
+01EE8:  MOVLW  0A
+01EEA:  BTFSS  F9E.4
+01EEC:  BRA    1EEA
+01EEE:  MOVWF  FAD
+....................          delay_us(10); 
+01EF0:  MOVLW  10
+01EF2:  MOVWF  00
+01EF4:  DECFSZ 00,F
+01EF6:  BRA    1EF4
+01EF8:  NOP   
+....................          if(Ciclo<11) 
+01EFA:  MOVF   4C,W
+01EFC:  SUBLW  0A
+01EFE:  BNC   1F32
+....................             fprintf(printer,"%s\n",Texto[Ciclo-1]); 
+01F00:  MOVLW  01
+01F02:  SUBWF  4C,W
+01F04:  MULLW  14
+01F06:  MOVF   FF3,W
+01F08:  CLRF   03
+01F0A:  MOVLB  2
+01F0C:  MOVWF  x93
+01F0E:  MOVLW  9E
+01F10:  MOVWF  FF6
+01F12:  MOVLW  00
+01F14:  MOVWF  FF7
+01F16:  MOVLW  00
+01F18:  MOVWF  FF8
+01F1A:  MOVF   x93,W
+01F1C:  ADDWF  FF6,F
+01F1E:  MOVLW  00
+01F20:  ADDWFC FF7,F
+01F22:  MOVLB  0
+01F24:  CALL   103E
+01F28:  MOVLW  0A
+01F2A:  BTFSS  F9E.4
+01F2C:  BRA    1F2A
+01F2E:  MOVWF  FAD
+....................          else 
+01F30:  BRA    1F62
+....................             fprintf(printer,"Personalizado %02u\n",Ciclo); 
+01F32:  MOVLW  DE
+01F34:  MOVWF  FF6
+01F36:  MOVLW  05
+01F38:  MOVWF  FF7
+01F3A:  MOVLW  00
+01F3C:  MOVWF  FF8
+01F3E:  MOVLW  0E
+01F40:  MOVLB  2
+01F42:  MOVWF  x94
+01F44:  MOVLB  0
+01F46:  CALL   1470
+01F4A:  MOVFF  4C,293
+01F4E:  MOVLW  01
+01F50:  MOVLB  2
+01F52:  MOVWF  x94
+01F54:  MOVLB  0
+01F56:  CALL   1094
+01F5A:  MOVLW  0A
+01F5C:  BTFSS  F9E.4
+01F5E:  BRA    1F5C
+01F60:  MOVWF  FAD
+....................          delay_us(10); 
+01F62:  MOVLW  10
+01F64:  MOVWF  00
+01F66:  DECFSZ 00,F
+01F68:  BRA    1F66
+01F6A:  NOP   
+....................          fprintf(printer,"Tiempo Esterilizacion:%02Lu:%02Lu\n",mEst,sEst); 
+01F6C:  MOVLW  F2
+01F6E:  MOVWF  FF6
+01F70:  MOVLW  05
+01F72:  MOVWF  FF7
+01F74:  MOVLW  00
+01F76:  MOVWF  FF8
+01F78:  MOVLW  16
+01F7A:  MOVLB  2
+01F7C:  MOVWF  x94
+01F7E:  MOVLB  0
+01F80:  CALL   1470
+01F84:  MOVLW  0B
+01F86:  MOVWF  FE9
+01F88:  MOVFF  6A,294
+01F8C:  MOVFF  69,293
+01F90:  CALL   14A2
+01F94:  MOVLW  3A
+01F96:  BTFSS  F9E.4
+01F98:  BRA    1F96
+01F9A:  MOVWF  FAD
+01F9C:  MOVLW  0B
+01F9E:  MOVWF  FE9
+01FA0:  MOVFF  6C,294
+01FA4:  MOVFF  6B,293
+01FA8:  CALL   14A2
+01FAC:  MOVLW  0A
+01FAE:  BTFSS  F9E.4
+01FB0:  BRA    1FAE
+01FB2:  MOVWF  FAD
+....................          delay_us(10); 
+01FB4:  MOVLW  10
+01FB6:  MOVWF  00
+01FB8:  DECFSZ 00,F
+01FBA:  BRA    1FB8
+01FBC:  NOP   
+....................          fprintf(printer,"Tiempo de Secado:%02Lu:%02Lu\n",mSec,sSec); 
+01FBE:  MOVLW  16
+01FC0:  MOVWF  FF6
+01FC2:  MOVLW  06
+01FC4:  MOVWF  FF7
+01FC6:  MOVLW  00
+01FC8:  MOVWF  FF8
+01FCA:  MOVLW  11
+01FCC:  MOVLB  2
+01FCE:  MOVWF  x94
+01FD0:  MOVLB  0
+01FD2:  CALL   1470
+01FD6:  MOVLW  0B
+01FD8:  MOVWF  FE9
+01FDA:  MOVFF  70,294
+01FDE:  MOVFF  6F,293
+01FE2:  CALL   14A2
+01FE6:  MOVLW  3A
+01FE8:  BTFSS  F9E.4
+01FEA:  BRA    1FE8
+01FEC:  MOVWF  FAD
+01FEE:  MOVLW  0B
+01FF0:  MOVWF  FE9
+01FF2:  MOVFF  6E,294
+01FF6:  MOVFF  6D,293
+01FFA:  CALL   14A2
+01FFE:  MOVLW  0A
+02000:  BTFSS  F9E.4
+02002:  BRA    2000
+02004:  MOVWF  FAD
+....................          delay_us(10); 
+02006:  MOVLW  10
+02008:  MOVWF  00
+0200A:  DECFSZ 00,F
+0200C:  BRA    200A
+0200E:  NOP   
+....................          fprintf(printer,"Setpoint de Temperatura:%03Lu°C\n",Setpoint); 
+02010:  MOVLW  34
+02012:  MOVWF  FF6
+02014:  MOVLW  06
+02016:  MOVWF  FF7
+02018:  MOVLW  00
+0201A:  MOVWF  FF8
+0201C:  MOVLW  18
+0201E:  MOVLB  2
+02020:  MOVWF  x94
+02022:  MOVLB  0
+02024:  CALL   1470
+02028:  MOVLW  0A
+0202A:  MOVWF  FE9
+0202C:  MOVFF  72,294
+02030:  MOVFF  71,293
+02034:  CALL   14A2
+02038:  MOVLW  B0
+0203A:  BTFSS  F9E.4
+0203C:  BRA    203A
+0203E:  MOVWF  FAD
+02040:  MOVLW  43
+02042:  BTFSS  F9E.4
+02044:  BRA    2042
+02046:  MOVWF  FAD
+02048:  MOVLW  0A
+0204A:  BTFSS  F9E.4
+0204C:  BRA    204A
+0204E:  MOVWF  FAD
+....................          delay_us(10); 
+02050:  MOVLW  10
+02052:  MOVWF  00
+02054:  DECFSZ 00,F
+02056:  BRA    2054
+02058:  NOP   
+....................          fprintf(printer,"Ciclo #%05Lu\n",CiclosTotales); 
+0205A:  MOVLW  56
+0205C:  MOVWF  FF6
+0205E:  MOVLW  06
+02060:  MOVWF  FF7
+02062:  MOVLW  00
+02064:  MOVWF  FF8
+02066:  MOVLW  07
+02068:  MOVLB  2
+0206A:  MOVWF  x94
+0206C:  MOVLB  0
+0206E:  CALL   1470
+02072:  MOVLW  08
+02074:  MOVWF  FE9
+02076:  MOVFF  60,294
+0207A:  MOVFF  5F,293
+0207E:  CALL   14A2
+02082:  MOVLW  0A
+02084:  BTFSS  F9E.4
+02086:  BRA    2084
+02088:  MOVWF  FAD
+....................          delay_us(10); 
+0208A:  MOVLW  10
+0208C:  MOVWF  00
+0208E:  DECFSZ 00,F
+02090:  BRA    208E
+02092:  NOP   
+....................          fprintf(printer,"FECHA: %02u-%02u-%02u \n",DiaRx,MesRx,YearRx); 
+02094:  MOVLW  64
+02096:  MOVWF  FF6
+02098:  MOVLW  06
+0209A:  MOVWF  FF7
+0209C:  MOVLW  00
+0209E:  MOVWF  FF8
+020A0:  MOVLW  07
+020A2:  MOVLB  2
+020A4:  MOVWF  x94
+020A6:  MOVLB  0
+020A8:  CALL   1470
+020AC:  MOVFF  50,293
+020B0:  MOVLW  01
+020B2:  MOVLB  2
+020B4:  MOVWF  x94
+020B6:  MOVLB  0
+020B8:  CALL   1094
+020BC:  MOVLW  2D
+020BE:  BTFSS  F9E.4
+020C0:  BRA    20BE
+020C2:  MOVWF  FAD
+020C4:  MOVFF  4F,293
+020C8:  MOVLW  01
+020CA:  MOVLB  2
+020CC:  MOVWF  x94
+020CE:  MOVLB  0
+020D0:  CALL   1094
+020D4:  MOVLW  2D
+020D6:  BTFSS  F9E.4
+020D8:  BRA    20D6
+020DA:  MOVWF  FAD
+020DC:  MOVFF  4E,293
+020E0:  MOVLW  01
+020E2:  MOVLB  2
+020E4:  MOVWF  x94
+020E6:  MOVLB  0
+020E8:  CALL   1094
+020EC:  MOVLW  20
+020EE:  BTFSS  F9E.4
+020F0:  BRA    20EE
+020F2:  MOVWF  FAD
+020F4:  MOVLW  0A
+020F6:  BTFSS  F9E.4
+020F8:  BRA    20F6
+020FA:  MOVWF  FAD
+....................          delay_us(10); 
+020FC:  MOVLW  10
+020FE:  MOVWF  00
+02100:  DECFSZ 00,F
+02102:  BRA    2100
+02104:  NOP   
+....................          //fprintf(printer,"   HORA   TEMP    PRESION \n"); 
+....................          fprintf(printer," HORA  TEMP     PC     PP   \n"); 
+02106:  MOVLW  7C
+02108:  MOVWF  FF6
+0210A:  MOVLW  06
+0210C:  MOVWF  FF7
+0210E:  MOVLW  00
+02110:  MOVWF  FF8
+02112:  CALL   103E
+....................          delay_us(10); 
+02116:  MOVLW  10
+02118:  MOVWF  00
+0211A:  DECFSZ 00,F
+0211C:  BRA    211A
+0211E:  NOP   
+....................       } 
+....................       delay_ms(1000); 
+02120:  MOVLW  04
+02122:  MOVLB  2
+02124:  MOVWF  x93
+02126:  MOVLW  FA
+02128:  MOVWF  x94
+0212A:  MOVLB  0
+0212C:  CALL   0A9A
+02130:  MOVLB  2
+02132:  DECFSZ x93,F
+02134:  BRA    2126
+....................       flagImprime2=1; 
+02136:  BSF    5A.1
+....................       flagImprime=1; 
+02138:  BSF    5A.0
+....................       Finalizo=0; 
+0213A:  BCF    5A.3
+0213C:  MOVLB  0
+....................    } 
+....................    if(Imprime==5 && !flagImprime && !Finalizo){ 
+0213E:  MOVF   56,W
+02140:  SUBLW  05
+02142:  BNZ   2208
+02144:  BTFSC  5A.0
+02146:  BRA    2208
+02148:  BTFSC  5A.3
+0214A:  BRA    2208
+....................       fprintf(printer,"%02u:%02u %03.1f%cC %03LukPa %03LukPa \n",HoraRx,MinutoRx,Temperatura,0XDF,PresionCamara,PresionPreCamara); 
+0214C:  MOVFF  51,293
+02150:  MOVLW  01
+02152:  MOVLB  2
+02154:  MOVWF  x94
+02156:  MOVLB  0
+02158:  CALL   1094
+0215C:  MOVLW  3A
+0215E:  BTFSS  F9E.4
+02160:  BRA    215E
+02162:  MOVWF  FAD
+02164:  MOVFF  52,293
+02168:  MOVLW  01
+0216A:  MOVLB  2
+0216C:  MOVWF  x94
+0216E:  MOVLB  0
+02170:  CALL   1094
+02174:  MOVLW  20
+02176:  BTFSS  F9E.4
+02178:  BRA    2176
+0217A:  MOVWF  FAD
+0217C:  MOVLW  42
+0217E:  MOVWF  FE9
+02180:  MOVFF  3C,296
+02184:  MOVFF  3B,295
+02188:  MOVFF  3A,294
+0218C:  MOVFF  39,293
+02190:  MOVLW  01
+02192:  MOVLB  2
+02194:  MOVWF  x97
+02196:  MOVLB  0
+02198:  CALL   12CE
+0219C:  MOVLW  DF
+0219E:  BTFSS  F9E.4
+021A0:  BRA    219E
+021A2:  MOVWF  FAD
+021A4:  MOVLW  43
+021A6:  BTFSS  F9E.4
+021A8:  BRA    21A6
+021AA:  MOVWF  FAD
+021AC:  MOVLW  20
+021AE:  BTFSS  F9E.4
+021B0:  BRA    21AE
+021B2:  MOVWF  FAD
+021B4:  MOVLW  0A
+021B6:  MOVWF  FE9
+021B8:  MOVFF  5C,294
+021BC:  MOVFF  5B,293
+021C0:  CALL   14A2
+021C4:  MOVLW  B3
+021C6:  MOVWF  FF6
+021C8:  MOVLW  06
+021CA:  MOVWF  FF7
+021CC:  MOVLW  00
+021CE:  MOVWF  FF8
+021D0:  MOVLW  04
+021D2:  MOVLB  2
+021D4:  MOVWF  x94
+021D6:  MOVLB  0
+021D8:  CALL   1470
+021DC:  MOVLW  0A
+021DE:  MOVWF  FE9
+021E0:  MOVFF  5E,294
+021E4:  MOVFF  5D,293
+021E8:  CALL   14A2
+021EC:  MOVLW  BC
+021EE:  MOVWF  FF6
+021F0:  MOVLW  06
+021F2:  MOVWF  FF7
+021F4:  MOVLW  00
+021F6:  MOVWF  FF8
+021F8:  MOVLW  05
+021FA:  MOVLB  2
+021FC:  MOVWF  x94
+021FE:  MOVLB  0
+02200:  CALL   1470
+....................       flagImprime=1; 
+02204:  BSF    5A.0
+....................    }else if(Imprime==20 && !Finalizo){ 
+02206:  BRA    27B2
+02208:  MOVF   56,W
+0220A:  SUBLW  14
+0220C:  BNZ   2286
+0220E:  BTFSC  5A.3
+02210:  BRA    2286
+....................       fprintf(printer," Parada de Emergencia Activada \n"); 
+02212:  MOVLW  C2
+02214:  MOVWF  FF6
+02216:  MOVLW  06
+02218:  MOVWF  FF7
+0221A:  MOVLW  00
+0221C:  MOVWF  FF8
+0221E:  CALL   103E
+....................       delay_us(10); 
+02222:  MOVLW  10
+02224:  MOVWF  00
+02226:  DECFSZ 00,F
+02228:  BRA    2226
+0222A:  NOP   
+....................       fprintf(printer,"       Ciclo Cancelado \n"); 
+0222C:  MOVLW  E4
+0222E:  MOVWF  FF6
+02230:  MOVLW  06
+02232:  MOVWF  FF7
+02234:  MOVLW  00
+02236:  MOVWF  FF8
+02238:  CALL   103E
+....................       delay_us(10); 
+0223C:  MOVLW  10
+0223E:  MOVWF  00
+02240:  DECFSZ 00,F
+02242:  BRA    2240
+02244:  NOP   
+....................       fprintf(printer," \n"); 
+02246:  MOVLW  20
+02248:  BTFSS  F9E.4
+0224A:  BRA    2248
+0224C:  MOVWF  FAD
+0224E:  MOVLW  0A
+02250:  BTFSS  F9E.4
+02252:  BRA    2250
+02254:  MOVWF  FAD
+....................       delay_us(10); 
+02256:  MOVLW  10
+02258:  MOVWF  00
+0225A:  DECFSZ 00,F
+0225C:  BRA    225A
+0225E:  NOP   
+....................       fprintf(printer,"  \n"); 
+02260:  MOVLW  20
+02262:  BTFSS  F9E.4
+02264:  BRA    2262
+02266:  MOVWF  FAD
+02268:  MOVLW  20
+0226A:  BTFSS  F9E.4
+0226C:  BRA    226A
+0226E:  MOVWF  FAD
+02270:  MOVLW  0A
+02272:  BTFSS  F9E.4
+02274:  BRA    2272
+02276:  MOVWF  FAD
+....................       delay_us(10); 
+02278:  MOVLW  10
+0227A:  MOVWF  00
+0227C:  DECFSZ 00,F
+0227E:  BRA    227C
+02280:  NOP   
+....................       Finalizo=1; 
+02282:  BSF    5A.3
+....................    }else if(Imprime==21 && !Finalizo){ 
+02284:  BRA    27B2
+02286:  MOVF   56,W
+02288:  SUBLW  15
+0228A:  BNZ   2304
+0228C:  BTFSC  5A.3
+0228E:  BRA    2304
+....................       fprintf(printer,"   Tiempo de Llenado prolongado\n"); 
+02290:  MOVLW  FE
+02292:  MOVWF  FF6
+02294:  MOVLW  06
+02296:  MOVWF  FF7
+02298:  MOVLW  00
+0229A:  MOVWF  FF8
+0229C:  CALL   103E
+....................       delay_us(10); 
+022A0:  MOVLW  10
+022A2:  MOVWF  00
+022A4:  DECFSZ 00,F
+022A6:  BRA    22A4
+022A8:  NOP   
+....................       fprintf(printer,"    EA01 Ciclo Cancelado \n"); 
+022AA:  MOVLW  20
+022AC:  MOVWF  FF6
+022AE:  MOVLW  07
+022B0:  MOVWF  FF7
+022B2:  MOVLW  00
+022B4:  MOVWF  FF8
+022B6:  CALL   103E
+....................       delay_us(10); 
+022BA:  MOVLW  10
+022BC:  MOVWF  00
+022BE:  DECFSZ 00,F
+022C0:  BRA    22BE
+022C2:  NOP   
+....................       fprintf(printer," \n"); 
+022C4:  MOVLW  20
+022C6:  BTFSS  F9E.4
+022C8:  BRA    22C6
+022CA:  MOVWF  FAD
+022CC:  MOVLW  0A
+022CE:  BTFSS  F9E.4
+022D0:  BRA    22CE
+022D2:  MOVWF  FAD
+....................       delay_us(10); 
+022D4:  MOVLW  10
+022D6:  MOVWF  00
+022D8:  DECFSZ 00,F
+022DA:  BRA    22D8
+022DC:  NOP   
+....................       fprintf(printer,"  \n"); 
+022DE:  MOVLW  20
+022E0:  BTFSS  F9E.4
+022E2:  BRA    22E0
+022E4:  MOVWF  FAD
+022E6:  MOVLW  20
+022E8:  BTFSS  F9E.4
+022EA:  BRA    22E8
+022EC:  MOVWF  FAD
+022EE:  MOVLW  0A
+022F0:  BTFSS  F9E.4
+022F2:  BRA    22F0
+022F4:  MOVWF  FAD
+....................       delay_us(10); 
+022F6:  MOVLW  10
+022F8:  MOVWF  00
+022FA:  DECFSZ 00,F
+022FC:  BRA    22FA
+022FE:  NOP   
+....................       Finalizo=1; 
+02300:  BSF    5A.3
+....................    }else if(Imprime==22 && !Finalizo){ 
+02302:  BRA    27B2
+02304:  MOVF   56,W
+02306:  SUBLW  16
+02308:  BNZ   2382
+0230A:  BTFSC  5A.3
+0230C:  BRA    2382
+....................       fprintf(printer,"      Termostato Activado\n"); 
+0230E:  MOVLW  3C
+02310:  MOVWF  FF6
+02312:  MOVLW  07
+02314:  MOVWF  FF7
+02316:  MOVLW  00
+02318:  MOVWF  FF8
+0231A:  CALL   103E
+....................       delay_us(10); 
+0231E:  MOVLW  10
+02320:  MOVWF  00
+02322:  DECFSZ 00,F
+02324:  BRA    2322
+02326:  NOP   
+....................       fprintf(printer,"    EA02 Ciclo Cancelado \n"); 
+02328:  MOVLW  58
+0232A:  MOVWF  FF6
+0232C:  MOVLW  07
+0232E:  MOVWF  FF7
+02330:  MOVLW  00
+02332:  MOVWF  FF8
+02334:  CALL   103E
+....................       delay_us(10); 
+02338:  MOVLW  10
+0233A:  MOVWF  00
+0233C:  DECFSZ 00,F
+0233E:  BRA    233C
+02340:  NOP   
+....................       fprintf(printer," \n"); 
+02342:  MOVLW  20
+02344:  BTFSS  F9E.4
+02346:  BRA    2344
+02348:  MOVWF  FAD
+0234A:  MOVLW  0A
+0234C:  BTFSS  F9E.4
+0234E:  BRA    234C
+02350:  MOVWF  FAD
+....................       delay_us(10); 
+02352:  MOVLW  10
+02354:  MOVWF  00
+02356:  DECFSZ 00,F
+02358:  BRA    2356
+0235A:  NOP   
+....................       fprintf(printer,"  \n"); 
+0235C:  MOVLW  20
+0235E:  BTFSS  F9E.4
+02360:  BRA    235E
+02362:  MOVWF  FAD
+02364:  MOVLW  20
+02366:  BTFSS  F9E.4
+02368:  BRA    2366
+0236A:  MOVWF  FAD
+0236C:  MOVLW  0A
+0236E:  BTFSS  F9E.4
+02370:  BRA    236E
+02372:  MOVWF  FAD
+....................       delay_us(10); 
+02374:  MOVLW  10
+02376:  MOVWF  00
+02378:  DECFSZ 00,F
+0237A:  BRA    2378
+0237C:  NOP   
+....................       Finalizo=1; 
+0237E:  BSF    5A.3
+....................    }else if(Imprime==24 && !Finalizo){ 
+02380:  BRA    27B2
+02382:  MOVF   56,W
+02384:  SUBLW  18
+02386:  BNZ   2400
+02388:  BTFSC  5A.3
+0238A:  BRA    2400
+....................       fprintf(printer,"Tiempo de Calentamiento Excesivo\n"); 
+0238C:  MOVLW  74
+0238E:  MOVWF  FF6
+02390:  MOVLW  07
+02392:  MOVWF  FF7
+02394:  MOVLW  00
+02396:  MOVWF  FF8
+02398:  CALL   103E
+....................       delay_us(10); 
+0239C:  MOVLW  10
+0239E:  MOVWF  00
+023A0:  DECFSZ 00,F
+023A2:  BRA    23A0
+023A4:  NOP   
+....................       fprintf(printer,"    ET01 Ciclo Cancelado \n"); 
+023A6:  MOVLW  96
+023A8:  MOVWF  FF6
+023AA:  MOVLW  07
+023AC:  MOVWF  FF7
+023AE:  MOVLW  00
+023B0:  MOVWF  FF8
+023B2:  CALL   103E
+....................       delay_us(10); 
+023B6:  MOVLW  10
+023B8:  MOVWF  00
+023BA:  DECFSZ 00,F
+023BC:  BRA    23BA
+023BE:  NOP   
+....................       fprintf(printer," \n"); 
+023C0:  MOVLW  20
+023C2:  BTFSS  F9E.4
+023C4:  BRA    23C2
+023C6:  MOVWF  FAD
+023C8:  MOVLW  0A
+023CA:  BTFSS  F9E.4
+023CC:  BRA    23CA
+023CE:  MOVWF  FAD
+....................       delay_us(10); 
+023D0:  MOVLW  10
+023D2:  MOVWF  00
+023D4:  DECFSZ 00,F
+023D6:  BRA    23D4
+023D8:  NOP   
+....................       fprintf(printer,"  \n"); 
+023DA:  MOVLW  20
+023DC:  BTFSS  F9E.4
+023DE:  BRA    23DC
+023E0:  MOVWF  FAD
+023E2:  MOVLW  20
+023E4:  BTFSS  F9E.4
+023E6:  BRA    23E4
+023E8:  MOVWF  FAD
+023EA:  MOVLW  0A
+023EC:  BTFSS  F9E.4
+023EE:  BRA    23EC
+023F0:  MOVWF  FAD
+....................       delay_us(10); 
+023F2:  MOVLW  10
+023F4:  MOVWF  00
+023F6:  DECFSZ 00,F
+023F8:  BRA    23F6
+023FA:  NOP   
+....................       Finalizo=1; 
+023FC:  BSF    5A.3
+....................    }else if(Imprime==23 && !Finalizo){ 
+023FE:  BRA    27B2
+02400:  MOVF   56,W
+02402:  SUBLW  17
+02404:  BNZ   247E
+02406:  BTFSC  5A.3
+02408:  BRA    247E
+....................       fprintf(printer," Sobrepaso en la temperatura\n"); 
+0240A:  MOVLW  B2
+0240C:  MOVWF  FF6
+0240E:  MOVLW  07
+02410:  MOVWF  FF7
+02412:  MOVLW  00
+02414:  MOVWF  FF8
+02416:  CALL   103E
+....................       delay_us(10); 
+0241A:  MOVLW  10
+0241C:  MOVWF  00
+0241E:  DECFSZ 00,F
+02420:  BRA    241E
+02422:  NOP   
+....................       fprintf(printer,"    ET02 Ciclo Cancelado \n"); 
+02424:  MOVLW  D0
+02426:  MOVWF  FF6
+02428:  MOVLW  07
+0242A:  MOVWF  FF7
+0242C:  MOVLW  00
+0242E:  MOVWF  FF8
+02430:  CALL   103E
+....................       delay_us(10); 
+02434:  MOVLW  10
+02436:  MOVWF  00
+02438:  DECFSZ 00,F
+0243A:  BRA    2438
+0243C:  NOP   
+....................       fprintf(printer," \n"); 
+0243E:  MOVLW  20
+02440:  BTFSS  F9E.4
+02442:  BRA    2440
+02444:  MOVWF  FAD
+02446:  MOVLW  0A
+02448:  BTFSS  F9E.4
+0244A:  BRA    2448
+0244C:  MOVWF  FAD
+....................       delay_us(10); 
+0244E:  MOVLW  10
+02450:  MOVWF  00
+02452:  DECFSZ 00,F
+02454:  BRA    2452
+02456:  NOP   
+....................       fprintf(printer,"  \n"); 
+02458:  MOVLW  20
+0245A:  BTFSS  F9E.4
+0245C:  BRA    245A
+0245E:  MOVWF  FAD
+02460:  MOVLW  20
+02462:  BTFSS  F9E.4
+02464:  BRA    2462
+02466:  MOVWF  FAD
+02468:  MOVLW  0A
+0246A:  BTFSS  F9E.4
+0246C:  BRA    246A
+0246E:  MOVWF  FAD
+....................       delay_us(10); 
+02470:  MOVLW  10
+02472:  MOVWF  00
+02474:  DECFSZ 00,F
+02476:  BRA    2474
+02478:  NOP   
+....................       Finalizo=1; 
+0247A:  BSF    5A.3
+....................    }else if(Imprime==25 && !Finalizo){ 
+0247C:  BRA    27B2
+0247E:  MOVF   56,W
+02480:  SUBLW  19
+02482:  BNZ   24FC
+02484:  BTFSC  5A.3
+02486:  BRA    24FC
+....................       fprintf(printer," Sobrepaso en la presion\n"); 
+02488:  MOVLW  EC
+0248A:  MOVWF  FF6
+0248C:  MOVLW  07
+0248E:  MOVWF  FF7
+02490:  MOVLW  00
+02492:  MOVWF  FF8
+02494:  CALL   103E
+....................       delay_us(10); 
+02498:  MOVLW  10
+0249A:  MOVWF  00
+0249C:  DECFSZ 00,F
+0249E:  BRA    249C
+024A0:  NOP   
+....................       fprintf(printer,"    EP01 Ciclo Cancelado \n"); 
+024A2:  MOVLW  06
+024A4:  MOVWF  FF6
+024A6:  MOVLW  08
+024A8:  MOVWF  FF7
+024AA:  MOVLW  00
+024AC:  MOVWF  FF8
+024AE:  CALL   103E
+....................       delay_us(10); 
+024B2:  MOVLW  10
+024B4:  MOVWF  00
+024B6:  DECFSZ 00,F
+024B8:  BRA    24B6
+024BA:  NOP   
+....................       fprintf(printer," \n"); 
+024BC:  MOVLW  20
+024BE:  BTFSS  F9E.4
+024C0:  BRA    24BE
+024C2:  MOVWF  FAD
+024C4:  MOVLW  0A
+024C6:  BTFSS  F9E.4
+024C8:  BRA    24C6
+024CA:  MOVWF  FAD
+....................       delay_us(10); 
+024CC:  MOVLW  10
+024CE:  MOVWF  00
+024D0:  DECFSZ 00,F
+024D2:  BRA    24D0
+024D4:  NOP   
+....................       fprintf(printer,"  \n"); 
+024D6:  MOVLW  20
+024D8:  BTFSS  F9E.4
+024DA:  BRA    24D8
+024DC:  MOVWF  FAD
+024DE:  MOVLW  20
+024E0:  BTFSS  F9E.4
+024E2:  BRA    24E0
+024E4:  MOVWF  FAD
+024E6:  MOVLW  0A
+024E8:  BTFSS  F9E.4
+024EA:  BRA    24E8
+024EC:  MOVWF  FAD
+....................       delay_us(10); 
+024EE:  MOVLW  10
+024F0:  MOVWF  00
+024F2:  DECFSZ 00,F
+024F4:  BRA    24F2
+024F6:  NOP   
+....................       Finalizo=1; 
+024F8:  BSF    5A.3
+....................    }else if(Imprime==26 && !Finalizo){ 
+024FA:  BRA    27B2
+024FC:  MOVF   56,W
+024FE:  SUBLW  1A
+02500:  BNZ   257A
+02502:  BTFSC  5A.3
+02504:  BRA    257A
+....................       fprintf(printer," Error en bomba de Vacio\n"); 
+02506:  MOVLW  22
+02508:  MOVWF  FF6
+0250A:  MOVLW  08
+0250C:  MOVWF  FF7
+0250E:  MOVLW  00
+02510:  MOVWF  FF8
+02512:  CALL   103E
+....................       delay_us(10); 
+02516:  MOVLW  10
+02518:  MOVWF  00
+0251A:  DECFSZ 00,F
+0251C:  BRA    251A
+0251E:  NOP   
+....................       fprintf(printer,"    EV01 Ciclo Cancelado \n"); 
+02520:  MOVLW  3C
+02522:  MOVWF  FF6
+02524:  MOVLW  08
+02526:  MOVWF  FF7
+02528:  MOVLW  00
+0252A:  MOVWF  FF8
+0252C:  CALL   103E
+....................       delay_us(10); 
+02530:  MOVLW  10
+02532:  MOVWF  00
+02534:  DECFSZ 00,F
+02536:  BRA    2534
+02538:  NOP   
+....................       fprintf(printer," \n"); 
+0253A:  MOVLW  20
+0253C:  BTFSS  F9E.4
+0253E:  BRA    253C
+02540:  MOVWF  FAD
+02542:  MOVLW  0A
+02544:  BTFSS  F9E.4
+02546:  BRA    2544
+02548:  MOVWF  FAD
+....................       delay_us(10); 
+0254A:  MOVLW  10
+0254C:  MOVWF  00
+0254E:  DECFSZ 00,F
+02550:  BRA    254E
+02552:  NOP   
+....................       fprintf(printer,"  \n"); 
+02554:  MOVLW  20
+02556:  BTFSS  F9E.4
+02558:  BRA    2556
+0255A:  MOVWF  FAD
+0255C:  MOVLW  20
+0255E:  BTFSS  F9E.4
+02560:  BRA    255E
+02562:  MOVWF  FAD
+02564:  MOVLW  0A
+02566:  BTFSS  F9E.4
+02568:  BRA    2566
+0256A:  MOVWF  FAD
+....................       delay_us(10); 
+0256C:  MOVLW  10
+0256E:  MOVWF  00
+02570:  DECFSZ 00,F
+02572:  BRA    2570
+02574:  NOP   
+....................       Finalizo=1; 
+02576:  BSF    5A.3
+....................    }else if(Imprime==27 && !Finalizo){ 
+02578:  BRA    27B2
+0257A:  MOVF   56,W
+0257C:  SUBLW  1B
+0257E:  BNZ   25F8
+02580:  BTFSC  5A.3
+02582:  BRA    25F8
+....................       fprintf(printer," Tiempo de Vacio Excesivo\n"); 
+02584:  MOVLW  58
+02586:  MOVWF  FF6
+02588:  MOVLW  08
+0258A:  MOVWF  FF7
+0258C:  MOVLW  00
+0258E:  MOVWF  FF8
+02590:  CALL   103E
+....................       delay_us(10); 
+02594:  MOVLW  10
+02596:  MOVWF  00
+02598:  DECFSZ 00,F
+0259A:  BRA    2598
+0259C:  NOP   
+....................       fprintf(printer,"    EV02 Ciclo Cancelado \n"); 
+0259E:  MOVLW  74
+025A0:  MOVWF  FF6
+025A2:  MOVLW  08
+025A4:  MOVWF  FF7
+025A6:  MOVLW  00
+025A8:  MOVWF  FF8
+025AA:  CALL   103E
+....................       delay_us(10); 
+025AE:  MOVLW  10
+025B0:  MOVWF  00
+025B2:  DECFSZ 00,F
+025B4:  BRA    25B2
+025B6:  NOP   
+....................       fprintf(printer," \n"); 
+025B8:  MOVLW  20
+025BA:  BTFSS  F9E.4
+025BC:  BRA    25BA
+025BE:  MOVWF  FAD
+025C0:  MOVLW  0A
+025C2:  BTFSS  F9E.4
+025C4:  BRA    25C2
+025C6:  MOVWF  FAD
+....................       delay_us(10); 
+025C8:  MOVLW  10
+025CA:  MOVWF  00
+025CC:  DECFSZ 00,F
+025CE:  BRA    25CC
+025D0:  NOP   
+....................       fprintf(printer,"  \n"); 
+025D2:  MOVLW  20
+025D4:  BTFSS  F9E.4
+025D6:  BRA    25D4
+025D8:  MOVWF  FAD
+025DA:  MOVLW  20
+025DC:  BTFSS  F9E.4
+025DE:  BRA    25DC
+025E0:  MOVWF  FAD
+025E2:  MOVLW  0A
+025E4:  BTFSS  F9E.4
+025E6:  BRA    25E4
+025E8:  MOVWF  FAD
+....................       delay_us(10); 
+025EA:  MOVLW  10
+025EC:  MOVWF  00
+025EE:  DECFSZ 00,F
+025F0:  BRA    25EE
+025F2:  NOP   
+....................       Finalizo=1; 
+025F4:  BSF    5A.3
+....................    }else if(Imprime==28 && !Finalizo){ 
+025F6:  BRA    27B2
+025F8:  MOVF   56,W
+025FA:  SUBLW  1C
+025FC:  BTFSS  FD8.2
+025FE:  BRA    272A
+02600:  BTFSC  5A.3
+02602:  BRA    272A
+....................       fprintf(printer,"      Ciclo Finalizado \n"); 
+02604:  MOVLW  90
+02606:  MOVWF  FF6
+02608:  MOVLW  08
+0260A:  MOVWF  FF7
+0260C:  MOVLW  00
+0260E:  MOVWF  FF8
+02610:  CALL   103E
+....................       delay_us(10); 
+02614:  MOVLW  10
+02616:  MOVWF  00
+02618:  DECFSZ 00,F
+0261A:  BRA    2618
+0261C:  NOP   
+....................       fprintf(printer,"       Correctamente \n"); 
+0261E:  MOVLW  AA
+02620:  MOVWF  FF6
+02622:  MOVLW  08
+02624:  MOVWF  FF7
+02626:  MOVLW  00
+02628:  MOVWF  FF8
+0262A:  CALL   103E
+....................       delay_us(10); 
+0262E:  MOVLW  10
+02630:  MOVWF  00
+02632:  DECFSZ 00,F
+02634:  BRA    2632
+02636:  NOP   
+....................       fprintf(printer,"  %02u:%02u  %03.1f°C  %03LukPa  \n",HoraRx,MinutoRx,Temperatura,PresionCamara);  
+02638:  MOVLW  20
+0263A:  BTFSS  F9E.4
+0263C:  BRA    263A
+0263E:  MOVWF  FAD
+02640:  MOVLW  20
+02642:  BTFSS  F9E.4
+02644:  BRA    2642
+02646:  MOVWF  FAD
+02648:  MOVFF  51,293
+0264C:  MOVLW  01
+0264E:  MOVLB  2
+02650:  MOVWF  x94
+02652:  MOVLB  0
+02654:  CALL   1094
+02658:  MOVLW  3A
+0265A:  BTFSS  F9E.4
+0265C:  BRA    265A
+0265E:  MOVWF  FAD
+02660:  MOVFF  52,293
+02664:  MOVLW  01
+02666:  MOVLB  2
+02668:  MOVWF  x94
+0266A:  MOVLB  0
+0266C:  CALL   1094
+02670:  MOVLW  20
+02672:  BTFSS  F9E.4
+02674:  BRA    2672
+02676:  MOVWF  FAD
+02678:  MOVLW  20
+0267A:  BTFSS  F9E.4
+0267C:  BRA    267A
+0267E:  MOVWF  FAD
+02680:  MOVLW  42
+02682:  MOVWF  FE9
+02684:  MOVFF  3C,296
+02688:  MOVFF  3B,295
+0268C:  MOVFF  3A,294
+02690:  MOVFF  39,293
+02694:  MOVLW  01
+02696:  MOVLB  2
+02698:  MOVWF  x97
+0269A:  MOVLB  0
+0269C:  CALL   12CE
+026A0:  MOVLW  D5
+026A2:  MOVWF  FF6
+026A4:  MOVLW  08
+026A6:  MOVWF  FF7
+026A8:  MOVLW  00
+026AA:  MOVWF  FF8
+026AC:  MOVLW  04
+026AE:  MOVLB  2
+026B0:  MOVWF  x94
+026B2:  MOVLB  0
+026B4:  CALL   1470
+026B8:  MOVLW  0A
+026BA:  MOVWF  FE9
+026BC:  MOVFF  5C,294
+026C0:  MOVFF  5B,293
+026C4:  CALL   14A2
+026C8:  MOVLW  DE
+026CA:  MOVWF  FF6
+026CC:  MOVLW  08
+026CE:  MOVWF  FF7
+026D0:  MOVLW  00
+026D2:  MOVWF  FF8
+026D4:  MOVLW  06
+026D6:  MOVLB  2
+026D8:  MOVWF  x94
+026DA:  MOVLB  0
+026DC:  CALL   1470
+....................       delay_us(10); 
+026E0:  MOVLW  10
+026E2:  MOVWF  00
+026E4:  DECFSZ 00,F
+026E6:  BRA    26E4
+026E8:  NOP   
+....................       fprintf(printer," \n"); 
+026EA:  MOVLW  20
+026EC:  BTFSS  F9E.4
+026EE:  BRA    26EC
+026F0:  MOVWF  FAD
+026F2:  MOVLW  0A
+026F4:  BTFSS  F9E.4
+026F6:  BRA    26F4
+026F8:  MOVWF  FAD
+....................       delay_us(10); 
+026FA:  MOVLW  10
+026FC:  MOVWF  00
+026FE:  DECFSZ 00,F
+02700:  BRA    26FE
+02702:  NOP   
+....................       fprintf(printer,"  \n"); 
+02704:  MOVLW  20
+02706:  BTFSS  F9E.4
+02708:  BRA    2706
+0270A:  MOVWF  FAD
+0270C:  MOVLW  20
+0270E:  BTFSS  F9E.4
+02710:  BRA    270E
+02712:  MOVWF  FAD
+02714:  MOVLW  0A
+02716:  BTFSS  F9E.4
+02718:  BRA    2716
+0271A:  MOVWF  FAD
+....................       delay_us(10); 
+0271C:  MOVLW  10
+0271E:  MOVWF  00
+02720:  DECFSZ 00,F
+02722:  BRA    2720
+02724:  NOP   
+....................       Finalizo=1; 
+02726:  BSF    5A.3
+....................    }else if(Imprime==29 && !Finalizo){ 
+02728:  BRA    27B2
+0272A:  MOVF   56,W
+0272C:  SUBLW  1D
+0272E:  BNZ   27A8
+02730:  BTFSC  5A.3
+02732:  BRA    27A8
+....................       fprintf(printer,"    Error Empaque Puerta\n"); 
+02734:  MOVLW  E6
+02736:  MOVWF  FF6
+02738:  MOVLW  08
+0273A:  MOVWF  FF7
+0273C:  MOVLW  00
+0273E:  MOVWF  FF8
+02740:  CALL   103E
+....................       delay_us(10); 
+02744:  MOVLW  10
+02746:  MOVWF  00
+02748:  DECFSZ 00,F
+0274A:  BRA    2748
+0274C:  NOP   
+....................       fprintf(printer,"    EE01 Ciclo Cancelado \n"); 
+0274E:  MOVLW  00
+02750:  MOVWF  FF6
+02752:  MOVLW  09
+02754:  MOVWF  FF7
+02756:  MOVLW  00
+02758:  MOVWF  FF8
+0275A:  CALL   103E
+....................       delay_us(10); 
+0275E:  MOVLW  10
+02760:  MOVWF  00
+02762:  DECFSZ 00,F
+02764:  BRA    2762
+02766:  NOP   
+....................       fprintf(printer," \n"); 
+02768:  MOVLW  20
+0276A:  BTFSS  F9E.4
+0276C:  BRA    276A
+0276E:  MOVWF  FAD
+02770:  MOVLW  0A
+02772:  BTFSS  F9E.4
+02774:  BRA    2772
+02776:  MOVWF  FAD
+....................       delay_us(10); 
+02778:  MOVLW  10
+0277A:  MOVWF  00
+0277C:  DECFSZ 00,F
+0277E:  BRA    277C
+02780:  NOP   
+....................       fprintf(printer,"  \n"); 
+02782:  MOVLW  20
+02784:  BTFSS  F9E.4
+02786:  BRA    2784
+02788:  MOVWF  FAD
+0278A:  MOVLW  20
+0278C:  BTFSS  F9E.4
+0278E:  BRA    278C
+02790:  MOVWF  FAD
+02792:  MOVLW  0A
+02794:  BTFSS  F9E.4
+02796:  BRA    2794
+02798:  MOVWF  FAD
+....................       delay_us(10); 
+0279A:  MOVLW  10
+0279C:  MOVWF  00
+0279E:  DECFSZ 00,F
+027A0:  BRA    279E
+027A2:  NOP   
+....................       Finalizo=1; 
+027A4:  BSF    5A.3
+....................    }else if(Imprime==10){ 
+027A6:  BRA    27B2
+027A8:  MOVF   56,W
+027AA:  SUBLW  0A
+027AC:  BNZ   27B2
+....................       flagImprime=0; 
+027AE:  BCF    5A.0
+....................       flagImprime2=0; 
+027B0:  BCF    5A.1
+....................    } 
+....................     
+....................    if(estadoBuzzer==1) 
+027B2:  BTFSS  5A.4
+027B4:  BRA    27BC
+....................       Buzzer_on; 
+027B6:  BSF    F8B.2
+027B8:  BCF    F94.2
+....................    else 
+027BA:  BRA    27C0
+....................       Buzzer_off; 
+027BC:  BCF    F8B.2
+027BE:  BCF    F94.2
+....................     
+....................    if(rxbuf1[0]==0xff && rxbuf1[1]==0xff){//indica que debe iniciar la escritura en la Impresora 
+027C0:  INCFSZ x85,W
+027C2:  GOTO   34FA
+027C6:  INCFSZ x86,W
+027C8:  GOTO   34FA
+....................       delay_ms(1000); 
+027CC:  MOVLW  04
+027CE:  MOVLB  2
+027D0:  MOVWF  x93
+027D2:  MOVLW  FA
+027D4:  MOVWF  x94
+027D6:  MOVLB  0
+027D8:  CALL   0A9A
+027DC:  MOVLB  2
+027DE:  DECFSZ x93,F
+027E0:  BRA    27D2
+....................       fprintf(printer," AUTOCLAVE DIGITAL  JP INGLOBAL  \n"); 
+027E2:  MOVLW  1C
+027E4:  MOVWF  FF6
+027E6:  MOVLW  09
+027E8:  MOVWF  FF7
+027EA:  MOVLW  00
+027EC:  MOVWF  FF8
+027EE:  MOVLB  0
+027F0:  CALL   103E
+....................       delay_us(10); 
+027F4:  MOVLW  10
+027F6:  MOVWF  00
+027F8:  DECFSZ 00,F
+027FA:  BRA    27F8
+027FC:  NOP   
+....................       fprintf(printer," OPERADOR  %s\n",user[rxbuf1[2]]); 
+027FE:  MOVF   x87,W
+02800:  MULLW  14
+02802:  MOVF   FF3,W
+02804:  CLRF   03
+02806:  MOVLB  2
+02808:  MOVWF  x93
+0280A:  MOVLW  40
+0280C:  MOVWF  FF6
+0280E:  MOVLW  09
+02810:  MOVWF  FF7
+02812:  MOVLW  00
+02814:  MOVWF  FF8
+02816:  MOVLW  0B
+02818:  MOVWF  x94
+0281A:  MOVLB  0
+0281C:  CALL   1470
+02820:  MOVLW  88
+02822:  MOVWF  FF6
+02824:  MOVLW  01
+02826:  MOVWF  FF7
+02828:  MOVLW  00
+0282A:  MOVWF  FF8
+0282C:  MOVLB  2
+0282E:  MOVF   x93,W
+02830:  ADDWF  FF6,F
+02832:  MOVLW  00
+02834:  ADDWFC FF7,F
+02836:  MOVLB  0
+02838:  CALL   103E
+0283C:  MOVLW  0A
+0283E:  BTFSS  F9E.4
+02840:  BRA    283E
+02842:  MOVWF  FAD
+....................       delay_us(10); 
+02844:  MOVLW  10
+02846:  MOVWF  00
+02848:  DECFSZ 00,F
+0284A:  BRA    2848
+0284C:  NOP   
+....................       fprintf(printer,"  Ciclo de Esterilizacion #%02u \n",rxbuf1[3]); 
+0284E:  MOVLW  50
+02850:  MOVWF  FF6
+02852:  MOVLW  09
+02854:  MOVWF  FF7
+02856:  MOVLW  00
+02858:  MOVWF  FF8
+0285A:  MOVLW  1B
+0285C:  MOVLB  2
+0285E:  MOVWF  x94
+02860:  MOVLB  0
+02862:  CALL   1470
+02866:  MOVFF  88,293
+0286A:  MOVLW  01
+0286C:  MOVLB  2
+0286E:  MOVWF  x94
+02870:  MOVLB  0
+02872:  CALL   1094
+02876:  MOVLW  20
+02878:  BTFSS  F9E.4
+0287A:  BRA    2878
+0287C:  MOVWF  FAD
+0287E:  MOVLW  0A
+02880:  BTFSS  F9E.4
+02882:  BRA    2880
+02884:  MOVWF  FAD
+....................       delay_us(10); 
+02886:  MOVLW  10
+02888:  MOVWF  00
+0288A:  DECFSZ 00,F
+0288C:  BRA    288A
+0288E:  NOP   
+....................       if(Ciclo<11) 
+02890:  MOVF   4C,W
+02892:  SUBLW  0A
+02894:  BNC   28C8
+....................          fprintf(printer,"%s\n",Texto[rxbuf1[3]-1]); 
+02896:  MOVLW  01
+02898:  SUBWF  x88,W
+0289A:  MULLW  14
+0289C:  MOVF   FF3,W
+0289E:  CLRF   03
+028A0:  MOVLB  2
+028A2:  MOVWF  x93
+028A4:  MOVLW  9E
+028A6:  MOVWF  FF6
+028A8:  MOVLW  00
+028AA:  MOVWF  FF7
+028AC:  MOVLW  00
+028AE:  MOVWF  FF8
+028B0:  MOVF   x93,W
+028B2:  ADDWF  FF6,F
+028B4:  MOVLW  00
+028B6:  ADDWFC FF7,F
+028B8:  MOVLB  0
+028BA:  CALL   103E
+028BE:  MOVLW  0A
+028C0:  BTFSS  F9E.4
+028C2:  BRA    28C0
+028C4:  MOVWF  FAD
+....................       else 
+028C6:  BRA    28F8
+....................          fprintf(printer,"Personalizado %02u\n",rxbuf1[3]); 
+028C8:  MOVLW  72
+028CA:  MOVWF  FF6
+028CC:  MOVLW  09
+028CE:  MOVWF  FF7
+028D0:  MOVLW  00
+028D2:  MOVWF  FF8
+028D4:  MOVLW  0E
+028D6:  MOVLB  2
+028D8:  MOVWF  x94
+028DA:  MOVLB  0
+028DC:  CALL   1470
+028E0:  MOVFF  88,293
+028E4:  MOVLW  01
+028E6:  MOVLB  2
+028E8:  MOVWF  x94
+028EA:  MOVLB  0
+028EC:  CALL   1094
+028F0:  MOVLW  0A
+028F2:  BTFSS  F9E.4
+028F4:  BRA    28F2
+028F6:  MOVWF  FAD
+....................       delay_us(10); 
+028F8:  MOVLW  10
+028FA:  MOVWF  00
+028FC:  DECFSZ 00,F
+028FE:  BRA    28FC
+02900:  NOP   
+....................       fprintf(printer,"Ciclo #%05Lu\n",CiclosTotales); 
+02902:  MOVLW  86
+02904:  MOVWF  FF6
+02906:  MOVLW  09
+02908:  MOVWF  FF7
+0290A:  MOVLW  00
+0290C:  MOVWF  FF8
+0290E:  MOVLW  07
+02910:  MOVLB  2
+02912:  MOVWF  x94
+02914:  MOVLB  0
+02916:  CALL   1470
+0291A:  MOVLW  08
+0291C:  MOVWF  FE9
+0291E:  MOVFF  60,294
+02922:  MOVFF  5F,293
+02926:  CALL   14A2
+0292A:  MOVLW  0A
+0292C:  BTFSS  F9E.4
+0292E:  BRA    292C
+02930:  MOVWF  FAD
+....................       delay_us(10); 
+02932:  MOVLW  10
+02934:  MOVWF  00
+02936:  DECFSZ 00,F
+02938:  BRA    2936
+0293A:  NOP   
+....................       fprintf(printer,"FECHA: %02u-%02u-%02u \n",rxbuf1[4],rxbuf1[5],rxbuf1[6]); 
+0293C:  MOVLW  94
+0293E:  MOVWF  FF6
+02940:  MOVLW  09
+02942:  MOVWF  FF7
+02944:  MOVLW  00
+02946:  MOVWF  FF8
+02948:  MOVLW  07
+0294A:  MOVLB  2
+0294C:  MOVWF  x94
+0294E:  MOVLB  0
+02950:  CALL   1470
+02954:  MOVFF  89,293
+02958:  MOVLW  01
+0295A:  MOVLB  2
+0295C:  MOVWF  x94
+0295E:  MOVLB  0
+02960:  CALL   1094
+02964:  MOVLW  2D
+02966:  BTFSS  F9E.4
+02968:  BRA    2966
+0296A:  MOVWF  FAD
+0296C:  MOVFF  8A,293
+02970:  MOVLW  01
+02972:  MOVLB  2
+02974:  MOVWF  x94
+02976:  MOVLB  0
+02978:  CALL   1094
+0297C:  MOVLW  2D
+0297E:  BTFSS  F9E.4
+02980:  BRA    297E
+02982:  MOVWF  FAD
+02984:  MOVFF  8B,293
+02988:  MOVLW  01
+0298A:  MOVLB  2
+0298C:  MOVWF  x94
+0298E:  MOVLB  0
+02990:  CALL   1094
+02994:  MOVLW  20
+02996:  BTFSS  F9E.4
+02998:  BRA    2996
+0299A:  MOVWF  FAD
+0299C:  MOVLW  0A
+0299E:  BTFSS  F9E.4
+029A0:  BRA    299E
+029A2:  MOVWF  FAD
+....................       delay_us(10); 
+029A4:  MOVLW  10
+029A6:  MOVWF  00
+029A8:  DECFSZ 00,F
+029AA:  BRA    29A8
+029AC:  NOP   
+....................       fprintf(printer," HORA  TEMP     PC     PP   Al\n"); 
+029AE:  MOVLW  AC
+029B0:  MOVWF  FF6
+029B2:  MOVLW  09
+029B4:  MOVWF  FF7
+029B6:  MOVLW  00
+029B8:  MOVWF  FF8
+029BA:  CALL   103E
+....................       delay_us(10); 
+029BE:  MOVLW  10
+029C0:  MOVWF  00
+029C2:  DECFSZ 00,F
+029C4:  BRA    29C2
+029C6:  NOP   
+....................        
+....................       /* 
+....................       fprintf(printer," OPERADOR:%02u\n",rxbuf1[2]); 
+....................       delay_us(10); 
+....................       fprintf(printer," CICLO:%02u\n",rxbuf1[3]); 
+....................       delay_us(10);             
+....................       fprintf(printer," FECHA:%02u/%02u/20%02u\n",rxbuf1[4],rxbuf1[5],rxbuf1[6]); 
+....................       delay_us(10);   
+....................       fprintf(printer,"Hora   PC   PPC  Temp  Alar\n",); 
+....................       delay_us(10);  
+....................       */ 
+....................       for(i=0;i<10;i++){ 
+029C8:  CLRF   59
+029CA:  MOVF   59,W
+029CC:  SUBLW  09
+029CE:  BTFSS  FD8.0
+029D0:  BRA    2C7E
+....................          Hora=rxbuf1[13+(i*9)]; 
+029D2:  MOVF   59,W
+029D4:  MULLW  09
+029D6:  MOVF   FF3,W
+029D8:  ADDLW  0D
+029DA:  CLRF   03
+029DC:  ADDLW  85
+029DE:  MOVWF  FE9
+029E0:  MOVLW  00
+029E2:  ADDWFC 03,W
+029E4:  MOVWF  FEA
+029E6:  MOVFF  FEF,48
+....................          if(Hora>25){ 
+029EA:  MOVF   48,W
+029EC:  SUBLW  19
+029EE:  BC    29F4
+....................             Hora=0; 
+029F0:  CLRF   48
+....................             break; 
+029F2:  BRA    2C7E
+....................          } 
+....................          Minuto=rxbuf1[14+(i*9)]; 
+029F4:  MOVF   59,W
+029F6:  MULLW  09
+029F8:  MOVF   FF3,W
+029FA:  ADDLW  0E
+029FC:  CLRF   03
+029FE:  ADDLW  85
+02A00:  MOVWF  FE9
+02A02:  MOVLW  00
+02A04:  ADDWFC 03,W
+02A06:  MOVWF  FEA
+02A08:  MOVFF  FEF,49
+....................          if(Minuto>59){ 
+02A0C:  MOVF   49,W
+02A0E:  SUBLW  3B
+02A10:  BC    2A16
+....................             Minuto=0; 
+02A12:  CLRF   49
+....................             break; 
+02A14:  BRA    2C7E
+....................          } 
+....................          PresionCamara=make16(rxbuf1[9+(i*9)],rxbuf1[10+(i*9)]); 
+02A16:  MOVF   59,W
+02A18:  MULLW  09
+02A1A:  MOVF   FF3,W
+02A1C:  ADDLW  09
+02A1E:  CLRF   03
+02A20:  ADDLW  85
+02A22:  MOVWF  FE9
+02A24:  MOVLW  00
+02A26:  ADDWFC 03,W
+02A28:  MOVWF  FEA
+02A2A:  MOVFF  FEF,293
+02A2E:  MOVF   59,W
+02A30:  MULLW  09
+02A32:  MOVF   FF3,W
+02A34:  ADDLW  0A
+02A36:  CLRF   03
+02A38:  ADDLW  85
+02A3A:  MOVWF  FE9
+02A3C:  MOVLW  00
+02A3E:  ADDWFC 03,W
+02A40:  MOVWF  FEA
+02A42:  MOVFF  FEF,294
+02A46:  MOVFF  293,5C
+02A4A:  MOVFF  294,5B
+....................          if(PresionCamara>400){ 
+02A4E:  MOVF   5C,W
+02A50:  SUBLW  00
+02A52:  BC    2A64
+02A54:  XORLW  FF
+02A56:  BNZ   2A5E
+02A58:  MOVF   5B,W
+02A5A:  SUBLW  90
+02A5C:  BC    2A64
+....................             PresionCamara=0; 
+02A5E:  CLRF   5C
+02A60:  CLRF   5B
+....................             break; 
+02A62:  BRA    2C7E
+....................          } 
+....................          PresionPreCamara=make16(rxbuf1[11+(i*9)],rxbuf1[12+(i*9)]);      
+02A64:  MOVF   59,W
+02A66:  MULLW  09
+02A68:  MOVF   FF3,W
+02A6A:  ADDLW  0B
+02A6C:  CLRF   03
+02A6E:  ADDLW  85
+02A70:  MOVWF  FE9
+02A72:  MOVLW  00
+02A74:  ADDWFC 03,W
+02A76:  MOVWF  FEA
+02A78:  MOVFF  FEF,293
+02A7C:  MOVF   59,W
+02A7E:  MULLW  09
+02A80:  MOVF   FF3,W
+02A82:  ADDLW  0C
+02A84:  CLRF   03
+02A86:  ADDLW  85
+02A88:  MOVWF  FE9
+02A8A:  MOVLW  00
+02A8C:  ADDWFC 03,W
+02A8E:  MOVWF  FEA
+02A90:  MOVFF  FEF,294
+02A94:  MOVFF  293,5E
+02A98:  MOVFF  294,5D
+....................          if(PresionPreCamara>400){ 
+02A9C:  MOVF   5E,W
+02A9E:  SUBLW  00
+02AA0:  BC    2AB2
+02AA2:  XORLW  FF
+02AA4:  BNZ   2AAC
+02AA6:  MOVF   5D,W
+02AA8:  SUBLW  90
+02AAA:  BC    2AB2
+....................             PresionPreCamara=0; 
+02AAC:  CLRF   5E
+02AAE:  CLRF   5D
+....................             break; 
+02AB0:  BRA    2C7E
+....................          } 
+....................          Temperatura=rxbuf1[7+(i*9)]+inttofloat(rxbuf1[8+(i*9)]); 
+02AB2:  MOVF   59,W
+02AB4:  MULLW  09
+02AB6:  MOVF   FF3,W
+02AB8:  ADDLW  07
+02ABA:  CLRF   03
+02ABC:  ADDLW  85
+02ABE:  MOVWF  FE9
+02AC0:  MOVLW  00
+02AC2:  ADDWFC 03,W
+02AC4:  MOVWF  FEA
+02AC6:  MOVFF  FEF,293
+02ACA:  MOVF   59,W
+02ACC:  MULLW  09
+02ACE:  MOVF   FF3,W
+02AD0:  ADDLW  08
+02AD2:  CLRF   03
+02AD4:  ADDLW  85
+02AD6:  MOVWF  FE9
+02AD8:  MOVLW  00
+02ADA:  ADDWFC 03,W
+02ADC:  MOVWF  FEA
+02ADE:  MOVFF  FEF,294
+02AE2:  MOVFF  294,295
+02AE6:  CALL   15EA
+02AEA:  MOVFF  00,294
+02AEE:  MOVFF  01,295
+02AF2:  MOVFF  02,296
+02AF6:  MOVFF  03,297
+02AFA:  MOVLB  2
+02AFC:  CLRF   x9B
+02AFE:  MOVFF  293,29A
+02B02:  MOVLB  0
+02B04:  CALL   0AC2
+02B08:  MOVFF  FEA,299
+02B0C:  MOVFF  FE9,298
+02B10:  BCF    FD8.1
+02B12:  MOVFF  03,29D
+02B16:  MOVFF  02,29C
+02B1A:  MOVFF  01,29B
+02B1E:  MOVFF  00,29A
+02B22:  MOVFF  297,2A1
+02B26:  MOVFF  296,2A0
+02B2A:  MOVFF  295,29F
+02B2E:  MOVFF  294,29E
+02B32:  CALL   0C56
+02B36:  MOVFF  299,FEA
+02B3A:  MOVFF  298,FE9
+02B3E:  MOVFF  03,3C
+02B42:  MOVFF  02,3B
+02B46:  MOVFF  01,3A
+02B4A:  MOVFF  00,39
+....................          if(Temperatura>150){ 
+02B4E:  MOVLB  2
+02B50:  CLRF   x96
+02B52:  CLRF   x95
+02B54:  MOVLW  16
+02B56:  MOVWF  x94
+02B58:  MOVLW  86
+02B5A:  MOVWF  x93
+02B5C:  MOVFF  3C,29A
+02B60:  MOVFF  3B,299
+02B64:  MOVFF  3A,298
+02B68:  MOVFF  39,297
+02B6C:  MOVLB  0
+02B6E:  CALL   154C
+02B72:  BNC   2B7E
+....................             Temperatura=0; 
+02B74:  CLRF   3C
+02B76:  CLRF   3B
+02B78:  CLRF   3A
+02B7A:  CLRF   39
+....................             break; 
+02B7C:  BRA    2C7E
+....................          }    
+....................          Alarma=rxbuf1[15+(i*9)]; 
+02B7E:  MOVF   59,W
+02B80:  MULLW  09
+02B82:  MOVF   FF3,W
+02B84:  ADDLW  0F
+02B86:  CLRF   03
+02B88:  ADDLW  85
+02B8A:  MOVWF  FE9
+02B8C:  MOVLW  00
+02B8E:  ADDWFC 03,W
+02B90:  MOVWF  FEA
+02B92:  MOVFF  FEF,1F
+....................          if(Alarma>20){ 
+02B96:  MOVF   1F,W
+02B98:  SUBLW  14
+02B9A:  BC    2BA0
+....................             Alarma=0; 
+02B9C:  CLRF   1F
+....................             break; 
+02B9E:  BRA    2C7E
+....................          } 
+....................          fprintf(printer,"%02u:%02u %03.1f%cC %03LukPa %03LukPa %02u\n",Hora,Minuto,Temperatura,0XDF,PresionCamara,PresionPreCamara,Alarma); 
+02BA0:  MOVFF  48,293
+02BA4:  MOVLW  01
+02BA6:  MOVLB  2
+02BA8:  MOVWF  x94
+02BAA:  MOVLB  0
+02BAC:  CALL   1094
+02BB0:  MOVLW  3A
+02BB2:  BTFSS  F9E.4
+02BB4:  BRA    2BB2
+02BB6:  MOVWF  FAD
+02BB8:  MOVFF  49,293
+02BBC:  MOVLW  01
+02BBE:  MOVLB  2
+02BC0:  MOVWF  x94
+02BC2:  MOVLB  0
+02BC4:  CALL   1094
+02BC8:  MOVLW  20
+02BCA:  BTFSS  F9E.4
+02BCC:  BRA    2BCA
+02BCE:  MOVWF  FAD
+02BD0:  MOVLW  42
+02BD2:  MOVWF  FE9
+02BD4:  MOVFF  3C,296
+02BD8:  MOVFF  3B,295
+02BDC:  MOVFF  3A,294
+02BE0:  MOVFF  39,293
+02BE4:  MOVLW  01
+02BE6:  MOVLB  2
+02BE8:  MOVWF  x97
+02BEA:  MOVLB  0
+02BEC:  CALL   12CE
+02BF0:  MOVLW  DF
+02BF2:  BTFSS  F9E.4
+02BF4:  BRA    2BF2
+02BF6:  MOVWF  FAD
+02BF8:  MOVLW  43
+02BFA:  BTFSS  F9E.4
+02BFC:  BRA    2BFA
+02BFE:  MOVWF  FAD
+02C00:  MOVLW  20
+02C02:  BTFSS  F9E.4
+02C04:  BRA    2C02
+02C06:  MOVWF  FAD
+02C08:  MOVLW  0A
+02C0A:  MOVWF  FE9
+02C0C:  MOVFF  5C,294
+02C10:  MOVFF  5B,293
+02C14:  CALL   14A2
+02C18:  MOVLW  E5
+02C1A:  MOVWF  FF6
+02C1C:  MOVLW  09
+02C1E:  MOVWF  FF7
+02C20:  MOVLW  00
+02C22:  MOVWF  FF8
+02C24:  MOVLW  04
+02C26:  MOVLB  2
+02C28:  MOVWF  x94
+02C2A:  MOVLB  0
+02C2C:  CALL   1470
+02C30:  MOVLW  0A
+02C32:  MOVWF  FE9
+02C34:  MOVFF  5E,294
+02C38:  MOVFF  5D,293
+02C3C:  CALL   14A2
+02C40:  MOVLW  EE
+02C42:  MOVWF  FF6
+02C44:  MOVLW  09
+02C46:  MOVWF  FF7
+02C48:  MOVLW  00
+02C4A:  MOVWF  FF8
+02C4C:  MOVLW  04
+02C4E:  MOVLB  2
+02C50:  MOVWF  x94
+02C52:  MOVLB  0
+02C54:  CALL   1470
+02C58:  MOVFF  1F,293
+02C5C:  MOVLW  01
+02C5E:  MOVLB  2
+02C60:  MOVWF  x94
+02C62:  MOVLB  0
+02C64:  CALL   1094
+02C68:  MOVLW  0A
+02C6A:  BTFSS  F9E.4
+02C6C:  BRA    2C6A
+02C6E:  MOVWF  FAD
+....................          delay_us(10); 
+02C70:  MOVLW  10
+02C72:  MOVWF  00
+02C74:  DECFSZ 00,F
+02C76:  BRA    2C74
+02C78:  NOP   
+....................       }  
+02C7A:  INCF   59,F
+02C7C:  BRA    29CA
+....................       for(i=0;i<11;i++){ 
+02C7E:  CLRF   59
+02C80:  MOVF   59,W
+02C82:  SUBLW  0A
+02C84:  BTFSS  FD8.0
+02C86:  BRA    2F32
+....................          Hora=rxbuf2[6+(i*9)]; 
+02C88:  MOVF   59,W
+02C8A:  MULLW  09
+02C8C:  MOVF   FF3,W
+02C8E:  ADDLW  06
+02C90:  CLRF   03
+02C92:  ADDLW  E9
+02C94:  MOVWF  FE9
+02C96:  MOVLW  00
+02C98:  ADDWFC 03,W
+02C9A:  MOVWF  FEA
+02C9C:  MOVFF  FEF,48
+....................          if(Hora>25){ 
+02CA0:  MOVF   48,W
+02CA2:  SUBLW  19
+02CA4:  BC    2CAA
+....................             Hora=0; 
+02CA6:  CLRF   48
+....................             break; 
+02CA8:  BRA    2F32
+....................          }               
+....................          Minuto=rxbuf2[7+(i*9)]; 
+02CAA:  MOVF   59,W
+02CAC:  MULLW  09
+02CAE:  MOVF   FF3,W
+02CB0:  ADDLW  07
+02CB2:  CLRF   03
+02CB4:  ADDLW  E9
+02CB6:  MOVWF  FE9
+02CB8:  MOVLW  00
+02CBA:  ADDWFC 03,W
+02CBC:  MOVWF  FEA
+02CBE:  MOVFF  FEF,49
+....................          if(Minuto>59){ 
+02CC2:  MOVF   49,W
+02CC4:  SUBLW  3B
+02CC6:  BC    2CCC
+....................             Minuto=0; 
+02CC8:  CLRF   49
+....................             break; 
+02CCA:  BRA    2F32
+....................          } 
+....................          PresionCamara=make16(rxbuf2[2+(i*9)],rxbuf2[3+(i*9)]); 
+02CCC:  MOVF   59,W
+02CCE:  MULLW  09
+02CD0:  MOVF   FF3,W
+02CD2:  ADDLW  02
+02CD4:  CLRF   03
+02CD6:  ADDLW  E9
+02CD8:  MOVWF  FE9
+02CDA:  MOVLW  00
+02CDC:  ADDWFC 03,W
+02CDE:  MOVWF  FEA
+02CE0:  MOVFF  FEF,293
+02CE4:  MOVF   59,W
+02CE6:  MULLW  09
+02CE8:  MOVF   FF3,W
+02CEA:  ADDLW  03
+02CEC:  CLRF   03
+02CEE:  ADDLW  E9
+02CF0:  MOVWF  FE9
+02CF2:  MOVLW  00
+02CF4:  ADDWFC 03,W
+02CF6:  MOVWF  FEA
+02CF8:  MOVFF  FEF,294
+02CFC:  MOVFF  293,5C
+02D00:  MOVFF  294,5B
+....................          if(PresionCamara>400){ 
+02D04:  MOVF   5C,W
+02D06:  SUBLW  00
+02D08:  BC    2D1A
+02D0A:  XORLW  FF
+02D0C:  BNZ   2D14
+02D0E:  MOVF   5B,W
+02D10:  SUBLW  90
+02D12:  BC    2D1A
+....................             PresionCamara=0; 
+02D14:  CLRF   5C
+02D16:  CLRF   5B
+....................             break; 
+02D18:  BRA    2F32
+....................          } 
+....................          PresionPreCamara=make16(rxbuf2[4+(i*9)],rxbuf2[5+(i*9)]);     
+02D1A:  MOVF   59,W
+02D1C:  MULLW  09
+02D1E:  MOVF   FF3,W
+02D20:  ADDLW  04
+02D22:  CLRF   03
+02D24:  ADDLW  E9
+02D26:  MOVWF  FE9
+02D28:  MOVLW  00
+02D2A:  ADDWFC 03,W
+02D2C:  MOVWF  FEA
+02D2E:  MOVFF  FEF,293
+02D32:  MOVF   59,W
+02D34:  MULLW  09
+02D36:  MOVF   FF3,W
+02D38:  ADDLW  05
+02D3A:  CLRF   03
+02D3C:  ADDLW  E9
+02D3E:  MOVWF  FE9
+02D40:  MOVLW  00
+02D42:  ADDWFC 03,W
+02D44:  MOVWF  FEA
+02D46:  MOVFF  FEF,294
+02D4A:  MOVFF  293,5E
+02D4E:  MOVFF  294,5D
+....................          if(PresionPreCamara>400){                      
+02D52:  MOVF   5E,W
+02D54:  SUBLW  00
+02D56:  BC    2D68
+02D58:  XORLW  FF
+02D5A:  BNZ   2D62
+02D5C:  MOVF   5D,W
+02D5E:  SUBLW  90
+02D60:  BC    2D68
+....................             PresionPreCamara=0; 
+02D62:  CLRF   5E
+02D64:  CLRF   5D
+....................             break; 
+02D66:  BRA    2F32
+....................          } 
+....................          Temperatura=rxbuf2[(i*9)]+inttofloat(rxbuf2[1+(i*9)]); 
+02D68:  MOVF   59,W
+02D6A:  MULLW  09
+02D6C:  MOVF   FF3,W
+02D6E:  CLRF   03
+02D70:  ADDLW  E9
+02D72:  MOVWF  FE9
+02D74:  MOVLW  00
+02D76:  ADDWFC 03,W
+02D78:  MOVWF  FEA
+02D7A:  MOVFF  FEF,293
+02D7E:  MOVF   59,W
+02D80:  MULLW  09
+02D82:  MOVF   FF3,W
+02D84:  ADDLW  01
+02D86:  CLRF   03
+02D88:  ADDLW  E9
+02D8A:  MOVWF  FE9
+02D8C:  MOVLW  00
+02D8E:  ADDWFC 03,W
+02D90:  MOVWF  FEA
+02D92:  MOVFF  FEF,294
+02D96:  MOVFF  294,295
+02D9A:  CALL   15EA
+02D9E:  MOVFF  00,294
+02DA2:  MOVFF  01,295
+02DA6:  MOVFF  02,296
+02DAA:  MOVFF  03,297
+02DAE:  MOVLB  2
+02DB0:  CLRF   x9B
+02DB2:  MOVFF  293,29A
+02DB6:  MOVLB  0
+02DB8:  CALL   0AC2
+02DBC:  MOVFF  FEA,299
+02DC0:  MOVFF  FE9,298
+02DC4:  BCF    FD8.1
+02DC6:  MOVFF  03,29D
+02DCA:  MOVFF  02,29C
+02DCE:  MOVFF  01,29B
+02DD2:  MOVFF  00,29A
+02DD6:  MOVFF  297,2A1
+02DDA:  MOVFF  296,2A0
+02DDE:  MOVFF  295,29F
+02DE2:  MOVFF  294,29E
+02DE6:  CALL   0C56
+02DEA:  MOVFF  299,FEA
+02DEE:  MOVFF  298,FE9
+02DF2:  MOVFF  03,3C
+02DF6:  MOVFF  02,3B
+02DFA:  MOVFF  01,3A
+02DFE:  MOVFF  00,39
+....................          if(Temperatura>150){ 
+02E02:  MOVLB  2
+02E04:  CLRF   x96
+02E06:  CLRF   x95
+02E08:  MOVLW  16
+02E0A:  MOVWF  x94
+02E0C:  MOVLW  86
+02E0E:  MOVWF  x93
+02E10:  MOVFF  3C,29A
+02E14:  MOVFF  3B,299
+02E18:  MOVFF  3A,298
+02E1C:  MOVFF  39,297
+02E20:  MOVLB  0
+02E22:  CALL   154C
+02E26:  BNC   2E32
+....................             Temperatura=0; 
+02E28:  CLRF   3C
+02E2A:  CLRF   3B
+02E2C:  CLRF   3A
+02E2E:  CLRF   39
+....................             break; 
+02E30:  BRA    2F32
+....................          } 
+....................          Alarma=rxbuf2[8+(i*9)]; 
+02E32:  MOVF   59,W
+02E34:  MULLW  09
+02E36:  MOVF   FF3,W
+02E38:  ADDLW  08
+02E3A:  CLRF   03
+02E3C:  ADDLW  E9
+02E3E:  MOVWF  FE9
+02E40:  MOVLW  00
+02E42:  ADDWFC 03,W
+02E44:  MOVWF  FEA
+02E46:  MOVFF  FEF,1F
+....................          if(Alarma>20){ 
+02E4A:  MOVF   1F,W
+02E4C:  SUBLW  14
+02E4E:  BC    2E54
+....................             Alarma=0; 
+02E50:  CLRF   1F
+....................             break; 
+02E52:  BRA    2F32
+....................          } 
+....................          fprintf(printer,"%02u:%02u %03.1f%cC %03LukPa %03LukPa %02u\n",Hora,Minuto,Temperatura,0XDF,PresionCamara,PresionPreCamara,Alarma); 
+02E54:  MOVFF  48,293
+02E58:  MOVLW  01
+02E5A:  MOVLB  2
+02E5C:  MOVWF  x94
+02E5E:  MOVLB  0
+02E60:  CALL   1094
+02E64:  MOVLW  3A
+02E66:  BTFSS  F9E.4
+02E68:  BRA    2E66
+02E6A:  MOVWF  FAD
+02E6C:  MOVFF  49,293
+02E70:  MOVLW  01
+02E72:  MOVLB  2
+02E74:  MOVWF  x94
+02E76:  MOVLB  0
+02E78:  CALL   1094
+02E7C:  MOVLW  20
+02E7E:  BTFSS  F9E.4
+02E80:  BRA    2E7E
+02E82:  MOVWF  FAD
+02E84:  MOVLW  42
+02E86:  MOVWF  FE9
+02E88:  MOVFF  3C,296
+02E8C:  MOVFF  3B,295
+02E90:  MOVFF  3A,294
+02E94:  MOVFF  39,293
+02E98:  MOVLW  01
+02E9A:  MOVLB  2
+02E9C:  MOVWF  x97
+02E9E:  MOVLB  0
+02EA0:  CALL   12CE
+02EA4:  MOVLW  DF
+02EA6:  BTFSS  F9E.4
+02EA8:  BRA    2EA6
+02EAA:  MOVWF  FAD
+02EAC:  MOVLW  43
+02EAE:  BTFSS  F9E.4
+02EB0:  BRA    2EAE
+02EB2:  MOVWF  FAD
+02EB4:  MOVLW  20
+02EB6:  BTFSS  F9E.4
+02EB8:  BRA    2EB6
+02EBA:  MOVWF  FAD
+02EBC:  MOVLW  0A
+02EBE:  MOVWF  FE9
+02EC0:  MOVFF  5C,294
+02EC4:  MOVFF  5B,293
+02EC8:  CALL   14A2
+02ECC:  MOVLW  11
+02ECE:  MOVWF  FF6
+02ED0:  MOVLW  0A
+02ED2:  MOVWF  FF7
+02ED4:  MOVLW  00
+02ED6:  MOVWF  FF8
+02ED8:  MOVLW  04
+02EDA:  MOVLB  2
+02EDC:  MOVWF  x94
+02EDE:  MOVLB  0
+02EE0:  CALL   1470
+02EE4:  MOVLW  0A
+02EE6:  MOVWF  FE9
+02EE8:  MOVFF  5E,294
+02EEC:  MOVFF  5D,293
+02EF0:  CALL   14A2
+02EF4:  MOVLW  1A
+02EF6:  MOVWF  FF6
+02EF8:  MOVLW  0A
+02EFA:  MOVWF  FF7
+02EFC:  MOVLW  00
+02EFE:  MOVWF  FF8
+02F00:  MOVLW  04
+02F02:  MOVLB  2
+02F04:  MOVWF  x94
+02F06:  MOVLB  0
+02F08:  CALL   1470
+02F0C:  MOVFF  1F,293
+02F10:  MOVLW  01
+02F12:  MOVLB  2
+02F14:  MOVWF  x94
+02F16:  MOVLB  0
+02F18:  CALL   1094
+02F1C:  MOVLW  0A
+02F1E:  BTFSS  F9E.4
+02F20:  BRA    2F1E
+02F22:  MOVWF  FAD
+....................          delay_us(10); 
+02F24:  MOVLW  10
+02F26:  MOVWF  00
+02F28:  DECFSZ 00,F
+02F2A:  BRA    2F28
+02F2C:  NOP   
+....................       }  
+02F2E:  INCF   59,F
+02F30:  BRA    2C80
+....................       for(i=0;i<11;i++){ 
+02F32:  CLRF   59
+02F34:  MOVF   59,W
+02F36:  SUBLW  0A
+02F38:  BTFSS  FD8.0
+02F3A:  BRA    31E6
+....................          Hora=rxbuf3[6+(i*9)]; 
+02F3C:  MOVF   59,W
+02F3E:  MULLW  09
+02F40:  MOVF   FF3,W
+02F42:  ADDLW  06
+02F44:  CLRF   03
+02F46:  ADDLW  4D
+02F48:  MOVWF  FE9
+02F4A:  MOVLW  01
+02F4C:  ADDWFC 03,W
+02F4E:  MOVWF  FEA
+02F50:  MOVFF  FEF,48
+....................          if(Hora>25){ 
+02F54:  MOVF   48,W
+02F56:  SUBLW  19
+02F58:  BC    2F5E
+....................             Hora=0; 
+02F5A:  CLRF   48
+....................             break; 
+02F5C:  BRA    31E6
+....................          }               
+....................          Minuto=rxbuf3[7+(i*9)]; 
+02F5E:  MOVF   59,W
+02F60:  MULLW  09
+02F62:  MOVF   FF3,W
+02F64:  ADDLW  07
+02F66:  CLRF   03
+02F68:  ADDLW  4D
+02F6A:  MOVWF  FE9
+02F6C:  MOVLW  01
+02F6E:  ADDWFC 03,W
+02F70:  MOVWF  FEA
+02F72:  MOVFF  FEF,49
+....................          if(Minuto>59){ 
+02F76:  MOVF   49,W
+02F78:  SUBLW  3B
+02F7A:  BC    2F80
+....................             Minuto=0; 
+02F7C:  CLRF   49
+....................             break; 
+02F7E:  BRA    31E6
+....................          } 
+....................          PresionCamara=make16(rxbuf3[2+(i*9)],rxbuf3[3+(i*9)]); 
+02F80:  MOVF   59,W
+02F82:  MULLW  09
+02F84:  MOVF   FF3,W
+02F86:  ADDLW  02
+02F88:  CLRF   03
+02F8A:  ADDLW  4D
+02F8C:  MOVWF  FE9
+02F8E:  MOVLW  01
+02F90:  ADDWFC 03,W
+02F92:  MOVWF  FEA
+02F94:  MOVFF  FEF,293
+02F98:  MOVF   59,W
+02F9A:  MULLW  09
+02F9C:  MOVF   FF3,W
+02F9E:  ADDLW  03
+02FA0:  CLRF   03
+02FA2:  ADDLW  4D
+02FA4:  MOVWF  FE9
+02FA6:  MOVLW  01
+02FA8:  ADDWFC 03,W
+02FAA:  MOVWF  FEA
+02FAC:  MOVFF  FEF,294
+02FB0:  MOVFF  293,5C
+02FB4:  MOVFF  294,5B
+....................          if(PresionCamara>400){ 
+02FB8:  MOVF   5C,W
+02FBA:  SUBLW  00
+02FBC:  BC    2FCE
+02FBE:  XORLW  FF
+02FC0:  BNZ   2FC8
+02FC2:  MOVF   5B,W
+02FC4:  SUBLW  90
+02FC6:  BC    2FCE
+....................             PresionCamara=0; 
+02FC8:  CLRF   5C
+02FCA:  CLRF   5B
+....................             break; 
+02FCC:  BRA    31E6
+....................          } 
+....................          PresionPreCamara=make16(rxbuf3[4+(i*9)],rxbuf3[5+(i*9)]);     
+02FCE:  MOVF   59,W
+02FD0:  MULLW  09
+02FD2:  MOVF   FF3,W
+02FD4:  ADDLW  04
+02FD6:  CLRF   03
+02FD8:  ADDLW  4D
+02FDA:  MOVWF  FE9
+02FDC:  MOVLW  01
+02FDE:  ADDWFC 03,W
+02FE0:  MOVWF  FEA
+02FE2:  MOVFF  FEF,293
+02FE6:  MOVF   59,W
+02FE8:  MULLW  09
+02FEA:  MOVF   FF3,W
+02FEC:  ADDLW  05
+02FEE:  CLRF   03
+02FF0:  ADDLW  4D
+02FF2:  MOVWF  FE9
+02FF4:  MOVLW  01
+02FF6:  ADDWFC 03,W
+02FF8:  MOVWF  FEA
+02FFA:  MOVFF  FEF,294
+02FFE:  MOVFF  293,5E
+03002:  MOVFF  294,5D
+....................          if(PresionPreCamara>400){                      
+03006:  MOVF   5E,W
+03008:  SUBLW  00
+0300A:  BC    301C
+0300C:  XORLW  FF
+0300E:  BNZ   3016
+03010:  MOVF   5D,W
+03012:  SUBLW  90
+03014:  BC    301C
+....................             PresionPreCamara=0; 
+03016:  CLRF   5E
+03018:  CLRF   5D
+....................             break; 
+0301A:  BRA    31E6
+....................          } 
+....................          Temperatura=rxbuf3[(i*9)]+inttofloat(rxbuf3[1+(i*9)]); 
+0301C:  MOVF   59,W
+0301E:  MULLW  09
+03020:  MOVF   FF3,W
+03022:  CLRF   03
+03024:  ADDLW  4D
+03026:  MOVWF  FE9
+03028:  MOVLW  01
+0302A:  ADDWFC 03,W
+0302C:  MOVWF  FEA
+0302E:  MOVFF  FEF,293
+03032:  MOVF   59,W
+03034:  MULLW  09
+03036:  MOVF   FF3,W
+03038:  ADDLW  01
+0303A:  CLRF   03
+0303C:  ADDLW  4D
+0303E:  MOVWF  FE9
+03040:  MOVLW  01
+03042:  ADDWFC 03,W
+03044:  MOVWF  FEA
+03046:  MOVFF  FEF,294
+0304A:  MOVFF  294,295
+0304E:  CALL   15EA
+03052:  MOVFF  00,294
+03056:  MOVFF  01,295
+0305A:  MOVFF  02,296
+0305E:  MOVFF  03,297
+03062:  MOVLB  2
+03064:  CLRF   x9B
+03066:  MOVFF  293,29A
+0306A:  MOVLB  0
+0306C:  CALL   0AC2
+03070:  MOVFF  FEA,299
+03074:  MOVFF  FE9,298
+03078:  BCF    FD8.1
+0307A:  MOVFF  03,29D
+0307E:  MOVFF  02,29C
+03082:  MOVFF  01,29B
+03086:  MOVFF  00,29A
+0308A:  MOVFF  297,2A1
+0308E:  MOVFF  296,2A0
+03092:  MOVFF  295,29F
+03096:  MOVFF  294,29E
+0309A:  CALL   0C56
+0309E:  MOVFF  299,FEA
+030A2:  MOVFF  298,FE9
+030A6:  MOVFF  03,3C
+030AA:  MOVFF  02,3B
+030AE:  MOVFF  01,3A
+030B2:  MOVFF  00,39
+....................          if(Temperatura>150){ 
+030B6:  MOVLB  2
+030B8:  CLRF   x96
+030BA:  CLRF   x95
+030BC:  MOVLW  16
+030BE:  MOVWF  x94
+030C0:  MOVLW  86
+030C2:  MOVWF  x93
+030C4:  MOVFF  3C,29A
+030C8:  MOVFF  3B,299
+030CC:  MOVFF  3A,298
+030D0:  MOVFF  39,297
+030D4:  MOVLB  0
+030D6:  CALL   154C
+030DA:  BNC   30E6
+....................             Temperatura=0; 
+030DC:  CLRF   3C
+030DE:  CLRF   3B
+030E0:  CLRF   3A
+030E2:  CLRF   39
+....................             break; 
+030E4:  BRA    31E6
+....................          } 
+....................          Alarma=rxbuf3[8+(i*9)]; 
+030E6:  MOVF   59,W
+030E8:  MULLW  09
+030EA:  MOVF   FF3,W
+030EC:  ADDLW  08
+030EE:  CLRF   03
+030F0:  ADDLW  4D
+030F2:  MOVWF  FE9
+030F4:  MOVLW  01
+030F6:  ADDWFC 03,W
+030F8:  MOVWF  FEA
+030FA:  MOVFF  FEF,1F
+....................          if(Alarma>20){ 
+030FE:  MOVF   1F,W
+03100:  SUBLW  14
+03102:  BC    3108
+....................             Alarma=0; 
+03104:  CLRF   1F
+....................             break; 
+03106:  BRA    31E6
+....................          } 
+....................          fprintf(printer,"%02u:%02u %03.1f%cC %03LukPa %03LukPa %02u\n",Hora,Minuto,Temperatura,0XDF,PresionCamara,PresionPreCamara,Alarma); 
+03108:  MOVFF  48,293
+0310C:  MOVLW  01
+0310E:  MOVLB  2
+03110:  MOVWF  x94
+03112:  MOVLB  0
+03114:  CALL   1094
+03118:  MOVLW  3A
+0311A:  BTFSS  F9E.4
+0311C:  BRA    311A
+0311E:  MOVWF  FAD
+03120:  MOVFF  49,293
+03124:  MOVLW  01
+03126:  MOVLB  2
+03128:  MOVWF  x94
+0312A:  MOVLB  0
+0312C:  CALL   1094
+03130:  MOVLW  20
+03132:  BTFSS  F9E.4
+03134:  BRA    3132
+03136:  MOVWF  FAD
+03138:  MOVLW  42
+0313A:  MOVWF  FE9
+0313C:  MOVFF  3C,296
+03140:  MOVFF  3B,295
+03144:  MOVFF  3A,294
+03148:  MOVFF  39,293
+0314C:  MOVLW  01
+0314E:  MOVLB  2
+03150:  MOVWF  x97
+03152:  MOVLB  0
+03154:  CALL   12CE
+03158:  MOVLW  DF
+0315A:  BTFSS  F9E.4
+0315C:  BRA    315A
+0315E:  MOVWF  FAD
+03160:  MOVLW  43
+03162:  BTFSS  F9E.4
+03164:  BRA    3162
+03166:  MOVWF  FAD
+03168:  MOVLW  20
+0316A:  BTFSS  F9E.4
+0316C:  BRA    316A
+0316E:  MOVWF  FAD
+03170:  MOVLW  0A
+03172:  MOVWF  FE9
+03174:  MOVFF  5C,294
+03178:  MOVFF  5B,293
+0317C:  CALL   14A2
+03180:  MOVLW  3D
+03182:  MOVWF  FF6
+03184:  MOVLW  0A
+03186:  MOVWF  FF7
+03188:  MOVLW  00
+0318A:  MOVWF  FF8
+0318C:  MOVLW  04
+0318E:  MOVLB  2
+03190:  MOVWF  x94
+03192:  MOVLB  0
+03194:  CALL   1470
+03198:  MOVLW  0A
+0319A:  MOVWF  FE9
+0319C:  MOVFF  5E,294
+031A0:  MOVFF  5D,293
+031A4:  CALL   14A2
+031A8:  MOVLW  46
+031AA:  MOVWF  FF6
+031AC:  MOVLW  0A
+031AE:  MOVWF  FF7
+031B0:  MOVLW  00
+031B2:  MOVWF  FF8
+031B4:  MOVLW  04
+031B6:  MOVLB  2
+031B8:  MOVWF  x94
+031BA:  MOVLB  0
+031BC:  CALL   1470
+031C0:  MOVFF  1F,293
+031C4:  MOVLW  01
+031C6:  MOVLB  2
+031C8:  MOVWF  x94
+031CA:  MOVLB  0
+031CC:  CALL   1094
+031D0:  MOVLW  0A
+031D2:  BTFSS  F9E.4
+031D4:  BRA    31D2
+031D6:  MOVWF  FAD
+....................          delay_us(10); 
+031D8:  MOVLW  10
+031DA:  MOVWF  00
+031DC:  DECFSZ 00,F
+031DE:  BRA    31DC
+031E0:  NOP   
+....................       } 
+031E2:  INCF   59,F
+031E4:  BRA    2F34
+....................       for(i=0;i<3;i++){ 
+031E6:  CLRF   59
+031E8:  MOVF   59,W
+031EA:  SUBLW  02
+031EC:  BTFSS  FD8.0
+031EE:  BRA    349A
+....................          Hora=rxbuf4[6+(i*9)]; 
+031F0:  MOVF   59,W
+031F2:  MULLW  09
+031F4:  MOVF   FF3,W
+031F6:  ADDLW  06
+031F8:  CLRF   03
+031FA:  ADDLW  B1
+031FC:  MOVWF  FE9
+031FE:  MOVLW  01
+03200:  ADDWFC 03,W
+03202:  MOVWF  FEA
+03204:  MOVFF  FEF,48
+....................          if(Hora>25){ 
+03208:  MOVF   48,W
+0320A:  SUBLW  19
+0320C:  BC    3212
+....................             Hora=0; 
+0320E:  CLRF   48
+....................             break; 
+03210:  BRA    349A
+....................          }               
+....................          Minuto=rxbuf4[7+(i*9)]; 
+03212:  MOVF   59,W
+03214:  MULLW  09
+03216:  MOVF   FF3,W
+03218:  ADDLW  07
+0321A:  CLRF   03
+0321C:  ADDLW  B1
+0321E:  MOVWF  FE9
+03220:  MOVLW  01
+03222:  ADDWFC 03,W
+03224:  MOVWF  FEA
+03226:  MOVFF  FEF,49
+....................          if(Minuto>59){ 
+0322A:  MOVF   49,W
+0322C:  SUBLW  3B
+0322E:  BC    3234
+....................             Minuto=0; 
+03230:  CLRF   49
+....................             break; 
+03232:  BRA    349A
+....................          } 
+....................          PresionCamara=make16(rxbuf4[2+(i*9)],rxbuf4[3+(i*9)]); 
+03234:  MOVF   59,W
+03236:  MULLW  09
+03238:  MOVF   FF3,W
+0323A:  ADDLW  02
+0323C:  CLRF   03
+0323E:  ADDLW  B1
+03240:  MOVWF  FE9
+03242:  MOVLW  01
+03244:  ADDWFC 03,W
+03246:  MOVWF  FEA
+03248:  MOVFF  FEF,293
+0324C:  MOVF   59,W
+0324E:  MULLW  09
+03250:  MOVF   FF3,W
+03252:  ADDLW  03
+03254:  CLRF   03
+03256:  ADDLW  B1
+03258:  MOVWF  FE9
+0325A:  MOVLW  01
+0325C:  ADDWFC 03,W
+0325E:  MOVWF  FEA
+03260:  MOVFF  FEF,294
+03264:  MOVFF  293,5C
+03268:  MOVFF  294,5B
+....................          if(PresionCamara>400){ 
+0326C:  MOVF   5C,W
+0326E:  SUBLW  00
+03270:  BC    3282
+03272:  XORLW  FF
+03274:  BNZ   327C
+03276:  MOVF   5B,W
+03278:  SUBLW  90
+0327A:  BC    3282
+....................             PresionCamara=0; 
+0327C:  CLRF   5C
+0327E:  CLRF   5B
+....................             break; 
+03280:  BRA    349A
+....................          } 
+....................          PresionPreCamara=make16(rxbuf4[4+(i*9)],rxbuf4[5+(i*9)]);     
+03282:  MOVF   59,W
+03284:  MULLW  09
+03286:  MOVF   FF3,W
+03288:  ADDLW  04
+0328A:  CLRF   03
+0328C:  ADDLW  B1
+0328E:  MOVWF  FE9
+03290:  MOVLW  01
+03292:  ADDWFC 03,W
+03294:  MOVWF  FEA
+03296:  MOVFF  FEF,293
+0329A:  MOVF   59,W
+0329C:  MULLW  09
+0329E:  MOVF   FF3,W
+032A0:  ADDLW  05
+032A2:  CLRF   03
+032A4:  ADDLW  B1
+032A6:  MOVWF  FE9
+032A8:  MOVLW  01
+032AA:  ADDWFC 03,W
+032AC:  MOVWF  FEA
+032AE:  MOVFF  FEF,294
+032B2:  MOVFF  293,5E
+032B6:  MOVFF  294,5D
+....................          if(PresionPreCamara>400){                      
+032BA:  MOVF   5E,W
+032BC:  SUBLW  00
+032BE:  BC    32D0
+032C0:  XORLW  FF
+032C2:  BNZ   32CA
+032C4:  MOVF   5D,W
+032C6:  SUBLW  90
+032C8:  BC    32D0
+....................             PresionPreCamara=0; 
+032CA:  CLRF   5E
+032CC:  CLRF   5D
+....................             break; 
+032CE:  BRA    349A
+....................          } 
+....................          Temperatura=rxbuf4[(i*9)]+inttofloat(rxbuf4[1+(i*9)]); 
+032D0:  MOVF   59,W
+032D2:  MULLW  09
+032D4:  MOVF   FF3,W
+032D6:  CLRF   03
+032D8:  ADDLW  B1
+032DA:  MOVWF  FE9
+032DC:  MOVLW  01
+032DE:  ADDWFC 03,W
+032E0:  MOVWF  FEA
+032E2:  MOVFF  FEF,293
+032E6:  MOVF   59,W
+032E8:  MULLW  09
+032EA:  MOVF   FF3,W
+032EC:  ADDLW  01
+032EE:  CLRF   03
+032F0:  ADDLW  B1
+032F2:  MOVWF  FE9
+032F4:  MOVLW  01
+032F6:  ADDWFC 03,W
+032F8:  MOVWF  FEA
+032FA:  MOVFF  FEF,294
+032FE:  MOVFF  294,295
+03302:  CALL   15EA
+03306:  MOVFF  00,294
+0330A:  MOVFF  01,295
+0330E:  MOVFF  02,296
+03312:  MOVFF  03,297
+03316:  MOVLB  2
+03318:  CLRF   x9B
+0331A:  MOVFF  293,29A
+0331E:  MOVLB  0
+03320:  CALL   0AC2
+03324:  MOVFF  FEA,299
+03328:  MOVFF  FE9,298
+0332C:  BCF    FD8.1
+0332E:  MOVFF  03,29D
+03332:  MOVFF  02,29C
+03336:  MOVFF  01,29B
+0333A:  MOVFF  00,29A
+0333E:  MOVFF  297,2A1
+03342:  MOVFF  296,2A0
+03346:  MOVFF  295,29F
+0334A:  MOVFF  294,29E
+0334E:  CALL   0C56
+03352:  MOVFF  299,FEA
+03356:  MOVFF  298,FE9
+0335A:  MOVFF  03,3C
+0335E:  MOVFF  02,3B
+03362:  MOVFF  01,3A
+03366:  MOVFF  00,39
+....................          if(Temperatura>150){ 
+0336A:  MOVLB  2
+0336C:  CLRF   x96
+0336E:  CLRF   x95
+03370:  MOVLW  16
+03372:  MOVWF  x94
+03374:  MOVLW  86
+03376:  MOVWF  x93
+03378:  MOVFF  3C,29A
+0337C:  MOVFF  3B,299
+03380:  MOVFF  3A,298
+03384:  MOVFF  39,297
+03388:  MOVLB  0
+0338A:  CALL   154C
+0338E:  BNC   339A
+....................             Temperatura=0; 
+03390:  CLRF   3C
+03392:  CLRF   3B
+03394:  CLRF   3A
+03396:  CLRF   39
+....................             break; 
+03398:  BRA    349A
+....................          } 
+....................          Alarma=rxbuf4[8+(i*9)]; 
+0339A:  MOVF   59,W
+0339C:  MULLW  09
+0339E:  MOVF   FF3,W
+033A0:  ADDLW  08
+033A2:  CLRF   03
+033A4:  ADDLW  B1
+033A6:  MOVWF  FE9
+033A8:  MOVLW  01
+033AA:  ADDWFC 03,W
+033AC:  MOVWF  FEA
+033AE:  MOVFF  FEF,1F
+....................          if(Alarma>20){ 
+033B2:  MOVF   1F,W
+033B4:  SUBLW  14
+033B6:  BC    33BC
+....................             Alarma=0; 
+033B8:  CLRF   1F
+....................             break; 
+033BA:  BRA    349A
+....................          } 
+....................          fprintf(printer,"%02u:%02u %03.1f%cC %03LukPa %03LukPa %02u\n",Hora,Minuto,Temperatura,0XDF,PresionCamara,PresionPreCamara,Alarma); 
+033BC:  MOVFF  48,293
+033C0:  MOVLW  01
+033C2:  MOVLB  2
+033C4:  MOVWF  x94
+033C6:  MOVLB  0
+033C8:  CALL   1094
+033CC:  MOVLW  3A
+033CE:  BTFSS  F9E.4
+033D0:  BRA    33CE
+033D2:  MOVWF  FAD
+033D4:  MOVFF  49,293
+033D8:  MOVLW  01
+033DA:  MOVLB  2
+033DC:  MOVWF  x94
+033DE:  MOVLB  0
+033E0:  CALL   1094
+033E4:  MOVLW  20
+033E6:  BTFSS  F9E.4
+033E8:  BRA    33E6
+033EA:  MOVWF  FAD
+033EC:  MOVLW  42
+033EE:  MOVWF  FE9
+033F0:  MOVFF  3C,296
+033F4:  MOVFF  3B,295
+033F8:  MOVFF  3A,294
+033FC:  MOVFF  39,293
+03400:  MOVLW  01
+03402:  MOVLB  2
+03404:  MOVWF  x97
+03406:  MOVLB  0
+03408:  CALL   12CE
+0340C:  MOVLW  DF
+0340E:  BTFSS  F9E.4
+03410:  BRA    340E
+03412:  MOVWF  FAD
+03414:  MOVLW  43
+03416:  BTFSS  F9E.4
+03418:  BRA    3416
+0341A:  MOVWF  FAD
+0341C:  MOVLW  20
+0341E:  BTFSS  F9E.4
+03420:  BRA    341E
+03422:  MOVWF  FAD
+03424:  MOVLW  0A
+03426:  MOVWF  FE9
+03428:  MOVFF  5C,294
+0342C:  MOVFF  5B,293
+03430:  CALL   14A2
+03434:  MOVLW  69
+03436:  MOVWF  FF6
+03438:  MOVLW  0A
+0343A:  MOVWF  FF7
+0343C:  MOVLW  00
+0343E:  MOVWF  FF8
+03440:  MOVLW  04
+03442:  MOVLB  2
+03444:  MOVWF  x94
+03446:  MOVLB  0
+03448:  CALL   1470
+0344C:  MOVLW  0A
+0344E:  MOVWF  FE9
+03450:  MOVFF  5E,294
+03454:  MOVFF  5D,293
+03458:  CALL   14A2
+0345C:  MOVLW  72
+0345E:  MOVWF  FF6
+03460:  MOVLW  0A
+03462:  MOVWF  FF7
+03464:  MOVLW  00
+03466:  MOVWF  FF8
+03468:  MOVLW  04
+0346A:  MOVLB  2
+0346C:  MOVWF  x94
+0346E:  MOVLB  0
+03470:  CALL   1470
+03474:  MOVFF  1F,293
+03478:  MOVLW  01
+0347A:  MOVLB  2
+0347C:  MOVWF  x94
+0347E:  MOVLB  0
+03480:  CALL   1094
+03484:  MOVLW  0A
+03486:  BTFSS  F9E.4
+03488:  BRA    3486
+0348A:  MOVWF  FAD
+....................          delay_us(10); 
+0348C:  MOVLW  10
+0348E:  MOVWF  00
+03490:  DECFSZ 00,F
+03492:  BRA    3490
+03494:  NOP   
+....................       }          
+03496:  INCF   59,F
+03498:  BRA    31E8
+....................       fprintf(printer,"Impresion Finalizada\n"); 
+0349A:  MOVLW  7C
+0349C:  MOVWF  FF6
+0349E:  MOVLW  0A
+034A0:  MOVWF  FF7
+034A2:  MOVLW  00
+034A4:  MOVWF  FF8
+034A6:  CALL   103E
+....................       delay_us(10); 
+034AA:  MOVLW  10
+034AC:  MOVWF  00
+034AE:  DECFSZ 00,F
+034B0:  BRA    34AE
+034B2:  NOP   
+....................       fprintf(printer," \n"); 
+034B4:  MOVLW  20
+034B6:  BTFSS  F9E.4
+034B8:  BRA    34B6
+034BA:  MOVWF  FAD
+034BC:  MOVLW  0A
+034BE:  BTFSS  F9E.4
+034C0:  BRA    34BE
+034C2:  MOVWF  FAD
+....................       delay_us(10); 
+034C4:  MOVLW  10
+034C6:  MOVWF  00
+034C8:  DECFSZ 00,F
+034CA:  BRA    34C8
+034CC:  NOP   
+....................       fprintf(printer,"  \n"); 
+034CE:  MOVLW  20
+034D0:  BTFSS  F9E.4
+034D2:  BRA    34D0
+034D4:  MOVWF  FAD
+034D6:  MOVLW  20
+034D8:  BTFSS  F9E.4
+034DA:  BRA    34D8
+034DC:  MOVWF  FAD
+034DE:  MOVLW  0A
+034E0:  BTFSS  F9E.4
+034E2:  BRA    34E0
+034E4:  MOVWF  FAD
+....................       delay_us(10); 
+034E6:  MOVLW  10
+034E8:  MOVWF  00
+034EA:  DECFSZ 00,F
+034EC:  BRA    34EA
+034EE:  NOP   
+....................       respuesta=5; 
+034F0:  MOVLW  05
+034F2:  MOVWF  20
+....................       rxbuf1[0]=0; 
+034F4:  CLRF   x85
+....................       rxbuf1[1]=0; 
+034F6:  CLRF   x86
+....................     }else{ 
+034F8:  BRA    34FE
+....................       respuesta=10; 
+034FA:  MOVLW  0A
+034FC:  MOVWF  20
+....................     } 
+....................    } 
+034FE:  GOTO   1888
+.................... } 
+03502:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 0200   HS NOIESO NOFCMEN
+   Word  2: 1908   NOBROWNOUT WDT BORV42 PUT WDT4096
+   Word  3: 0000   NOPBADEN NOLPT1OSC NOMCLR
+   Word  4: 00B0   NOSTVREN NODEBUG NOLVP NOXINST BBSIZ4K
+   Word  5: C03F   NOPROTECT NOCPD NOCPB
+   Word  6: E03F   NOWRT NOWRTD NOWRTC NOWRTB
+   Word  7: 403F   NOEBTR NOEBTRB

@@ -1,0 +1,23 @@
+>>> Warning 203 "D:\Laboratorio\Autoclave\Autoclave Horizontal\Sin Precamara\2019\Autoclave 40L Artilab #0045880XX OP2019188\Firmware V4.0\USB_I2C\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "USB_I2C.c" Line 157(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "USB_I2C.c" Line 157(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "USB_I2C.c" Line 157(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "USB_I2C.c" Line 157(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "USB_I2C.c" Line 33(6,13): Variable never used:   Regular
+>>> Warning 202 "USB_I2C.c" Line 34(6,14): Variable never used:   Bisiesto
+>>> Warning 202 "USB_I2C.c" Line 37(6,7): Variable never used:   l
+>>> Warning 202 "USB_I2C.c" Line 40(6,10): Variable never used:   Year
+>>> Warning 202 "USB_I2C.c" Line 40(13,16): Variable never used:   Mes
+>>> Warning 202 "USB_I2C.c" Line 40(19,22): Variable never used:   Dia
+>>> Warning 202 "USB_I2C.c" Line 40(25,29): Variable never used:   Hora
+>>> Warning 202 "USB_I2C.c" Line 40(32,38): Variable never used:   Minuto
+>>> Warning 202 "USB_I2C.c" Line 40(41,48): Variable never used:   Segundo
+>>> Warning 202 "USB_I2C.c" Line 40(51,54): Variable never used:   dow
+>>> Warning 202 "USB_I2C.c" Line 41(63,68): Variable never used:   dowRx
+>>> Warning 202 "USB_I2C.c" Line 41(71,77): Variable never used:   Modulo
+>>> Warning 202 "USB_I2C.c" Line 42(7,16): Variable never used:   flagCiclo
+>>> Warning 202 "USB_I2C.c" Line 42(19,30): Variable never used:   flagImprime
+>>> Warning 202 "USB_I2C.c" Line 42(33,42): Variable never used:   Configura
+>>> Warning 202 "USB_I2C.c" Line 42(45,53): Variable never used:   Finalizo
+      Memory usage:   ROM=20%      RAM=24% - 25%
+      0 Errors,  21 Warnings.

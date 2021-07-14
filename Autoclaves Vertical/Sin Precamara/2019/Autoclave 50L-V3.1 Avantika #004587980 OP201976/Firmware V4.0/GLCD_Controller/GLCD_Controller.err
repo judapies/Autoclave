@@ -1,0 +1,3 @@
+>>> Warning 202 "GLCD_Controller.c" Line 84(68,70): Variable never used:   te
+      Memory usage:   ROM=47%      RAM=29% - 30%
+      0 Errors,  1 Warnings.

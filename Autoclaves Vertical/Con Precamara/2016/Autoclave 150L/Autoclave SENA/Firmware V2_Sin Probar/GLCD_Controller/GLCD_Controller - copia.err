@@ -1,0 +1,20 @@
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclaves Vertical\Con Precamara\Autoclave 160L\Autoclave SENA\Firmware V2_Sin Probar\GLCD_Controller\imagen.h" Line 1(19,26): Variable never used:   Tijeras
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclaves Vertical\Con Precamara\Autoclave 160L\Autoclave SENA\Firmware V2_Sin Probar\GLCD_Controller\imagen.h" Line 68(19,25): Variable never used:   Guante
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclaves Vertical\Con Precamara\Autoclave 160L\Autoclave SENA\Firmware V2_Sin Probar\GLCD_Controller\imagen.h" Line 135(21,29): Variable never used:   Delicado
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclaves Vertical\Con Precamara\Autoclave 160L\Autoclave SENA\Firmware V2_Sin Probar\GLCD_Controller\imagen.h" Line 202(20,27): Variable never used:   Liquido
+>>> Warning 202 "GLCD_Controller - copia.c" Line 34(83,90): Variable never used:   Expulsa
+>>> Warning 202 "GLCD_Controller - copia.c" Line 38(23,27): Variable never used:   bite
+>>> Warning 202 "GLCD_Controller - copia.c" Line 38(30,42): Variable never used:   TamanoCadena
+>>> Warning 202 "GLCD_Controller - copia.c" Line 40(7,14): Variable never used:   tiempos
+>>> Warning 202 "GLCD_Controller - copia.c" Line 40(17,25): Variable never used:   tiempos3
+>>> Warning 202 "GLCD_Controller - copia.c" Line 40(28,38): Variable never used:   tiempoctrl
+>>> Warning 202 "GLCD_Controller - copia.c" Line 40(60,75): Variable never used:   tiempo_desfogue
+>>> Warning 202 "GLCD_Controller - copia.c" Line 48(6,10): Variable never used:   dato
+>>> Warning 202 "GLCD_Controller - copia.c" Line 51(6,20): Variable never used:   ADCTemperatura
+>>> Warning 202 "GLCD_Controller - copia.c" Line 52(6,20): Variable never used:   SetTemperatura
+>>> Warning 202 "GLCD_Controller - copia.c" Line 53(27,33): Variable never used:   Tciclo
+>>> Warning 202 "GLCD_Controller - copia.c" Line 53(50,55): Variable never used:   error
+>>> Warning 202 "GLCD_Controller - copia.c" Line 53(85,88): Variable never used:   tmp
+>>> Warning 202 "GLCD_Controller - copia.c" Line 53(133,135): Variable never used:   d3
+      Memory usage:   ROM=78%      RAM=65% - 67%
+      0 Errors,  18 Warnings.

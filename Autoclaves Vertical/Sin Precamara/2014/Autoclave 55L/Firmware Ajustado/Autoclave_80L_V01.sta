@@ -1,0 +1,145 @@
+
+ROM used: 31770 (97%)
+          31770 (97%) including unused fragments
+
+          5 Average locations per line
+          16 Average locations per statement
+
+RAM used: 1159 (57%) at main() level
+          1225 (60%) worst case
+
+Stack used: 14 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+ 1087  1237  61  Autoclave_80L_V01.c
+  451     0   0  C:\Program Files (x86)\PICC\Devices\18F4550.h
+  354    74   4  HDM64GS12.c
+  556   167   8  GRAPHICS.c
+  336     0   0  imagen.h
+  222     0   0  pic18_usb.h
+  328     0   0  usb_hw_layer.h
+  156     0   0  header.h
+ 1063     0   0  usb.h
+  808   218  11  usb.c
+ 1281   320  16  pic18_usb.c
+----- -----
+ 6642  2016 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     42   0   1             @delay_ms1
+0    168   0   1   555  3.4  glcd_init
+0    226   0   7   764  7.1  glcd_pixel
+0    142   0   4   498  4.8  glcd_fillScreen
+0     64   0   2   257  2.8  glcd_writeByte
+0     76   0   2   318  2.8  glcd_readByte
+0    282   0   0             @const85
+0    246   0   0             @const88
+0    318   1  17  1475  8.8  glcd_line
+0    194   0   6  1036  5.8  glcd_rect
+0    554   1  12  1822  8.6  glcd_circle
+0     78   0   2             @MUL88
+0    440   1  20  1550 11.2  glcd_text57
+0   1048   2   0             @const164
+0   1048   2   0             @const167
+0   1048   2   0             @const170
+0   1048   2   0             @const173
+0   1048   2   0             @const176
+0     32   0   0             @const273
+0     66   0   0             @const277
+0     48   0   0             @const281
+0     18   0   0             @const283
+0     34   0   0             @const285
+0     20   0   0             @const287
+0     70   0   0             @const289
+0     60   0   3   133  4.3  usb_kbhit
+0     68   0   3   133  4.3  usb_tbe
+0     40   0   1   134  2.5  usb_detach
+0     34   0   0   136  2.2  usb_attach
+0      6   0   0    16  1.0  usb_init_cs
+0     34   0   1   346  4.6  usb_task
+0     14   0   0    61  2.5  usb_init
+0    220   0   7  1083  5.4  usb_flush_in
+0    176   0  10   320  5.5  usb_put_packet
+0    202   0   7   899  4.9  usb_flush_out
+0    202   0  12   632  5.7  usb_get_packet_buffer
+0     74   0   5   145  3.5  usb_get_packet
+0     74   0   4   251  4.6  usb_stall_ep
+0     72   0   4   258  4.6  usb_unstall_ep
+0     90   0   5   360  5.8  usb_endpoint_stalled
+0     26   0   1    88  2.7  usb_set_address
+0    466   1  10  1722  9.8  usb_set_configured
+0     84   0   3   192  3.2  usb_disable_endpoint
+0     30   0   1    93  2.9  usb_disable_endpoints
+0      4   0   0    39  2.0  usb_clear_trn
+0    136   0   2   638  6.6  usb_isr
+0      6   0   0    43  2.0  usb_isr_sof
+0     44   0   0   357  4.2  usb_isr_rst
+0     32   0   0   508  4.0  usb_init_ep0_setup
+0      8   0   0    74  2.8  usb_isr_uerr
+0     10   0   0    82  2.8  usb_isr_uidle
+0     16   0   0   102  3.3  usb_isr_activity
+0     14   0   0   151  3.9  usb_isr_stall
+0      6   0   1    30  1.7  usb_request_send_response
+0      6   0   0    22  1.2  usb_request_stall
+0    378   1   5  2031  7.9  usb_isr_tok_dne
+0      8   0   0    29  1.9  usb_enumerated
+0     40   0   3   231  4.0  usb_token_reset
+0    100   0   3   267  5.9  usb_endpoint_is_valid
+0     34   0   1   152  3.0  usb_isr_tok_in_dne
+0     10   0   1    48  1.9  usb_isr_tok_out_dne
+0     44   0   0   285  5.4  usb_isr_tok_setup_dne
+0    184   0   0  1454  8.3  usb_isr_tkn_setup_StandardDevice
+0    170   0   3   930  7.7  usb_isr_tkn_setup_StandardInterface
+0    106   0   0   753  5.8  usb_isr_tkn_setup_StandardEndpoint
+0    126   0   1   790  7.7  usb_Get_Descriptor
+0     14   0   0    76  1.8  usb_finish_set_address
+0    154   0   4   591  8.6  usb_copy_desc_seg_to_ep
+0    854   1   6  2727  7.9  glcd_imagen
+0     34   0   5             @MUL1616
+0    268   0   2   934  2.9  mensajes
+0    236   0   1  1973  5.9  temp1s
+0     36   0   4   110  2.5  Limpia
+0    112   0  18   292  2.9  displayT
+0     32   0   1             @SPRINTF
+0    246   0  11             @MULFF
+0     68   0   5             @FTOSD
+0    128   0  13             @DIV3232
+0    436   1  13             @PRINTF_L32D_617FPFPF
+0    450   1  15  1669  5.0  displayTiempo
+0     44   0   3             @DIV88
+0    224   0   6             @PRINTF_D_617
+0    126   0   2             @PRINTF_U_617
+0     84   0   5   100  2.1  sensores
+0     54   0   2             @ITOF
+0    108   0   2   142  3.9  ActualizaRecta
+0    632   1  16             @ADDFF
+0    862   1   9   710  7.4  Leer_Sensor
+0    350   1  14             @DIVFF
+0   1028   2   4  1054  8.3  Controla
+0    122   0  10             @FLT
+0     60   0   4             @SFTOI
+0  13038  21   4 64815 12.1  MAIN
+
+Program metrics:
+    Functions               63
+    Statements              2016
+    Comments                2623
+    Volume (V)              141156
+    Difficilty (D)          313.6
+    Effort to implement (E) 44266456
+    Time to implement (T)   683 hours, 7 minutes
+    Est Delivered Bugs (B)  42
+    Cyclomatic Complexity   369
+    Maintainability (MI)    46
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     4  0  
+00008-000A0   154  0  
+000A2-07FFE  31608  998  
+
+
+

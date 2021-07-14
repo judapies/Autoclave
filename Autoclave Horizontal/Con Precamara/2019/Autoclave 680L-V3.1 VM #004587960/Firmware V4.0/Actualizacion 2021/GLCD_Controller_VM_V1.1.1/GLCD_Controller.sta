@@ -1,0 +1,404 @@
+
+ROM used: 63826 (65%)
+          63826 (65%) including unused fragments
+
+          10 Average locations per line
+          17 Average locations per statement
+
+RAM used: 1622 (49%) at main() level
+          1653 (50%) worst case
+
+Stack used: 5 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+ 3073  2546  68  GLCD_Controller.c
+  461     0   0  C:\Program Files (x86)\PICC\Devices\18F4685.h
+   37     0   0  stdio.h
+  409     0   0  string.h
+   28     0   0  stddef.h
+   28     0   0  ctype.h
+ 1273   359  10  stdlib.h
+   73    22   1  24512.c
+  956   814  22  Funciones.h
+----- -----
+ 6338  3741 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   0   1             @delay_ms1
+0      8   0   0             @PUTCHARI_BIU_1
+0     78   0   2             @MUL88
+0    246   0  11             @MULFF
+0     54   0   2             @ITOF
+0    632   0  16             @ADDFF
+0    350   0  14             @DIVFF
+0     70   0   5             @DIV1616
+0    106   0   3             @I2C_READ_2
+0    118   0   1             @I2C_WRITE_2
+0    268   0   6   290  3.0  write_ext_eeprom
+0    168   0   5   264  1.2  read_ext_eeprom
+0    234   0   0             @const550
+0     44   0   0   749  2.4  BorraBuffer
+0     54   0   0   134  1.3  SendDataDisplay
+0     86   0   3   111  3.8  esBisiesto
+0     44   0   3             @DIV88
+0    148   0   1   750  4.8  LimitaDia
+0     88   0   5   100  2.1  sensores
+0   3080   2  24  1965  9.5  LeerPT100
+0     34   0   5             @MUL1616
+0    514   0   5   524  7.4  Leer_Sensor_Presion_Camara
+0    122   0  10             @FLT
+0    566   0   5   606  8.0  Leer_Sensor_Presion_PreCamara
+0    932   1   4   908  6.7  Controla
+0     60   0   4             @SFTOI
+0    112   0   5   174  1.8  Envio_I2C
+0    332   0   4  1432  4.7  Carga_Vector
+0     38   0   0   270  3.2  Lee_Vector
+0     76   0   1   153  3.9  Envio_Esclavos
+0    220   0   2   364  4.2  Lectura_Esclavos
+0    202   0  16   156  3.5  extraeDecimal
+0     64   0   5    64  2.4  inttofloat
+0   5878   5   9  9080  7.9  LeeEEPROM
+0     66   0   6             @WRITEBITA
+0     50   0   5             @READBITA
+0   1216   1   0  2584  5.9  LimitaValores
+0    496   0   0  4225  4.5  LeeDisplay
+0    184   0   1   978  6.3  ActivaAlarma
+0     40   0   0   272  2.3  ApagaSalidas
+0     40   0   0   129  3.4  ControlaPresion
+0    506   0   7   766  5.8  GuardaDatoEstatico
+0   1120   1   7  1656  6.4  GuardaDatoCiclo
+0   1360   1   6  2127  5.9  borraDatoCiclo
+0    144   0   0   250  3.7  incrementaCiclos
+0    992   1   5  2160  4.9  exportarData
+0   1506   1   2  2288  4.4  codificaAlarma
+0     16   0   0             @const674
+0    170   0   9             @PRINTF_LU_9600_31766_31767
+0     50   0   4             @PSTRINGCN_9600_31766_31767
+0     18   0   0             @const679
+0     18   0   0             @const680
+0     22   0   0             @const681
+0     18   0   0             @const682
+0     18   0   0             @const683
+0     20   0   0             @const684
+0     18   0   0             @const685
+0     22   0   0             @const686
+0     20   0   0             @const687
+0     18   0   0             @const688
+0     18   0   0             @const689
+0     20   0   0             @const690
+0     22   0   0             @const691
+0     20   0   0             @const692
+0     26   0   0             @const693
+0     44   0   1   233  4.1  sistemaBloqueo
+0    102   0  11  1225  5.4  ConfiguraCiclo
+0    110   0   2   644  5.8  serial_rx_isr
+0    424   0   0  2373  6.9  temp1s
+0  32098  25  11155547 15.0  MAIN
+0     16   0   0             @const712
+0     42   0   3             @PSTRINGC_9600_31766_31767
+0      8   0   0             @const714
+0     14   0   0             @const715
+0     16   0   0             @const716
+0      8   0   0             @const717
+0     14   0   0             @const718
+0     20   0   0             @const719
+0     26   0   0             @const720
+0     10   0   0             @const721
+0     26   0   0             @const722
+0     10   0   0             @const723
+0     28   0   0             @const724
+0     10   0   0             @const725
+0     16   0   0             @const726
+0     38   0   2             @PSTRINGR_9600_31766_31767
+0     14   0   0             @const728
+0     14   0   0             @const729
+0     20   0   0             @const730
+0     14   0   0             @const731
+0     12   0   0             @const732
+0     10   0   0             @const733
+0     12   0   0             @const734
+0     26   0   0             @const735
+0     10   0   0             @const736
+0     26   0   0             @const737
+0     10   0   0             @const738
+0     60   0   0             @const739
+0    126   0   2             @PRINTF_U_9600_31766_31767
+0     16   0   0             @const743
+0     20   0   0             @const744
+0     20   0   0             @const745
+0     20   0   0             @const746
+0     20   0   0             @const747
+0     20   0   0             @const748
+0     20   0   0             @const749
+0     20   0   0             @const750
+0     20   0   0             @const751
+0     20   0   0             @const752
+0     20   0   0             @const753
+0     10   0   0             @const754
+0     18   0   0             @const755
+0     14   0   0             @const756
+0     12   0   0             @const757
+0     60   0   0             @const758
+0     18   0   0             @const759
+0     20   0   0             @const760
+0     20   0   0             @const761
+0     60   0   0             @const762
+0     18   0   0             @const763
+0     20   0   0             @const764
+0     20   0   0             @const765
+0     60   0   0             @const766
+0     18   0   0             @const767
+0     20   0   0             @const768
+0     60   0   0             @const769
+0     18   0   0             @const770
+0     18   0   0             @const771
+0     12   0   0             @const772
+0     14   0   0             @const773
+0     12   0   0             @const774
+0     14   0   0             @const775
+0     12   0   0             @const776
+0     14   0   0             @const777
+0     12   0   0             @const778
+0     14   0   0             @const779
+0     12   0   0             @const780
+0     14   0   0             @const781
+0     12   0   0             @const782
+0     14   0   0             @const783
+0     12   0   0             @const784
+0     14   0   0             @const785
+0     12   0   0             @const786
+0     14   0   0             @const787
+0     14   0   0             @const788
+0     14   0   0             @const789
+0     12   0   0             @const790
+0     14   0   0             @const791
+0     12   0   0             @const792
+0     14   0   0             @const793
+0     14   0   0             @const794
+0     14   0   0             @const795
+0     14   0   0             @const796
+0     14   0   0             @const797
+0     14   0   0             @const798
+0     14   0   0             @const799
+0     14   0   0             @const800
+0     14   0   0             @const801
+0     22   0   0             @const802
+0     68   0   5             @FTOSD
+0    128   0  13             @DIV3232
+0    420   0  13             @PRINTF_L32D_9600_31766_31767FPFPF
+0     22   0   0             @const811
+0     26   0   0             @const812
+0     26   0   0             @const813
+0     20   0   0             @const814
+0     20   0   0             @const815
+0     10   0   0             @const816
+0     10   0   0             @const817
+0     18   0   0             @const818
+0     20   0   0             @const819
+0     16   0   0             @const820
+0     16   0   0             @const821
+0     18   0   0             @const822
+0     60   0   0             @const823
+0     16   0   0             @const824
+0     24   0   0             @const825
+0     14   0   0             @const826
+0     22   0   0             @const827
+0     22   0   0             @const828
+0     18   0   0             @const829
+0     22   0   0             @const830
+0     20   0   0             @const831
+0     22   0   0             @const832
+0     14   0   0             @const833
+0     18   0   0             @const834
+0     18   0   0             @const835
+0     16   0   0             @const836
+0     16   0   0             @const837
+0     18   0   0             @const838
+0     24   0   0             @const839
+0     14   0   0             @const840
+0     22   0   0             @const841
+0     22   0   0             @const842
+0     18   0   0             @const843
+0     22   0   0             @const844
+0     20   0   0             @const845
+0     10   0   0             @const846
+0     18   0   0             @const847
+0     14   0   0             @const848
+0     18   0   0             @const849
+0     16   0   0             @const850
+0     16   0   0             @const851
+0     12   0   0             @const852
+0     12   0   0             @const853
+0     20   0   0             @const854
+0     60   0   0             @const855
+0     18   0   0             @const856
+0     16   0   0             @const857
+0     60   0   0             @const858
+0     12   0   0             @const859
+0     42   0   0             @const860
+0     12   0   0             @const861
+0     48   0   0             @const862
+0     12   0   0             @const863
+0     48   0   0             @const864
+0     12   0   0             @const865
+0     48   0   0             @const866
+0     12   0   0             @const867
+0     48   0   0             @const868
+0     12   0   0             @const869
+0     48   0   0             @const870
+0     12   0   0             @const871
+0     48   0   0             @const872
+0     12   0   0             @const873
+0     48   0   0             @const874
+0     12   0   0             @const875
+0     48   0   0             @const876
+0     12   0   0             @const877
+0     44   0   0             @const878
+0     14   0   0             @const879
+0     60   0   0             @const880
+0     16   0   0             @const881
+0     12   0   0             @const882
+0     10   0   0             @const883
+0     14   0   0             @const884
+0     12   0   0             @const885
+0     12   0   0             @const886
+0     12   0   0             @const887
+0     10   0   0             @const888
+0     18   0   0             @const889
+0     14   0   0             @const890
+0     24   0   0             @const891
+0     32   0   0             @const892
+0     26   0   0             @const893
+0     30   0   0             @const894
+0     34   0   0             @const895
+0     26   0   0             @const896
+0     28   0   0             @const897
+0     14   0   0             @const898
+0     28   0   0             @const899
+0     18   0   0             @const900
+0     22   0   0             @const901
+0     20   0   0             @const902
+0     26   0   0             @const903
+0     22   0   0             @const904
+0     32   0   0             @const905
+0     20   0   0             @const906
+0     22   0   0             @const907
+0     22   0   0             @const908
+0     60   0   0             @const909
+0     18   0   0             @const910
+0     16   0   0             @const911
+0     60   0   0             @const912
+0     14   0   0             @const913
+0     14   0   0             @const914
+0     16   0   0             @const915
+0     18   0   0             @const916
+0     12   0   0             @const917
+0     14   0   0             @const918
+0     14   0   0             @const919
+0     14   0   0             @const920
+0     24   0   0             @const921
+0     48   0   0             @const922
+0     36   0   0             @const923
+0     42   0   0             @const924
+0     34   0   0             @const925
+0     38   0   0             @const926
+0     36   0   0             @const927
+0     44   0   0             @const928
+0     36   0   0             @const929
+0     44   0   0             @const930
+0     36   0   0             @const931
+0     40   0   0             @const932
+0     36   0   0             @const933
+0     38   0   0             @const934
+0     36   0   0             @const935
+0     38   0   0             @const936
+0     36   0   0             @const937
+0     34   0   0             @const938
+0     40   0   0             @const939
+0     34   0   0             @const940
+0     44   0   0             @const941
+0     44   0   0             @const942
+0     34   0   0             @const943
+0     38   0   0             @const944
+0     34   0   0             @const945
+0     38   0   0             @const946
+0     34   0   0             @const947
+0     42   0   0             @const948
+0     34   0   0             @const949
+0     38   0   0             @const950
+0     34   0   0             @const951
+0     34   0   0             @const952
+0     34   0   0             @const953
+0     42   0   0             @const954
+0     34   0   0             @const955
+0     40   0   0             @const956
+0     34   0   0             @const957
+0     32   0   0             @const958
+0     34   0   0             @const959
+0     38   0   0             @const960
+0     38   0   0             @const961
+0     38   0   0             @const962
+0     16   0   0             @const963
+0     16   0   0             @const964
+0     16   0   0             @const965
+0     30   0   0             @const966
+0     18   0   0             @const967
+0     34   0   0             @const968
+0     36   0   0             @const969
+0     30   0   0             @const970
+0     32   0   0             @const971
+0     32   0   0             @const972
+0     32   0   0             @const973
+0     32   0   0             @const974
+0     54   0   0             @const975
+0     30   0   0             @const976
+0     16   0   0             @const977
+0     24   0   0             @const978
+0     16   0   0             @const979
+0     26   0   0             @const980
+0     14   0   0             @const981
+0     26   0   0             @const982
+0     14   0   0             @const983
+0     28   0   0             @const984
+0     14   0   0             @const985
+0     28   0   0             @const986
+0     14   0   0             @const987
+0     24   0   0             @const988
+0     14   0   0             @const989
+0     26   0   0             @const990
+0     16   0   0             @const991
+0     28   0   0             @const992
+0     16   0   0             @const993
+0     24   0   0             @const994
+0     16   0   0             @const995
+0     30   0   0             @const996
+0     16   0   0             @const997
+0     30   0   0             @const998
+0     16   0   0             @const999
+0     10   0   0             @const1000
+0     54   0   0             @const1001
+
+Program metrics:
+    Functions               35
+    Statements              3741
+    Comments                1152
+    Volume (V)              237691
+    Difficilty (D)          173.3
+    Effort to implement (E) 41191172
+    Time to implement (T)   635 hours, 40 minutes
+    Est Delivered Bugs (B)  40
+    Cyclomatic Complexity   646
+    Maintainability (MI)    71
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00142   316  0  
+00144-0FFFE  63506  1706  
+10000-17FFE     0  32768  
+
+
+

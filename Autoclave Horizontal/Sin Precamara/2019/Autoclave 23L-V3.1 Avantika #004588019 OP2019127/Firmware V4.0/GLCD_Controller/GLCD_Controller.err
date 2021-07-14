@@ -1,0 +1,3 @@
+>>> Warning 202 "GLCD_Controller.c" Line 76(28,45): Variable never used:   flagPersonalizado
+      Memory usage:   ROM=55%      RAM=55% - 57%
+      0 Errors,  1 Warnings.

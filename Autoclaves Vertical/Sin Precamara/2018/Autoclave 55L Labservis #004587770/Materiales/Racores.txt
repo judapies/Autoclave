@@ -1,0 +1,78 @@
+-------------Racores Autoclave Vertical con vacio--------------------------
+
+//--------Sistema de Nivel-Desague Calderin-------//
+-4 Buchin de 3/8"NPT Macho a 1/4"NPT Hembra
+-4 Racores de 1/4"NPT Macho a 5/16" Compresion con anillos y tuercas.
+-2 Racor de 3/8"NPT Macho a 3/8" Compresion con anillos y tuercas
+//-------------------------------//
+
+//--------Sistema de Ingreso de Agua-------//
+-2 Codo Macho-Hembra de 1/2"
+-3 Uniones Macho-Macho de 1/2" NPT
+-1 Racor de 3/8"NPT Macho a 3/8" Compresion con anillos y tuercas
+-1 Racor de 1/2"NPT Hembra a 3/8" Compresion con anillos y tuercas
+-1 Racor de 3/8"NPT Hembra a 3/8" Compresion con anillos y tuercas
+//-------------------------------//
+
+//--------Sistema de Calderin-Tanque-------//
+-1 Union Macho-Macho de 1/2"NPT a 3/8"NPT
+-1 T Hembra de 3/8" NPT
+-1 Codo Macho-Hembra de 1/2"
+-2 Uniones Macho-Macho de 3/8" NPT a 1/2"NPT
+-2 Racor de 3/8"NPT Macho a 3/8" Compresion con anillos y tuercas
+-1 Buchin de 3/8"NPT Macho a 1/4"NPT Hembra
+-2 Racores de 1/4" NPT Macho a 1/4" Abocardado con tuercas
+-1 Racor de  1/4" NPT Hembra a 1/4" Abocardado con tuercas
+-1 Buchin de 1/4" NPT Macho a 1/8" NPT Hembra
+-1 Acople estriado para manguera de 1/8" X 1/8" NPT Macho
+-1 Racor de 1/2" NPT Macho a 3/4" NPT Hembra
+//-------------------------------//
+
+//--------Sistema de Desague-Desfogue Vapor-------//
+-4 Uniones Macho-Macho de 3/8" NPT a 1/2"NPT
+-1 T Hembra de 3/8" NPT
+-2 Codo Macho Hembra de 3/8"NPT
+-3 Racor de 3/8"NPT Macho a 3/8" Compresion con anillos y tuercas
+-1 Racor de 1/2"NPT Macho a 3/8" Compresion con anillos y tuercas
+-1 Racor de 3/8"NPT Hembra a 3/8" Compresion con anillos y tuercas
+-1 Codo Macho-Hembra de 1/2"NPT
+-1 Union Macho-Macho de 1/2"NPT
+//-------------------------------//
+
+//--------Sistema de Lecturas de Presion-------//
+-1 Buchin de 3/8"NPT Macho a 1/4"NPT Hembra
+-1 Union Macho-Macho de 3/8"NPT
+-1 Union Macho-Macho de 1/4"NPT
+-1 T Hembra de 1/4" NPT
+-1 T Hembra de 3/8" NPT
+-4 Racores de 1/4" NPT Macho a 1/4" Abocardado con tuercas
+-2 Racor de  1/4" NPT Hembra a 1/4" Abocardado con tuercas
+-1 Buchin de 1/4" NPT Macho a 1/8" NPT Hembra
+-1 Acople estriado para manguera de 1/8" X 1/8" NPT Macho
+-3m Manguera Siliconada 1/8" Diametro interno X 1/4" Diametro Externo
+//-------------------------------//
+
+//--------Sistema de Ingreso de Aire-------//
+-1 Codo Macho-Hembra de 1/2"
+-1 Codo Macho-Hembra de 3/8"
+-1 Union Macho-Macho de 1/2"NPT a 1/4"NPT
+-1 Uniones Macho-Macho de 3/8" NPT a 1/2"NPT
+-2 Acople estriado para manguera de 1/4" X 1/4"NPT macho Bronce
+-1 Acople estriado para manguera de 1/4" X 1/4"NPT macho Inox
+-1 Union Hembra de 1/4"
+//-------------------------------//
+
+//--------Sistema de Enfriamiento-Vacio-------//
+-1 Codo Macho-Hembra de 3/8"
+-2 Uniones Macho-Macho de 3/8" NPT
+-1 T Hembra de 3/8" NPT
+-1 Union Macho-Macho de 3/8"NPT a 1/4"NPT
+-1 Acople estriado para manguera de 1/4" X 3/8"NPT macho Bronce
+-4 Acoples estriados para manguera de 1/4" X 1/8" NPT Macho
+-4 Codos Macho-Hembra de 1/8"NPT
+-2 T de Acople Estriado Para Manguera de 1/4"
+-1 Acople estriado para manguera de 1/4" X 1/4"NPT macho Inox
+-1 Acople estriado para manguera de 1/4" X 1/4"NPT macho Bronce
+-1 Union Hembra de 1/4"
+-5m Manguera Siliconada 1/4" Diametro interno X 1/2" Diametro Externo
+//-------------------------------//

@@ -1,0 +1,5 @@
+>>> Warning 202 "GLCD_Controller.c" Line 41(100,109): Variable never used:   flag_agua
+>>> Warning 202 "GLCD_Controller.c" Line 43(21,36): Variable never used:   disp_AlarmaAgua
+>>> Warning 202 "GLCD_Controller.c" Line 45(55,64): Variable never used:   flagvacio
+      Memory usage:   ROM=89%      RAM=63% - 66%
+      0 Errors,  3 Warnings.

@@ -1,0 +1,5 @@
+>>> Warning 202 "C:\Users\maria consuelo\Desktop\Impresora Termica\Adafruit-Thermal-Printer-Library-master\Firmware PIC\Adafruit_Thermal.h" Line 119(94,100): Variable never used:   dtrPin
+>>> Warning 202 "C:\Users\maria consuelo\Desktop\Impresora Termica\Adafruit-Thermal-Printer-Library-master\Firmware PIC\Adafruit_Thermal.h" Line 120(9,19): Variable never used:   dtrEnabled
+>>> Warning 202 "C:\Users\maria consuelo\Desktop\Impresora Termica\Adafruit-Thermal-Printer-Library-master\Firmware PIC\Adafruit_Thermal.h" Line 121(15,25): Variable never used:   resumeTime
+      Memory usage:   ROM=2%      RAM=1% - 2%
+      0 Errors,  3 Warnings.

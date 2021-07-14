@@ -1,0 +1,237 @@
+
+ROM used: 67766 (69%)
+          70554 (72%) including unused fragments
+
+          11 Average locations per line
+          18 Average locations per statement
+
+RAM used: 1835 (55%) at main() level
+          1889 (57%) worst case
+
+Stack used: 8 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+ 3933  3380  88  DIELEC-AUT002.c
+  461     0   0  C:\Program Files (x86)\PICC\Devices\18F4685.h
+  354    78   2  HDM64GS12.c
+  556   167   4  GRAPHICS.c
+  202     0   0  imagen.h
+  202     0   0  imagen2.h
+  303   202   5  Funciones.h
+----- -----
+ 6011  3827 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   1   1             @delay_ms1
+0    108   2   3             @I2C_READ_1
+0    118   3   1             @I2C_WRITE_1
+0    168   4   1   580  3.2  glcd_init
+0    184   4   7   609  5.4  glcd_update
+0    188   4   9   466  7.8  glcd_pixel
+0     90   2  10   317  4.7  glcd_fillScreen
+0     54   1   2   257  2.8  glcd_writeByte
+0    286   6   0             @const99
+0    250   6   0             @const102
+0    318   7  17  1475  8.8  glcd_line
+0    194   4   6  1036  5.8  glcd_rect
+0    554  12  12  1822  8.6  glcd_circle
+0     78   2   2             @MUL88
+0    440  10  20  1550 11.2  glcd_text57
+0   1052  24   0             @const178
+0   1052  24   0             @const181
+0   1052  24   0             @const184
+0   1052  24   0             @const187
+0   1052  24   0             @const190
+0   1052  24   0             @const193
+0    440  10  17  1550  5.0  displayTemperatura
+0     32   1   1             @SPRINTF
+0    190   4   9             @PRINTF_LU_358
+0    416   9  10  1188  5.1  displayTemps
+0    120   3  18   330  3.4  displayTT
+0    246   6  11             @MULFF
+0     68   2   5             @FTOSD
+0    128   3  13             @DIV3232
+0    436  10  13             @PRINTF_L32D_358FPFPF
+0    118   3  18   330  3.4  displayT
+0    182   4  15   603  4.5  displayContrasena
+0     44   1   3             @DIV88
+0    224   5   6             @PRINTF_D_358
+0    250   6   8   868  5.1  displayMenu
+0    336   8  16  1180  5.1  displayTiempo
+0    134   3   2             @PRINTF_U_358
+0   1172  26   6  3965  8.0  glcd_imagen
+0     34   1   5             @MUL1616
+0     52   1   1   193  2.7  CuadroVacio
+0     52   1   1   193  2.7  CuadroCalentando
+0     52   1   1   193  2.7  CuadroEsterilizando
+0     52   1   1   193  2.7  CuadroDesfogando
+0     52   1   1   193  2.7  CuadroSecando
+0     30   1   0    59  1.6  BorraStatus
+0    320   7   2  1018  2.9  MuestraTiemposProgramados
+0     32   1   0             @const450
+0    110   2   2   142  3.9  ActualizaRecta
+0    632  14  16             @ADDFF
+0     88   2   5   100  2.1  sensores
+0     54   1   2             @ITOF
+0    958  21   5   736  7.7  LeerPT100
+0    350   8  14             @DIVFF
+0    502  11   5   561  7.5  Leer_Sensor_Presion_Camara
+0    122   3  10             @FLT
+0    502  11   5   561  7.5  Leer_Sensor_Presion_PreCamara
+0    980  22   4   948  8.2  Controla
+0     60   1   4             @SFTOI
+0     90   2   3   100  1.8  Envio_I2C
+ Inline        4   188  3.5  Lectura_I2C
+0    328   7   4  1233  5.1  Carga_Vector
+0   1200  27   2  2679  7.3  Lee_Vector
+0     44   1   0             @const486
+0     44   1   0             @const487
+0     64   1   1   153  3.9  Envio_Esclavos
+0    208   5   2   211  4.1  Lectura_Esclavos
+0    104   2   0   303  5.0  temp0s
+0    296   7   0  1807  5.9  temp1s
+0     40   1   0   134  3.4  ControlaPresion
+0  36292 814   4204395 13.0  CorrePrograma
+0     42   1   0             @const494
+0     42   1   0             @const495
+0     36   1   0             @const496
+0     40   1   0             @const498
+0     42   1   0             @const500
+0     46   1   0             @const501
+0     52   1   0             @const502
+0     50   1   0             @const504
+0     48   1   0             @const506
+0     44   1   0             @const508
+0     52   1   0             @const510
+0     46   1   0             @const512
+0     44   1   0             @const514
+0     44   1   0             @const516
+0     46   1   0             @const518
+0     48   1   0             @const520
+0     42   1   0             @const522
+0     44   1   0             @const524
+0     48   1   0             @const526
+0     52   1   0             @const527
+0     46   1   0             @const528
+0     42   1   0             @const529
+0     46   1   0             @const533
+0     38   1   0             @const534
+0     48   1   0             @const536
+0     52   1   0             @const537
+0     44   1   0             @const538
+0     40   1   0             @const539
+0     40   1   0             @const544
+0     52   1   0             @const547
+0     40   1   0             @const549
+0     54   1   0             @const552
+0     44   1   0             @const553
+0     42   1   0             @const554
+0     48   1   0             @const556
+0     52   1   0             @const557
+0     46   1   0             @const558
+0     52   1   0             @const559
+0     48   1   0             @const560
+0     40   1   0             @const562
+0     42   1   0             @const564
+0     48   1   0             @const566
+0     40   1   0             @const568
+0     42   1   0             @const575
+0     42   1   0             @const576
+0     34   1   0             @const577
+0     34   1   0             @const578
+0     38   1   0             @const582
+0     34   1   0             @const588
+0     42   1   0             @const594
+0     42   1   0             @const600
+0     44   1   0             @const606
+0     42   1   0             @const612
+0     44   1   0             @const618
+0     38   1   0             @const624
+0     40   1   0             @const630
+0     38   1   0             @const636
+0     36   1   0             @const642
+0     36   1   0             @const648
+0     38   1   0             @const654
+0     44   1   0             @const660
+0     38   1   0             @const666
+0     40   1   0             @const667
+0     38   1   0             @const669
+0     40   1   0             @const672
+0     34   1   0             @const674
+0     34   1   0             @const675
+0     42   1   0             @const678
+0     38   1   0             @const679
+0     38   1   0             @const680
+0     48   1   0             @const681
+0     46   1   0             @const682
+0     42   1   0             @const683
+0     42   1   0             @const684
+0     42   1   0             @const685
+0     42   1   0             @const686
+0     42   1   0             @const687
+0     42   1   0             @const688
+0     40   1   0             @const689
+0     46   1   0             @const690
+0     40   1   0             @const691
+0     48   1   0             @const693
+0     46   1   0             @const694
+0     38   1   0             @const696
+0     44   1   0             @const698
+0     32   1   0             @const699
+0     42   1   0             @const708
+0     44   1   0             @const716
+0     40   1   0             @const718
+0     42   1   0             @const720
+0     38   1   0             @const722
+0     40   1   0             @const724
+0     40   1   0             @const726
+0     42   1   0             @const728
+0     44   1   0             @const730
+0     44   1   0             @const732
+0     44   1   0             @const734
+0     44   1   0             @const736
+0     42   1   0             @const738
+0     32   1   0             @const740
+0     32   1   0             @const741
+0     32   1   0             @const742
+0     38   1   0             @const744
+0     38   1   0             @const745
+0     36   1   0             @const746
+0     40   1   0             @const747
+0     34   1   0             @const748
+0     38   1   0             @const749
+0     42   1   0             @const750
+0     34   1   0             @const752
+0     40   1   0             @const753
+0     34   1   0             @const754
+0     38   1   0             @const755
+1   5022 113   4  9330  8.4  MAIN
+0     42   1   0             @const758
+0     52   1   0             @const759
+0     44   1   0             @const760
+0     42   1   0             @const761
+
+Program metrics:
+    Functions               41
+    Statements              3827
+    Comments                787
+    Volume (V)              288669
+    Difficilty (D)          216.6
+    Effort to implement (E) 62513931
+    Time to implement (T)   964 hours, 43 minutes
+    Est Delivered Bugs (B)  53
+    Cyclomatic Complexity   613
+    Maintainability (MI)    72
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000A8   162  0  
+000AA-0FFFE  62578  2788  
+10000-17FFE  5022  27746  
+
+
+

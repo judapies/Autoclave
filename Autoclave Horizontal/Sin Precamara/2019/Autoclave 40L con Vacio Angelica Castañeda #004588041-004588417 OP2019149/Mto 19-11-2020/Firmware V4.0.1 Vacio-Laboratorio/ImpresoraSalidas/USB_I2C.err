@@ -1,0 +1,6 @@
+>>> Warning 203 "D:\Laboratorio\Autoclave\Autoclave Horizontal\Sin Precamara\2019\Autoclave 40L con Vacio Angelica Castañeda #004588041-004588417 OP2019149\Mto 19-11-2020\Firmware V4.0.1 Vacio-Laboratorio\ImpresoraSalidas\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "USB_I2C.c" Line 510(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "USB_I2C.c" Line 510(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "USB_I2C.c" Line 510(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+      Memory usage:   ROM=47%      RAM=42% - 43%
+      0 Errors,  4 Warnings.

@@ -1,0 +1,61 @@
+Año 2014
+AUTV 40L Nulab
+AUTV 55L UCO
+AUTV 80L CECIF
+AUTH 13L ODONTOLOGA CENIPALMA
+
+Año 2015
+AUTH23L Mayaguez
+AUTH40L Mayaguez
+AUTV27L Pasto
+AUTV27L Pasto
+
+Año 2016
+AUTH110L Artilab (ICA)
+AUTH110L Davila
+AUTH120L Tecnilab
+AUTH23L Microlab
+AUTH34L UPTC
+AUTH40L SENA
+AUTV55L Labservice
+AUTV55L Fedearroz
+AUTH62L Instruelectronic
+AUTV85L Nutrizeta
+AUTV85L UPTC
+AUTV150L Popayan
+
+
+Año 2017
+AUTH23L Dupont
+AUTH23L Instruelectronic
+AUTH62L Instruelectronic
+AUTH23L ADV
+AUTH23L Instruelectronic
+AUTH23L Analitika
+AUTH23L UPTC
+AUTH110L Bioenergy
+AUTV55L Avantika
+AUTV55L Labservis
+AUTV55L ScientificProducts
+AUTV55L UNAL
+AUTV62L Labservis
+AUTV62L Labservis
+AUTV85L Luker
+AUTV110L Analitika
+
+
+Año 2018
+AUTH23L Handler
+AUTH24L IMPRESORA Avantika
+AUTH24L RESER Avantika
+AUTH34L Artilab
+AUTH40L Javeriana
+AUTH52L COLMAYOR
+AUTH85L VAC Tunja
+AUTV23L Handler
+AUTV50L ScientificProducts
+AUTV55L Avantika
+AUTV55L Labservis
+AUTV55L Labservis
+AUTV55L Labservis
+AUTV85L Agro-InVitro

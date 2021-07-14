@@ -1,0 +1,6 @@
+>>> Warning 202 "GLCD_Controller.c" Line 97(29,37): Variable never used:   Temporal
+>>> Warning 202 "GLCD_Controller.c" Line 116(134,139): Variable never used:   tstop
+>>> Warning 202 "GLCD_Controller.c" Line 116(142,147): Variable never used:   tterm
+>>> Warning 202 "GLCD_Controller.c" Line 116(150,155): Variable never used:   tdoor
+      Memory usage:   ROM=58%      RAM=54% - 55%
+      0 Errors,  4 Warnings.

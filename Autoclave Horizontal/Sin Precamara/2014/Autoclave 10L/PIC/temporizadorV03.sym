@@ -1,0 +1,194 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     line
+018     contador
+019     i
+01A     tmp
+01B     cursor_x
+01C     cursor_y
+01D     inicio
+01E     indice
+01F     ventana
+020     solidos
+021     inicio_tmp
+022     tiempos
+023     estado_T_secado
+024     estado_T_esteril
+025     estado_trampa
+026     cont_trampas
+027     flanco_trampa
+028     estado_rampa
+029     fin
+02A-03D matriz
+03E     proceso
+03F     minutos
+040     minutos2
+041-044 tiempo1
+045-048 tiempo2
+049     hold_esteril
+04A     hold_secado
+04B-04C ContadorL
+04D-04E ContadorH
+04F     MAIN.j
+050     MAIN.k
+051     MAIN.leer121
+052     MAIN.x
+053     lcd_init.i
+053     @PSTRINGCN_85.P1
+053     mostrar_menu.m
+053     funcionStop.@SCRATCH1
+053     MAIN.@SCRATCH1
+054     @PSTRINGC_85.@SCRATCH1
+054     MAIN.@SCRATCH2
+054     @PSTRINGCN_85.@SCRATCH1
+055     @PSTRINGC_85.@SCRATCH2
+055     @PSTRINGCN_85.@SCRATCH2
+062     @DIVS88.P1
+062     @PRINTF_D_85.P2
+063     @DIVS88.P1
+063     @PRINTF_D_85.P2
+064     @PRINTF_D_85.@SCRATCH1
+064     @DIVS88.@SCRATCH1
+065     @PRINTF_D_85.@SCRATCH2
+065     @DIVS88.@SCRATCH2
+066     @PRINTF_D_85.@SCRATCH3
+067     @PRINTF_D_85.@SCRATCH4
+068     lcd_putc.c
+068     @DIV88.P1
+069     @DIV88.P1
+069     @delay_ms1.P2
+069     lcd_gotoxy.x
+06A     lcd_gotoxy.y
+06A     @DIV88.@SCRATCH1
+06B     lcd_gotoxy.dir
+06C     lcd_gotoxy.@SCRATCH1
+06D     lcd_enviar.dir
+06E     lcd_enviar.valor
+06F     lcd_leer.valor
+06F     lcd_enviar.@SCRATCH1
+F81     lcd_b
+F83     PSP_DATA
+F83.5   lcd_rs
+F83.6   lcd_rw
+F83.7   lcd_enable
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0186  @delay_ms1
+0096  lcd_leer
+00BE  lcd_enviar
+065E  lcd_init
+00F8  lcd_gotoxy
+01AE  lcd_putc
+031C  tempo1
+015E  @DIV88
+020C  @PRINTF_D_85
+02D4  @DIVS88
+075E  mostrar_menu
+04CC  @const136
+0706  @PSTRINGC_85
+04DC  @const138
+04F0  @const139
+04FA  @const140
+0504  @const142
+050E  @const143
+0516  @const144
+0520  @const145
+0532  @const149
+0542  @const150
+0554  @const154
+0566  @const155
+0576  @const156
+0588  @const157
+0592  @const160
+05A0  @const161
+05A8  @const162
+05B4  @const163
+05BC  @const165
+0E08  funcionStop
+05CE  @const169
+05E0  @const170
+105E  MAIN
+05F2  @const176
+0608  @const177
+0614  @const178
+0620  @const179
+062E  @const181
+063E  @const182
+0732  @PSTRINGCN_85
+064A  @const197
+0652  @const198
+105E  @cinit
+1422  salida
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    H:\JP\Autoclave\Autoclave 55L\PIC\
+
+Project Files:
+    temporizadorV03.c
+    C:\Program Files (x86)\PICC\Devices\18F4550.h
+    lcd.h
+
+Units:
+    H:\JP\Autoclave\Autoclave 55L\PIC\temporizadorV03 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      temporizadorV03.err
+    Ext Symbols: temporizadorV03.esym
+    INHX32:      temporizadorV03.hex
+    Symbols:     temporizadorV03.sym
+    List:        temporizadorV03.lst
+    Debug/COFF:  temporizadorV03.cof
+    Project:     temporizadorV03.PJT
+    Call Tree:   temporizadorV03.tre
+    Statistics:  temporizadorV03.sta

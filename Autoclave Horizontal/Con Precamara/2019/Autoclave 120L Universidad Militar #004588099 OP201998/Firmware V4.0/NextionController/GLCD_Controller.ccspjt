@@ -1,0 +1,111 @@
+[Directories]
+Include=\
+Library=
+LinkerScript=
+output=
+[defines]
+enabled=0
+D1=
+V1=
+buildcount=6
+chip=1
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+expandtree=0
+[PROJECT]
+Target=GLCD_Controller.hex
+Development_Mode=
+Processor=0x4685
+Processor_Text=PIC18F4685
+ToolSuite=CCS
+CCSVersion=5.059
+Compiler=PCH
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+FileList=GLCD_Controller.c
+[GLCD_Controller.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=GLCD_Controller.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=GLCD_Controller.c
+2=Funciones.h
+3=
+4=..\..\..\..\..\Sin Precamara\2019\Autoclave 23L-V3.1 Lesco #004587948\Firmware V4.0\GLCD_Controller\GLCD_Controller.c
+5=
+6=
+t1=2482
+Count=2
+t2=661
+
+[ProjectLog]
+Days=3
+D1=09-06-2019
+D1_L=4
+D1_L1=[70195]Project Opened.
+D1_L2=[70217]Started Editing.
+D1_L3=[70244]Stopped Editing.
+TotalEdit=5165
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L4=[72091]Project Closed.
+D2=10-06-2019
+D2_L=22
+D2_L1=[40017]Project Opened.
+D2_L2=[40085]Started Editing.
+D2_L3=[40640]Stopped Editing.
+D2_L4=[40761]Started Editing.
+D2_L5=[40774]Stopped Editing.
+D2_E=8
+D2_D=0
+D2_L6=[40812]Started Editing.
+D2_L7=[40841]Stopped Editing.
+D2_L8=[40864]Started Editing.
+D2_L9=[40873]Stopped Editing.
+D2_L10=[40873]Project Closed.
+D2_L11=[40890]Project Opened.
+D2_L12=[40918]Started Editing.
+D2_L13=[41240]Stopped Editing.
+D2_L14=[41302]Project Closed.
+D2_L15=[50375]Project Opened.
+D2_L16=[50543]Started Editing.
+D2_L17=[50978]Stopped Editing.
+D2_L18=[51028]Started Editing.
+D2_L19=[51362]Stopped Editing.
+D2_L20=[52769]Started Editing.
+D2_L21=[54406]Stopped Editing.
+D2_L22=[56585]Started Editing.
+D3=14-06-2019
+D3_L=2
+D3_L1=[18823]Stopped Editing.
+D3_E=5156
+D3_D=0
+D3_L2=[18823]Project Closed.
+
+[CompilerVersion]
+Fixed=
+[Units]
+Count=1
+1=GLCD_Controller (main)

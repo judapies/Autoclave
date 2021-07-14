@@ -1,0 +1,85 @@
+
+ROM used: 9906 (30%)
+          9906 (30%) including unused fragments
+
+          7 Average locations per line
+          12 Average locations per statement
+
+RAM used: 83 (4%) at main() level
+          111 (5%) worst case
+
+Stack used: 13 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  784   748  89  temporizadorV02.c
+  451     0   0  C:\Program Files (x86)\PICC\devices\18F4550.h
+  187    89  11  lcd.h
+----- -----
+ 1422   837 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   0   1             @delay_ms1
+0     40   0   1   236  2.3  lcd_leer
+0     58   0   3   388  2.9  lcd_enviar
+0    168   1   1   447  3.8  lcd_init
+0    102   1   4   667  6.0  lcd_gotoxy
+0     94   0   1   441  7.5  lcd_putc
+0    432   2   0  3368  6.9  tempo1
+0     40   0   3             @DIV88
+0    200   1   6             @PRINTF_D_85
+0     72   0   4             @DIVS88
+0   1696   9   1  4341  6.9  mostrar_menu
+0     16   0   0             @const135
+0     44   0   2             @PSTRINGC_85
+0     20   0   0             @const137
+0     10   0   0             @const138
+0     10   0   0             @const139
+0     10   0   0             @const141
+0      8   0   0             @const142
+0     10   0   0             @const143
+0     18   0   0             @const144
+0     16   0   0             @const148
+0     18   0   0             @const149
+0     18   0   0             @const153
+0     16   0   0             @const154
+0     18   0   0             @const155
+0     10   0   0             @const156
+0     14   0   0             @const159
+0      8   0   0             @const160
+0     12   0   0             @const161
+0      8   0   0             @const162
+0     18   0   0             @const164
+0    598   3   1  1953  4.9  funcionStop
+0     18   0   0             @const168
+0     18   0   0             @const169
+0   5802  29   5 24651 13.0  MAIN
+0     22   0   0             @const175
+0     12   0   0             @const176
+0     12   0   0             @const177
+0     14   0   0             @const178
+0      8   0   0             @const191
+0     12   0   0             @const192
+
+Program metrics:
+    Functions               9
+    Statements              837
+    Comments                265
+    Volume (V)              44686
+    Difficilty (D)          54.0
+    Effort to implement (E) 2414996
+    Time to implement (T)   37 hours, 16 minutes
+    Est Delivered Bugs (B)  6
+    Cyclomatic Complexity   130
+    Maintainability (MI)    93
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE  9760  22858  
+
+
+

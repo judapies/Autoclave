@@ -1,0 +1,3 @@
+>>> Warning 202 "GLCD_Controller.c" Line 106(112,118): Variable never used:   desvio
+      Memory usage:   ROM=65%      RAM=49% - 50%
+      0 Errors,  1 Warnings.

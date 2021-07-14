@@ -1,0 +1,75 @@
+-------------Racores Autoclave Horizontal--------------------------
+- 9 Codo Macho-Hembra de 1/2".
+- 10 Racor de 1/2" NPT Macho a racor de compresion de 1/2" con anillo y tuerca.
+- 1 Racor de 3/8" NPT Macho a racor de compresion de 3/8" con anillo y tuerca.
+- 1 Union Hembra de 1/2" NPT.
+- 10 Union Macho de 1/2" NPT. 
+- 2 Union Macho de 1/4" NPT.
+- 2 T Hembra de 1/4" NPT.
+- 4 Racores de 1/4" NPT Macho a 1/4" Abocardado con tuercas.
+- 4 Racores de 1/4" NPT Hembra a 1/4" Abocardado con tuercas.
+- 2 Bushing de 1/4" NPT Macho a 1/8" NPT Hembra.
+- 2 Acoples estriados para manguera de 1/8" NPT Macho a 1/8" para manguera.
+- 3 Racores de 1/4" NPT Macho a racor de compresion de 5/16" con anillo y tuerca.
+- 1 Racor de 1/2" NPT Macho a racor de compresion de 3/8" con anillo y tuerca.
+- 4 Racor de 3/8" NPT Hembra a racor de compresion de 1/2" con anillo y tuerca.
+
+0.6
+0.96--0.57
+
+0.44
+0.69--0.42
+
+228400+iva
+ra-mc-55
+
+Iconos
+
+Plastico:36
+Clave:38
+Fecha:40
+InicioCiclo:41
+Instrumental:37
+Libre:44
+LiquidosA:45
+LiquidosB:46
+Nivel:47
+Test:52
+Temperatura:56
+Test:57
+Tsec:58
+
+GranClave:83
+GranFecha:84
+GranInicia:85
+GranInst:86
+GranLibre:87
+GranLiqA:88
+GranLiqB:89
+GranNive:90
+GranPlast:91
+GranTem:92
+GranTest:93
+GranTeste:94
+GraTsec:95
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

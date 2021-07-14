@@ -1,0 +1,4 @@
+>>> Warning 202 "I2C_MotorDriver_V1.0.0.c" Line 39(24,33): Variable never used:   conteoAnt
+>>> Warning 202 "I2C_MotorDriver_V1.0.0.c" Line 40(7,16): Variable never used:   nuevoDato
+      Memory usage:   ROM=3%      RAM=7% - 7%
+      0 Errors,  2 Warnings.

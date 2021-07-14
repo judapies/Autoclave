@@ -1,0 +1,7 @@
+>>> Warning 203 "D:\Laboratorio\Autoclave\Autoclaves Vertical\Sin Precamara\2020\Autoclave 62L Avantika #004588376 OP202002\Firmware V4.0.3 200 Ciclos\ImpresoraSalidas\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "USB_I2C.c" Line 513(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "USB_I2C.c" Line 513(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "USB_I2C.c" Line 513(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "USB_I2C.c" Line 513(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+      Memory usage:   ROM=48%      RAM=42% - 43%
+      0 Errors,  5 Warnings.

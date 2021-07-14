@@ -1,0 +1,111 @@
+
+ROM used: 12016 (12%)
+          12016 (12%) including unused fragments
+
+          10 Average locations per line
+          23 Average locations per statement
+
+RAM used: 621 (19%) at main() level
+          643 (19%) worst case
+
+Stack used: 4 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  739   518 100  USB_I2C.c
+  461     0   0  C:\Program Files (x86)\PICC\Devices\18F4685.h
+----- -----
+ 1200   518 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   0   1             @delay_ms1
+0      8   0   0             @PUTCHARI_BIU_1
+0     24   0   1             @I2C_WRITE_1
+0    234   1   0             @const139
+0    188   1   0             @const142
+0    374   2   3   964  7.3  ssp_interupt
+0     48   0   0   331  2.3  Carga_Vector
+0    348   1   0  1699  3.9  Lee_Vector
+0     54   0   2             @ITOF
+0    350   1  14             @DIVFF
+0    632   3  16             @ADDFF
+0     68   0   5    64  2.4  inttofloat
+0   6758  28   7 24810 10.5  MAIN
+0     24   0   0             @const164
+0     42   0   3             @PSTRINGC_19200_31766_31767
+0     48   0   0             @const166
+0     44   0   3             @DIV88
+0    126   1   2             @PRINTF_U_19200_31766_31767
+0    248   1  11             @MULFF
+0     68   0   5             @FTOSD
+0    128   1  13             @DIV3232
+0    418   2  13             @PRINTF_L32D_19200_31766_31767FPFPF
+0     50   0   4             @PSTRINGCN_19200_31766_31767
+0    170   1   9             @PRINTF_LU_19200_31766_31767
+0     36   0   0             @const188
+0     34   0   0             @const189
+0     34   0   0             @const190
+0     20   0   0             @const192
+0     14   0   0             @const193
+0     24   0   0             @const194
+0     30   0   0             @const195
+0     40   0   0             @const196
+0     40   0   0             @const197
+0     34   0   0             @const198
+0     26   0   0             @const199
+0     34   0   0             @const202
+0     28   0   0             @const203
+0     28   0   0             @const206
+0     28   0   0             @const207
+0     34   0   0             @const210
+0     28   0   0             @const211
+0     30   0   0             @const214
+0     28   0   0             @const215
+0     26   0   0             @const218
+0     28   0   0             @const219
+0     26   0   0             @const222
+0     28   0   0             @const223
+0     28   0   0             @const226
+0     28   0   0             @const227
+0     26   0   0             @const230
+0     24   0   0             @const231
+0     36   0   0             @const232
+0     26   0   0             @const235
+0     28   0   0             @const236
+0     36   0   0             @const239
+0     16   0   0             @const240
+0     34   0   0             @const241
+0     20   0   0             @const243
+0     14   0   0             @const244
+0     24   0   0             @const245
+0     32   0   0             @const246
+0    122   1  10             @FLT
+0     44   0   0             @const250
+0     44   0   0             @const251
+0     44   0   0             @const252
+0     44   0   0             @const253
+0     22   0   0             @const254
+
+Program metrics:
+    Functions               5
+    Statements              518
+    Comments                257
+    Volume (V)              30685
+    Difficilty (D)          26.1
+    Effort to implement (E) 799558
+    Time to implement (T)   12 hours, 20 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   71
+    Maintainability (MI)    -2
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-0009C   150  0  
+0009E-0FFFE  11862  53516  
+10000-17FFE     0  32768  
+
+
+

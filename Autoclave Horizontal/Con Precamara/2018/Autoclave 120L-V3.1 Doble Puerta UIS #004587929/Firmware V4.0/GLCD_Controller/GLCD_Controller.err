@@ -1,0 +1,4 @@
+>>> Warning 202 "GLCD_Controller.c" Line 68(6,11): Variable never used:   txbuf
+>>> Warning 202 "GLCD_Controller.c" Line 94(81,89): Variable never used:   tmensaje
+      Memory usage:   ROM=46%      RAM=29% - 30%
+      0 Errors,  2 Warnings.

@@ -1,0 +1,55 @@
+[AB_Cache_{9F6E9CF4-3964-49D6-A8F8-4E1662AD3CF1}]
+Cache_ProjSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_TargetSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_MyCompChksum[String] = "3d19cc3de3177f10fba2b43fd8d08776"
+Cache_GenFile_Count[Integer] = 4
+Cache_GenFile[0][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[0][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[0][Path] Line0003 = "Control_Autoclave/JP Autoclave.exe"
+Cache_GenFile[1][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[1][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[1][Path] Line0003 = "Control_Autoclave/JP Autoclave.aliases"
+Cache_GenFile[2][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[2][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[2][Path] Line0003 = "Control_Autoclave/JP Autoclave.ini"
+Cache_GenFile[3][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[3][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[3][Path] Line0003 = "Control_Autoclave/data/mpusbapi.dll"
+Cache_GenGUID_Count[Integer] = 4
+Cache_GenGUID[0][String] = "{74AFD6B2-96DD-44C5-AA36-679BEB0558D1}"
+Cache_GenGUID[1][String] = "{1B525D00-30A6-4A12-8F25-470A2F53D83B}"
+Cache_GenGUID[2][String] = "{E0F55E20-1CDF-4C63-8795-E0A971894E54}"
+Cache_GenGUID[3][String] = ""
+Cache_OutputDir[Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hori"
+Cache_OutputDir[Path] Line0002 = "zontal/JPAHA 27L/builds/Control_Autoclave2/Co"
+Cache_OutputDir[Path] Line0003 = "ntrol_Autoclave"
+
+[AB_Cache_{90EC97EB-E0CC-42D4-8444-84D7067C301E}]
+Cache_ProjSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_TargetSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_MyCompChksum[String] = "3d19cc3de3177f10fba2b43fd8d08776"
+Cache_GenFile_Count[Integer] = 4
+Cache_GenFile[0][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[0][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[0][Path] Line0003 = "Control_Autoclave/JP Autoclave.exe"
+Cache_GenFile[1][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[1][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[1][Path] Line0003 = "Control_Autoclave/JP Autoclave.aliases"
+Cache_GenFile[2][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[2][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[2][Path] Line0003 = "Control_Autoclave/JP Autoclave.ini"
+Cache_GenFile[3][Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hor"
+Cache_GenFile[3][Path] Line0002 = "izontal/JPAHA 27L/builds/Control_Autoclave2/"
+Cache_GenFile[3][Path] Line0003 = "Control_Autoclave/data/mpusbapi.dll"
+Cache_GenGUID_Count[Integer] = 4
+Cache_GenGUID[0][String] = "{74AFD6B2-96DD-44C5-AA36-679BEB0558D1}"
+Cache_GenGUID[1][String] = "{1B525D00-30A6-4A12-8F25-470A2F53D83B}"
+Cache_GenGUID[2][String] = "{E0F55E20-1CDF-4C63-8795-E0A971894E54}"
+Cache_GenGUID[3][String] = ""
+Cache_OutputDir[Path] Line0001 = "/H/JP/JP/Laboratorio/Autoclave/Autoclave Hori"
+Cache_OutputDir[Path] Line0002 = "zontal/JPAHA 27L/builds/Control_Autoclave2/Co"
+Cache_OutputDir[Path] Line0003 = "ntrol_Autoclave"
+
+[ProjectWindow_Data]
+ProjectExplorer.ClassicPosition[String] = "65,42,465,414"
+

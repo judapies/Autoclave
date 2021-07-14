@@ -1,0 +1,12 @@
+# Writing all output to: E:\JP\JP\Autoclave\Autoclave 55L\Autoclave 80L_VersionFinal\Schematic\Autoclave_80L.log
+set pad_wire_necking on
+bus diagonal
+fanout 5
+route 50
+clean 2
+route 50 16
+clean 2
+filter 5
+recorner diagonal
+status_file
+

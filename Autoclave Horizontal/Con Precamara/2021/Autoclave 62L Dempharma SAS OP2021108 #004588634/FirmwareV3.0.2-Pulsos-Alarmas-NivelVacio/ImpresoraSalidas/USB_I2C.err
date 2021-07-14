@@ -1,0 +1,15 @@
+>>> Warning 202 "USB_I2C.c" Line 58(6,16): Variable never used:   Termostato
+>>> Warning 202 "USB_I2C.c" Line 58(19,25): Variable never used:   Puerta
+>>> Warning 202 "USB_I2C.c" Line 58(28,34): Variable never used:   Parada
+>>> Warning 202 "USB_I2C.c" Line 58(37,46): Variable never used:   NivelBajo
+>>> Warning 202 "USB_I2C.c" Line 58(49,58): Variable never used:   NivelAlto
+>>> Warning 202 "USB_I2C.c" Line 59(7,13): Variable never used:   Tpulso
+>>> Warning 202 "USB_I2C.c" Line 59(18,23): Variable never used:   error
+>>> Warning 202 "USB_I2C.c" Line 59(28,30): Variable never used:   d3
+>>> Warning 202 "USB_I2C.c" Line 60(23,30): Variable never used:   TempUSB
+>>> Warning 202 "USB_I2C.c" Line 61(13,16): Variable never used:   Mes
+>>> Warning 202 "USB_I2C.c" Line 62(63,68): Variable never used:   dowRx
+>>> Warning 202 "USB_I2C.c" Line 62(71,77): Variable never used:   Modulo
+>>> Warning 202 "USB_I2C.c" Line 74(6,12): Variable never used:   buffer
+      Memory usage:   ROM=14%      RAM=20% - 21%
+      0 Errors,  13 Warnings.

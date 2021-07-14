@@ -1,0 +1,64 @@
+
+ROM used: 1330 (4%)
+          1330 (4%) including unused fragments
+
+          1 Average locations per line
+          3 Average locations per statement
+
+RAM used: 554 (27%) at main() level
+          562 (27%) worst case
+
+Stack used: 4 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  159    40   9  ch376s.c
+  392     0   0  C:\Program Files (x86)\PICC\Devices\18F2550.h
+   37     0   0  C:\Program Files (x86)\PICC\Drivers\stdio.h
+  409     0   0  C:\Program Files (x86)\PICC\Drivers\string.h
+   28     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
+   28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
+ 1273   359  80  C:\Program Files (x86)\PICC\Drivers\stdlib.h
+  116    51  11  CH367s.h
+----- -----
+ 2442   450 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   2   1             @delay_ms1
+0     60   2   5   129  4.6  strlen
+0      8   0   0             @PUTCHARI_BIU_1
+0     26   1   0    67  1.2  reset
+0     24   1   0    94  2.1  set_usb
+0     30   1   0    94  2.1  check
+0     30   1   0    94  2.1  mount
+0     32   1   1   119  1.3  name
+0     38   1   2             @PSTRINGR_9600_31766_31767
+0     30   1   0    94  2.1  create
+0    106   4   2   346  1.4  escribir
+0     34   1   0   122  1.7  close
+0     24   1   1             @I2C_WRITE_1
+0    124   5   3   375  4.2  ssp_interupt
+0    578  22   1   489  2.9  MAIN
+
+Program metrics:
+    Functions               11
+    Statements              450
+    Comments                738
+    Volume (V)              3391
+    Difficilty (D)          25.5
+    Effort to implement (E) 86475
+    Time to implement (T)   1 hours, 20 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   5
+    Maintainability (MI)    87
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE  1184  31434  
+
+
+

@@ -1,0 +1,11 @@
+>>> Warning 202 "USB_I2C.c" Line 16(5,8): Variable never used:   rs232_errors
+>>> Warning 202 "USB_I2C.c" Line 35(6,7): Variable never used:   l
+>>> Warning 202 "USB_I2C.c" Line 36(28,30): Variable never used:   d3
+>>> Warning 202 "USB_I2C.c" Line 37(23,30): Variable never used:   TempUSB
+>>> Warning 202 "USB_I2C.c" Line 38(51,54): Variable never used:   dow
+>>> Warning 202 "USB_I2C.c" Line 40(7,13): Variable never used:   Activo
+>>> Warning 202 "USB_I2C.c" Line 43(13,28): Variable never used:   Testerilizacion
+>>> Warning 202 "USB_I2C.c" Line 44(13,20): Variable never used:   Tsecado
+>>> Warning 202 "USB_I2C.c" Line 48(6,13): Variable never used:   usuario
+      Memory usage:   ROM=25%      RAM=14% - 15%
+      0 Errors,  9 Warnings.

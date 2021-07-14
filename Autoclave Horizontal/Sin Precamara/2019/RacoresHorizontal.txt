@@ -1,0 +1,14 @@
+2 B101 1/4"
+2 B122 1/4" x 1/4"
+1 B122 3/8" x 1/2"
+1 B122 3/8" x 3/8"
+3 B66 1/4" x 1/4"
+1 B66 3/8" (Hembra) x 1/4" (Anillo)
+5 B68 1/4" x 1/4"
+1 B68 1/4" (Macho) x 5/16" (Anillo)
+4 B110 3/8" (Macho) x 1/4" (Hembra)
+1 B110 1/4" (Macho) x 1/8" (Hembra)
+1 B116 3/8"
+1 B100 3/8"
+1 B3 1/8" (Macho) x 3/16" (Espigo)
+1 B69 1/2" (Macho) x 1/4"(Anillo)

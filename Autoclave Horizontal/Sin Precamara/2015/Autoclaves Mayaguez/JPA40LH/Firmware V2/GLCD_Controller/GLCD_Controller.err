@@ -1,0 +1,12 @@
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclave Horizontal\Autoclaves Mayaguez\JPA40LH\Firmware V2\GLCD_Controller\imagen.h" Line 1(19,26): Variable never used:   Tijeras
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclave Horizontal\Autoclaves Mayaguez\JPA40LH\Firmware V2\GLCD_Controller\imagen.h" Line 68(19,25): Variable never used:   Guante
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclave Horizontal\Autoclaves Mayaguez\JPA40LH\Firmware V2\GLCD_Controller\imagen.h" Line 135(21,29): Variable never used:   Delicado
+>>> Warning 202 "H:\JP\JP\Laboratorio\Autoclave\Autoclave Horizontal\Autoclaves Mayaguez\JPA40LH\Firmware V2\GLCD_Controller\imagen.h" Line 202(20,27): Variable never used:   Liquido
+>>> Warning 202 "GLCD_Controller.c" Line 51(6,20): Variable never used:   ADCTemperatura
+>>> Warning 202 "GLCD_Controller.c" Line 52(6,20): Variable never used:   SetTemperatura
+>>> Warning 202 "GLCD_Controller.c" Line 53(27,33): Variable never used:   Tciclo
+>>> Warning 202 "GLCD_Controller.c" Line 53(50,55): Variable never used:   error
+>>> Warning 202 "GLCD_Controller.c" Line 53(85,88): Variable never used:   tmp
+>>> Warning 202 "GLCD_Controller.c" Line 53(133,135): Variable never used:   d3
+      Memory usage:   ROM=84%      RAM=66% - 68%
+      0 Errors,  10 Warnings.

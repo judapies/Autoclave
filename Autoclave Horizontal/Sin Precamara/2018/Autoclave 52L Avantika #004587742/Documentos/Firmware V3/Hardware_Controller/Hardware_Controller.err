@@ -1,0 +1,104 @@
+>>> Warning 237 "C:\Users\judapies\Desktop\Firmware V3\Hardware_Controller\header.h" Line 53(5,6): Extra comma
+>>> Warning 237 "C:\Users\judapies\Desktop\Firmware V3\Hardware_Controller\header.h" Line 153(6,7): Extra comma
+>>> Warning 203 "C:\Program Files (x86)\PICC\Drivers\pic18_usb.c" Line 719(1,1): Condition always TRUE
+*** Error 1 "Hardware_Controller.c" Line 54(1,2): Illegal C character in input file  0x80
+*** Error 1 "Hardware_Controller.c" Line 54(1,2): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 54(1,2): Illegal C character in input file  0x10
+*** Error 102 "Hardware_Controller.c" Line 54(125,128): Expect comma
+*** Error 48 "Hardware_Controller.c" Line 55(8,19): Expecting a (
+*** Error 43 "Hardware_Controller.c" Line 55(20,22): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(22,23): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(23,24): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(24,25): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(25,28): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(28,29): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(29,32): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(32,33): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(33,36): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(36,37): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(37,40): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(40,41): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(41,44): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(44,45): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(45,48): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(48,49): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(49,52): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(52,53): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(53,56): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(56,57): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(57,60): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(60,61): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(61,64): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(64,65): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(65,68): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(68,69): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(69,72): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(72,73): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(73,76): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(76,77): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(77,80): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(80,81): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(81,84): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(84,85): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(85,88): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(88,89): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(89,92): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(92,93): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(93,96): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(96,97): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(97,100): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(100,101): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(101,104): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(104,105): Expecting a declaration
+*** Error 43 "Hardware_Controller.c" Line 55(105,106): Expecting a declaration
+*** Error 1 "Hardware_Controller.c" Line 58(1,2): Illegal C character in input file  0x80
+*** Error 1 "Hardware_Controller.c" Line 58(1,2): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x0B
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0xFF
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0xFF
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0xFF
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x06
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(2,3): Illegal C character in input file  0x08
+*** Error 1 "Hardware_Controller.c" Line 58(7,8): Illegal C character in input file  0x9D
+*** Error 1 "Hardware_Controller.c" Line 58(7,8): Illegal C character in input file  0x1B
+*** Error 51 "Hardware_Controller.c" Line 58(7,8): A numeric expression must appear here
+*** Error 43 "Hardware_Controller.c" Line 58(9,10): Expecting a declaration
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x95
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0xCC
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0xF3
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x18
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0xE5
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x40
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x18
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x07
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0xB0
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0xD7
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x01
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x80
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0x00
+*** Error 1 "Hardware_Controller.c" Line 58(10,11): Illegal C character in input file  0xE4
+*** Error 1 "Hardware_Controller.c" Line 58(19,20): Illegal C character in input file  0x06
+*** Error 1 "Hardware_Controller.c" Line 58(19,20): Illegal C character in input file  0x04

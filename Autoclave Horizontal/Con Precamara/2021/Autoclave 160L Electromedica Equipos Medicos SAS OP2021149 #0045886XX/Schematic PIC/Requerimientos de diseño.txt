@@ -1,0 +1,25 @@
+- Solenoide Bloqueo puerta--
+- Resistencia Generador de Vapor--
+- Valvulas y bomba de Vacio--
+- Almacenamiento de 200 Ciclos*
+- Dos sensores PT100--
+- Colores Dependiendo del Estado del ciclo
+- 10 Ciclos Fijos
+- 20 Programas adaptables
+- Menu para activar o desactivar ciclos
+- CFR21
+- USB*
+- Conexion Impresora*
+- Ethernet*
+- Salida Analoga para Valvula Proporcional--
+- 6 Niveles de desfogue
+- Control F0
+- Termostato--
+- Sensores de Presion--
+
+SAT EP-130(J1900)
+
+13% descuento rotametros
++10% descuento
+
+71 03 00 00 00 FF FF FF 

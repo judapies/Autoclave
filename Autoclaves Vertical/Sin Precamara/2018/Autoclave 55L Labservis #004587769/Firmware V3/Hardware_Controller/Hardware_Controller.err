@@ -1,0 +1,8 @@
+>>> Warning 203 "H:\JP\JP\Laboratorio\Autoclave\Autoclaves Vertical\Sin Precamara\2017\Autoclave 55L\Autoclave 55L Scientific Products #0045876XX\Firmware V3\Hardware_Controller\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "Hardware_Controller.c" Line 703(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "Hardware_Controller.c" Line 703(0,1): Interrupts disabled during call to prevent re-entrancy:  (@MUL1616)
+>>> Warning 216 "Hardware_Controller.c" Line 703(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "Hardware_Controller.c" Line 703(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "Hardware_Controller.c" Line 703(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+      Memory usage:   ROM=42%      RAM=46% - 48%
+      0 Errors,  6 Warnings.

@@ -1,0 +1,8 @@
+>>> Warning 202 "D:\Laboratorio\Autoclave\Autoclave Horizontal\Sin Precamara\2021\Autoclave 24L Artilab #0045886XX OP2021129\Firmware V4.1.8 - Enfirador-200Ciclos-Impresora-Absoluta\GLCD_Controller_V3.0.1\24512.c" Line 44(14,20): Variable never used:   status
+>>> Warning 202 "GLCD_Controller.c" Line 95(83,97): Variable never used:   flagCalentando
+>>> Warning 202 "GLCD_Controller.c" Line 95(102,119): Variable never used:   flagEsterilizando
+>>> Warning 202 "GLCD_Controller.c" Line 96(7,21): Variable never used:   flagDesfogando
+>>> Warning 202 "GLCD_Controller.c" Line 97(80,85): Variable never used:   purga
+>>> Warning 202 "GLCD_Controller.c" Line 136(51,60): Variable never used:   SegundoTx
+      Memory usage:   ROM=61%      RAM=33% - 34%
+      0 Errors,  6 Warnings.

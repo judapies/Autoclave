@@ -1,0 +1,9 @@
+>>> Warning 203 "C:\Archivos de programa\PICC\drivers\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "Autoclave_80L.c" Line 950(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "Autoclave_80L.c" Line 950(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "Autoclave_80L.c" Line 950(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "Autoclave_80L.c" Line 950(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "Autoclave_80L.c" Line 67(17,25): Variable never used:   modifica
+>>> Warning 202 "Autoclave_80L.c" Line 68(61,64): Variable never used:   CUR
+      Memory usage:   ROM=91%      RAM=40% - 59%
+      0 Errors,  7 Warnings.

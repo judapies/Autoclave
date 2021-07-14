@@ -1,0 +1,9 @@
+Colocar alarma por demora en apertura o cierre de brazo t=15 segundos
+
+Colocar alarma por demora en apertura o cierre de puerta t=50 segundos
+
+Colocar alarma por demora en desactivacion de switch de puerta cerrada, con el fin de evitar que si se abre la puerta con los brazos cerrados dañe la estructura, t=2 segundos
+
+1.770.000
+1.920.000
+Tauret

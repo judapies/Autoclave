@@ -1,0 +1,26 @@
+>>> Warning 202 "C:\Users\JP Electronica\Desktop\Autoclave Santa Marta\Firmware V3\GLCD_Controller\imagen.h" Line 1(19,26): Variable never used:   Tijeras
+>>> Warning 202 "C:\Users\JP Electronica\Desktop\Autoclave Santa Marta\Firmware V3\GLCD_Controller\imagen.h" Line 68(19,25): Variable never used:   Guante
+>>> Warning 202 "C:\Users\JP Electronica\Desktop\Autoclave Santa Marta\Firmware V3\GLCD_Controller\imagen.h" Line 135(21,29): Variable never used:   Delicado
+>>> Warning 202 "C:\Users\JP Electronica\Desktop\Autoclave Santa Marta\Firmware V3\GLCD_Controller\imagen.h" Line 202(20,27): Variable never used:   Liquido
+>>> Warning 202 "GLCD_Controller.c" Line 32(6,11): Variable never used:   rxbuf
+>>> Warning 202 "GLCD_Controller.c" Line 41(7,15): Variable never used:   promedio
+>>> Warning 202 "GLCD_Controller.c" Line 42(69,70): Variable never used:   h
+>>> Warning 202 "GLCD_Controller.c" Line 42(73,74): Variable never used:   l
+>>> Warning 202 "GLCD_Controller.c" Line 42(96,98): Variable never used:   R2
+>>> Warning 202 "GLCD_Controller.c" Line 43(120,134): Variable never used:   CadenaRecibida
+>>> Warning 202 "GLCD_Controller.c" Line 47(23,27): Variable never used:   bite
+>>> Warning 202 "GLCD_Controller.c" Line 47(30,42): Variable never used:   TamanoCadena
+>>> Warning 202 "GLCD_Controller.c" Line 57(6,12): Variable never used:   datoTx
+>>> Warning 202 "GLCD_Controller.c" Line 59(6,20): Variable never used:   ADCTemperatura
+>>> Warning 202 "GLCD_Controller.c" Line 60(6,20): Variable never used:   SetTemperatura
+>>> Warning 202 "GLCD_Controller.c" Line 61(7,9): Variable never used:   V0
+>>> Warning 202 "GLCD_Controller.c" Line 61(14,16): Variable never used:   R1
+>>> Warning 202 "GLCD_Controller.c" Line 61(24,26): Variable never used:   Pt
+>>> Warning 202 "GLCD_Controller.c" Line 61(27,33): Variable never used:   Tciclo
+>>> Warning 202 "GLCD_Controller.c" Line 61(50,55): Variable never used:   error
+>>> Warning 202 "GLCD_Controller.c" Line 61(60,64): Variable never used:   Prom
+>>> Warning 202 "GLCD_Controller.c" Line 61(69,80): Variable never used:   Temperature
+>>> Warning 202 "GLCD_Controller.c" Line 61(85,88): Variable never used:   tmp
+>>> Warning 202 "GLCD_Controller.c" Line 61(133,135): Variable never used:   d3
+      Memory usage:   ROM=84%      RAM=74% - 76%
+      0 Errors,  24 Warnings.

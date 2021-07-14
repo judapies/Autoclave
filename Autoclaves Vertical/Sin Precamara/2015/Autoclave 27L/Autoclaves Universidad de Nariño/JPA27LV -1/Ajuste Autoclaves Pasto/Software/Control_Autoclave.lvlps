@@ -1,0 +1,55 @@
+[AB_Cache_{92E34497-7582-4F2F-BC26-2AA79DFC09A6}]
+Cache_ProjSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_TargetSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_MyCompChksum[String] = "1fe92bab5b88f5399ecd5e956f1c6b2d"
+Cache_GenFile_Count[Integer] = 4
+Cache_GenFile[0][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[0][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[0][Path] Line0003 = "l_Autoclave/AutoclaveJP.exe"
+Cache_GenFile[1][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[1][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[1][Path] Line0003 = "l_Autoclave/AutoclaveJP.aliases"
+Cache_GenFile[2][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[2][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[2][Path] Line0003 = "l_Autoclave/AutoclaveJP.ini"
+Cache_GenFile[3][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[3][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[3][Path] Line0003 = "l_Autoclave/data/mpusbapi.dll"
+Cache_GenGUID_Count[Integer] = 4
+Cache_GenGUID[0][String] = "{9E582504-DF7E-4E13-AD6A-DD1C60B95933}"
+Cache_GenGUID[1][String] = "{ECECE3DE-F156-48B5-865A-E6B3C5B7DBB3}"
+Cache_GenGUID[2][String] = "{C71E6DD3-05B3-47E6-B13D-449A325C65B3}"
+Cache_GenGUID[3][String] = ""
+Cache_OutputDir[Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_V"
+Cache_OutputDir[Path] Line0002 = "ersionFinal/builds/Control_Autoclave/Control_"
+Cache_OutputDir[Path] Line0003 = "Autoclave"
+
+[AB_Cache_{B0328BBF-FC93-47E6-B253-7C32B967D4A1}]
+Cache_ProjSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_TargetSymbolChksum[String] = "7dea362b3fac8e00956a4952a3d4f474"
+Cache_MyCompChksum[String] = "1fe92bab5b88f5399ecd5e956f1c6b2d"
+Cache_GenFile_Count[Integer] = 4
+Cache_GenFile[0][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[0][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[0][Path] Line0003 = "l_Autoclave/AutoclaveJP.exe"
+Cache_GenFile[1][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[1][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[1][Path] Line0003 = "l_Autoclave/AutoclaveJP.aliases"
+Cache_GenFile[2][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[2][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[2][Path] Line0003 = "l_Autoclave/AutoclaveJP.ini"
+Cache_GenFile[3][Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_"
+Cache_GenFile[3][Path] Line0002 = "VersionFinal/builds/Control_Autoclave/Contro"
+Cache_GenFile[3][Path] Line0003 = "l_Autoclave/data/mpusbapi.dll"
+Cache_GenGUID_Count[Integer] = 4
+Cache_GenGUID[0][String] = "{9E582504-DF7E-4E13-AD6A-DD1C60B95933}"
+Cache_GenGUID[1][String] = "{ECECE3DE-F156-48B5-865A-E6B3C5B7DBB3}"
+Cache_GenGUID[2][String] = "{C71E6DD3-05B3-47E6-B13D-449A325C65B3}"
+Cache_GenGUID[3][String] = ""
+Cache_OutputDir[Path] Line0001 = "/H/JP/Autoclave/Autoclave 55L/Autoclave 80L_V"
+Cache_OutputDir[Path] Line0002 = "ersionFinal/builds/Control_Autoclave/Control_"
+Cache_OutputDir[Path] Line0003 = "Autoclave"
+
+[ProjectWindow_Data]
+ProjectExplorer.ClassicPosition[String] = "64,42,464,414"
+

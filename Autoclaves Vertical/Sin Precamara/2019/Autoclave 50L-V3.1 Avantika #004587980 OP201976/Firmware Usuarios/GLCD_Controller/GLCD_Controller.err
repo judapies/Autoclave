@@ -1,0 +1,14 @@
+>>> Warning 202 "GLCD_Controller.c" Line 67(120,131): Variable never used:   AlarmaVacio
+>>> Warning 202 "GLCD_Controller.c" Line 68(7,18): Variable never used:   AlarmaBomba
+>>> Warning 202 "GLCD_Controller.c" Line 73(47,57): Variable never used:   EstadoAire
+>>> Warning 202 "GLCD_Controller.c" Line 73(106,117): Variable never used:   EstadoAgua2
+>>> Warning 202 "GLCD_Controller.c" Line 75(70,83): Variable never used:   EstadoACierre
+>>> Warning 202 "GLCD_Controller.c" Line 75(88,99): Variable never used:   EstadoBomba
+>>> Warning 202 "GLCD_Controller.c" Line 76(61,66): Variable never used:   Vacio
+>>> Warning 202 "GLCD_Controller.c" Line 76(71,79): Variable never used:   flag_vac
+>>> Warning 202 "GLCD_Controller.c" Line 76(84,94): Variable never used:   flag_vacio
+>>> Warning 202 "GLCD_Controller.c" Line 76(99,109): Variable never used:   flag_pulso
+>>> Warning 202 "GLCD_Controller.c" Line 90(7,9): Variable never used:   R7
+>>> Warning 202 "GLCD_Controller.c" Line 112(120,133): Variable never used:   PulsoPositivo
+      Memory usage:   ROM=58%      RAM=48% - 49%
+      0 Errors,  12 Warnings.

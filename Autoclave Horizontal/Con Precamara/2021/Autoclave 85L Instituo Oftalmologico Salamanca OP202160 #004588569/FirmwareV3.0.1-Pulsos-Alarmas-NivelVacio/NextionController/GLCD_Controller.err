@@ -1,0 +1,19 @@
+>>> Warning 202 "GLCD_Controller.c" Line 65(39,47): Variable never used:   Cilindro
+>>> Warning 202 "GLCD_Controller.c" Line 73(70,83): Variable never used:   EstadoACierre
+>>> Warning 202 "GLCD_Controller.c" Line 74(114,129): Variable never used:   EstadoAireBomba
+>>> Warning 202 "GLCD_Controller.c" Line 75(25,34): Variable never used:   NivelBajo
+>>> Warning 202 "GLCD_Controller.c" Line 75(39,46): Variable never used:   onBomba
+>>> Warning 202 "GLCD_Controller.c" Line 75(51,64): Variable never used:   flagBombaAgua
+>>> Warning 202 "GLCD_Controller.c" Line 75(69,85): Variable never used:   flagBombaAguaOff
+>>> Warning 202 "GLCD_Controller.c" Line 76(7,20): Variable never used:   EstadoEmpaque
+>>> Warning 202 "GLCD_Controller.c" Line 76(25,35): Variable never used:   EstadoSSR1
+>>> Warning 202 "GLCD_Controller.c" Line 76(40,50): Variable never used:   EstadoSSR2
+>>> Warning 202 "GLCD_Controller.c" Line 79(42,44): Variable never used:   Tp
+>>> Warning 202 "GLCD_Controller.c" Line 79(47,49): Variable never used:   Tc
+>>> Warning 202 "GLCD_Controller.c" Line 85(32,36): Variable never used:   tmp2
+>>> Warning 202 "GLCD_Controller.c" Line 91(97,106): Variable never used:   Ganancia2
+>>> Warning 202 "GLCD_Controller.c" Line 91(112,118): Variable never used:   desvio
+>>> Warning 202 "GLCD_Controller.c" Line 95(6,14): Variable never used:   Integral
+>>> Warning 202 "GLCD_Controller.c" Line 95(17,27): Variable never used:   Derivativo
+      Memory usage:   ROM=65%      RAM=53% - 53%
+      0 Errors,  17 Warnings.

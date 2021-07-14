@@ -1,0 +1,12 @@
+>>> Warning 203 "H:\JP\JP\Laboratorio\Autoclave\Autoclave Horizontal\Con Precamara\2018\Autoclave 110L-V3.1 TIM #0045878XX\Firmware V4.0\USB_I2C\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "USB_I2C.c" Line 254(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "USB_I2C.c" Line 254(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "USB_I2C.c" Line 254(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "USB_I2C.c" Line 254(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "USB_I2C.c" Line 33(6,13): Variable never used:   Regular
+>>> Warning 202 "USB_I2C.c" Line 34(6,14): Variable never used:   Bisiesto
+>>> Warning 202 "USB_I2C.c" Line 41(63,68): Variable never used:   dowRx
+>>> Warning 202 "USB_I2C.c" Line 41(71,77): Variable never used:   Modulo
+>>> Warning 202 "USB_I2C.c" Line 42(33,42): Variable never used:   Configura
+      Memory usage:   ROM=28%      RAM=24% - 26%
+      0 Errors,  10 Warnings.

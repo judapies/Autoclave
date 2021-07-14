@@ -1,0 +1,19 @@
+--Racores Autoclave con vacio 40L de Piso Horizontal--
+-12 B122 1/4 x 1/4
+-5 B101 1/4
+-2 B116 3/8
+-4 B110 3/8 x 1/4
+-2 B110 1/2 x 1/4
+-1 B110 1/2 x 1/8
+-1 B116 1/4
+-1 B100 3/8
+-12 B68 1/4 x 1/4
+-2 B68 5/16 x 1/4
+-6 B66 1/4 x 1/4
+-1 B116 1/8
+-3 B3 1/8 Rosca Macho x 1/4 Espigo
+-2 B3 1/4 Rosca Macho x 1/4 Espigo
+-3 B3 1/4 Rosca Macho x 3/16 Espigo
+-1 B68 1/8 x 1/8
+-1 B122 1/2 x 3/8
+-1 B12 3/8 X 1/4

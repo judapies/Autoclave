@@ -1,0 +1,4 @@
+-Empaque de la puerta luego de 6 usos.
+-Sensor de nivel de agua 0.4uS.
+-Pata doblada.
+-8am-12pm 2pm-6pm L-V.

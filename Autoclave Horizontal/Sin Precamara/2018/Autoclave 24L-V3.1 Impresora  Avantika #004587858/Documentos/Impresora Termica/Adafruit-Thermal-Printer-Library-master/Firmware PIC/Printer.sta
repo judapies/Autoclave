@@ -1,0 +1,65 @@
+
+ROM used: 734 (2%)
+          734 (2%) including unused fragments
+
+          0 Average locations per line
+          1 Average locations per statement
+
+RAM used: 28 (1%) at main() level
+          37 (2%) worst case
+
+Stack used: 5 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   50    17   3  Printer.c
+  451     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  165    69  12  LCD420.c
+   37     0   0  stdio.h
+  409     0   0  string.h
+   28     0   0  stddef.h
+   28     0   0  ctype.h
+ 1273   359  63  stdlib.h
+  422   128  22  Adafruit_ThermalL.h
+  125     0   0  Adafruit_Thermal.h
+----- -----
+ 2988   573 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   3   1             @delay_ms1
+0      8   1   0             @PUTCHARI_BIU_1
+0     20   1   0   485  7.8  @const76
+0     32   2   1   134  2.2  lcd_send_nibble
+0     50   3   3   287  3.9  lcd_send_byte
+0     88   6   2   422  4.7  lcd_init
+0     54   4   3   321  5.5  lcd_gotoxy
+0     34   2   0   367  7.0  @goto10091
+0     86   6   1   370  6.0  lcd_putc
+0    164  11   1   420  2.3  MAIN
+0     16   1   0   595  2.8  @const451
+0     32   2   2             @PSTRINGC_98
+0     18   1   0             @const453
+0     32   2   0             @const454
+0     34   2   2             @PSTRINGC_19200_31766_31767
+0     22   1   0             @const456
+
+Program metrics:
+    Functions               9
+    Statements              573
+    Comments                944
+    Volume (V)              5363
+    Difficilty (D)          40.7
+    Effort to implement (E) 218326
+    Time to implement (T)   3 hours, 22 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   16
+    Maintainability (MI)    62
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   730  32034  
+
+
+

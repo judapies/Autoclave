@@ -1,0 +1,55 @@
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices;C:\Program Files (x86)\PICC\Drivers;
+Library=
+LinkerScript=
+[defines]
+enabled=0
+D1=
+V1=
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+[PROJECT]
+Target=ch376s.hex
+Development_Mode=
+Processor=0x2550
+Processor_Text=PIC18F2550
+ToolSuite=CCS
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[ch376s.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=ch376s.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=ch376s.c
+[Opened Files]
+1=ch376s.c
+2=..\GLCD_Controller_VM_V1.1.1\GLCD_Controller.c
+3=
+4=
+5=
+6=
+7=

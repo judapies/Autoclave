@@ -1,0 +1,6 @@
+>>> Warning 202 "GLCD_Controller.c" Line 102(39,46): Variable never used:   onBomba
+>>> Warning 202 "GLCD_Controller.c" Line 102(51,64): Variable never used:   flagBombaAgua
+>>> Warning 202 "GLCD_Controller.c" Line 102(69,85): Variable never used:   flagBombaAguaOff
+>>> Warning 202 "GLCD_Controller.c" Line 112(7,15): Variable never used:   Temporal
+      Memory usage:   ROM=62%      RAM=49% - 50%
+      0 Errors,  4 Warnings.

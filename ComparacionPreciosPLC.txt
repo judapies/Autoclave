@@ -1,0 +1,28 @@
+PLC Xinje
+798.000   ->PLC (CPU)
+896.000   ->Modulo Entrada Analoga
+392.000   ->Modulo Lector PT100
+1.125.000 ->Pantalla Tactil 7"
+93.950    ->Fuente 24V
+------------------------------------
+3.304.950 SUBTOTAL
+3.932.890 TOTAL CON IVA
+
+
+PLC SIEMENS
+1.288.100 ->Pantalla Touch de 4"
+478.800   ->Fuente de 24V
+1.398.400 ->CPU 1214C (PLC)
+1.172.600 ->Modulo de Entradas analogas
+994.700   ->Licencia de Software
+146.400   ->Cables
+------------------------------------
+5.479.000 SUBTOTAL
+6.520.010 TOTAL CON IVA
+
+PLC Juan David
+285.000    ->Display 5" Touch
+100.000    ->Fuentes de 12V y 5V
+300.000    ->Circuito Electronico de Control con sensores de presion
+--------------------------------------
+685.000 TOTAL CON IVA

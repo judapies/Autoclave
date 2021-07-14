@@ -1,0 +1,14 @@
+>>> Warning 203 "E:\JP\JP\Laboratorio\Autoclave\Autoclave 55L\Autoclave 80L_VersionFinal\Firmware\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 879(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 879(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 879(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 879(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 66(77,78): Variable never used:   T
+>>> Warning 202 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 67(7,23): Variable never used:   T_esterilizacion
+>>> Warning 202 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 67(45,53): Variable never used:   T_secado
+>>> Warning 202 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 67(67,75): Variable never used:   Desfogue
+>>> Warning 202 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 69(41,47): Variable never used:   unidad
+>>> Warning 202 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 69(105,108): Variable never used:   Flx
+>>> Warning 202 "Autoclave_80L_V02_Cambio_Menu_Libre.c" Line 69(113,116): Variable never used:   Fly
+      Memory usage:   ROM=92%      RAM=41% - 60%
+      0 Errors,  12 Warnings.

@@ -1,0 +1,5 @@
+>>> Warning 202 "GLCD_Controller.c" Line 79(83,97): Variable never used:   flagCalentando
+>>> Warning 202 "GLCD_Controller.c" Line 79(102,119): Variable never used:   flagEsterilizando
+>>> Warning 202 "GLCD_Controller.c" Line 80(7,21): Variable never used:   flagDesfogando
+      Memory usage:   ROM=47%      RAM=29% - 30%
+      0 Errors,  3 Warnings.

@@ -1,0 +1,118 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     lcdline
+005-006 strtok.save
+007-00A _Randseed
+00B     printMode
+00C     prevByte
+00D     column
+00E     maxColumn
+00F     charHeight
+010     lineSpacing
+011     barcodeHeight
+012     maxChunkHeight
+013     dtrPin
+014.0   dtrEnabled
+015-016 resumeTime
+017-018 dotPrintTime
+019-01A dotFeedTime
+01B     lcd_init.i
+01B     MAIN.@SCRATCH1
+01B     @PSTRINGC_98.@SCRATCH1
+01B     @PSTRINGC_19200_31766_31767.@SCRATCH1
+01C     lcd_init.@SCRATCH1
+01C     @PSTRINGC_98.@SCRATCH2
+01C     @PSTRINGC_19200_31766_31767.@SCRATCH2
+01D     lcd_putc.c
+01E     lcd_gotoxy.x
+01F     lcd_gotoxy.y
+020     lcd_gotoxy.address
+021     lcd_send_byte.address
+022     lcd_send_byte.n
+023     @delay_ms1.P1
+023     lcd_send_byte.@SCRATCH1
+024     lcd_send_nibble.n
+F83     lcd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0070  @delay_ms1
+0210  @PUTCHARI_BIU_1
+0004  LCD_INIT_STRING
+0098  lcd_send_nibble
+00B8  lcd_send_byte
+00EA  lcd_init
+0142  lcd_gotoxy
+0178  @goto10091
+019A  lcd_putc
+023A  MAIN
+0018  @const451
+01F0  @PSTRINGC_98
+0028  @const453
+003A  @const454
+0218  @PSTRINGC_19200_31766_31767
+005A  @const456
+023A  @cinit
+0136  StrtoulGO
+0136  StrtolGO
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\maria consuelo\Desktop\Impresora Termica\Adafruit-Thermal-Printer-Library-master\Firmware PIC\
+
+Project Files:
+    Printer.c
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+    LCD420.c
+    stdio.h
+    string.h
+    stddef.h
+    ctype.h
+    stdlib.h
+    Adafruit_ThermalL.h
+    Adafruit_Thermal.h
+
+Units:
+    C:\Users\maria consuelo\Desktop\Impresora Termica\Adafruit-Thermal-Printer-Library-master\Firmware PIC\Printer (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Printer.err
+    Ext Symbols: Printer.esym
+    INHX32:      Printer.hex
+    Symbols:     Printer.sym
+    List:        Printer.lst
+    Debug/COFF:  Printer.cof
+    Project:     Printer.PJT
+    Call Tree:   Printer.tre
+    Statistics:  Printer.sta

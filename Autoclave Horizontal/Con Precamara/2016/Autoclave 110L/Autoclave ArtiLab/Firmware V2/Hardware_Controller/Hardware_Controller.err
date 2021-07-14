@@ -1,0 +1,35 @@
+>>> Warning 203 "H:\JP\JP\Laboratorio\Autoclave\Autoclave Horizontal\Con Precamara\Autoclave 110L\Autoclave ArtiLab\Firmware V2\Hardware_Controller\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "Hardware_Controller.c" Line 691(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "Hardware_Controller.c" Line 691(0,1): Interrupts disabled during call to prevent re-entrancy:  (@MUL1616)
+>>> Warning 216 "Hardware_Controller.c" Line 691(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "Hardware_Controller.c" Line 691(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "Hardware_Controller.c" Line 691(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "Hardware_Controller.c" Line 61(19,32): Variable never used:   desfoguelento
+>>> Warning 202 "Hardware_Controller.c" Line 61(47,67): Variable never used:   TiempoFuncionamiento
+>>> Warning 202 "Hardware_Controller.c" Line 62(6,10): Variable never used:   Menu
+>>> Warning 202 "Hardware_Controller.c" Line 62(39,47): Variable never used:   Posicion
+>>> Warning 202 "Hardware_Controller.c" Line 62(50,57): Variable never used:   Decimal
+>>> Warning 202 "Hardware_Controller.c" Line 63(140,150): Variable never used:   AlarmaTemp
+>>> Warning 202 "Hardware_Controller.c" Line 65(41,48): Variable never used:   Minutos
+>>> Warning 202 "Hardware_Controller.c" Line 66(7,22): Variable never used:   disp_Calentando
+>>> Warning 202 "Hardware_Controller.c" Line 66(25,38): Variable never used:   disp_Llenando
+>>> Warning 202 "Hardware_Controller.c" Line 66(41,53): Variable never used:   disp_Secando
+>>> Warning 202 "Hardware_Controller.c" Line 66(56,74): Variable never used:   disp_Esterilizando
+>>> Warning 202 "Hardware_Controller.c" Line 66(77,97): Variable never used:   disp_Despresurizando
+>>> Warning 202 "Hardware_Controller.c" Line 66(100,109): Variable never used:   disp_Stop
+>>> Warning 202 "Hardware_Controller.c" Line 66(112,121): Variable never used:   disp_Door
+>>> Warning 202 "Hardware_Controller.c" Line 66(124,132): Variable never used:   disp_Fin
+>>> Warning 202 "Hardware_Controller.c" Line 67(13,28): Variable never used:   Testerilizacion
+>>> Warning 202 "Hardware_Controller.c" Line 68(13,29): Variable never used:   Testerilizacionp
+>>> Warning 202 "Hardware_Controller.c" Line 69(13,20): Variable never used:   Tsecado
+>>> Warning 202 "Hardware_Controller.c" Line 70(13,21): Variable never used:   Tsecadop
+>>> Warning 202 "Hardware_Controller.c" Line 72(28,31): Variable never used:   est
+>>> Warning 202 "Hardware_Controller.c" Line 72(42,51): Variable never used:   flagtimer
+>>> Warning 202 "Hardware_Controller.c" Line 73(38,47): Variable never used:   fin_ciclo
+>>> Warning 202 "Hardware_Controller.c" Line 73(50,65): Variable never used:   tiempo_desfogue
+>>> Warning 202 "Hardware_Controller.c" Line 73(92,105): Variable never used:   tiempo_secado
+>>> Warning 202 "Hardware_Controller.c" Line 73(108,115): Variable never used:   Exhaust
+>>> Warning 202 "Hardware_Controller.c" Line 81(6,20): Variable never used:   ADCTemperatura
+>>> Warning 202 "Hardware_Controller.c" Line 82(6,20): Variable never used:   SetTemperatura
+      Memory usage:   ROM=42%      RAM=47% - 49%
+      0 Errors,  33 Warnings.

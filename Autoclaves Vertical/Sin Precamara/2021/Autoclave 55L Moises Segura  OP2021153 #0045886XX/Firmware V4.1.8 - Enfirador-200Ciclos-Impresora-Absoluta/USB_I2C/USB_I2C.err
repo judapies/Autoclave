@@ -1,0 +1,10 @@
+>>> Warning 203 "D:\Laboratorio\Autoclave\Autoclaves Vertical\Sin Precamara\2021\Autoclave 62L Federacion Nacional de Cafeteros #004588629 OP202104\Firmware V4.1.6 - Enfirador-Presion-Decimal-200Ciclos-Impresora\USB_I2C\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "USB_I2C.c" Line 508(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "USB_I2C.c" Line 508(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "USB_I2C.c" Line 508(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "USB_I2C.c" Line 508(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "USB_I2C.c" Line 35(6,10): Variable never used:   Year
+>>> Warning 202 "USB_I2C.c" Line 35(13,16): Variable never used:   Mes
+>>> Warning 202 "USB_I2C.c" Line 35(19,22): Variable never used:   Dia
+      Memory usage:   ROM=47%      RAM=43% - 44%
+      0 Errors,  8 Warnings.

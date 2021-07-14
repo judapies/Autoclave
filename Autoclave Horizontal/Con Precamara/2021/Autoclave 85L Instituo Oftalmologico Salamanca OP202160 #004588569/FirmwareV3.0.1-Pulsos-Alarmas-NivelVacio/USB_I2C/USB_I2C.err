@@ -1,0 +1,14 @@
+>>> Warning 203 "D:\Laboratorio\Autoclave\Autoclave Horizontal\Con Precamara\2020\Autoclave 85L Neumatica Sinergia Pharma OP2020176 #0045882XX\FirmwareV3.0.0\USB_I2C\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "USB_I2C.c" Line 469(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "USB_I2C.c" Line 469(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "USB_I2C.c" Line 469(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "USB_I2C.c" Line 469(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "USB_I2C.c" Line 16(5,8): Variable never used:   rs232_errors
+>>> Warning 202 "USB_I2C.c" Line 47(6,7): Variable never used:   l
+>>> Warning 202 "USB_I2C.c" Line 50(51,54): Variable never used:   dow
+>>> Warning 202 "USB_I2C.c" Line 52(7,13): Variable never used:   Activo
+>>> Warning 202 "USB_I2C.c" Line 55(13,28): Variable never used:   Testerilizacion
+>>> Warning 202 "USB_I2C.c" Line 56(13,20): Variable never used:   Tsecado
+>>> Warning 202 "USB_I2C.c" Line 60(6,13): Variable never used:   usuario
+      Memory usage:   ROM=38%      RAM=28% - 30%
+      0 Errors,  12 Warnings.

@@ -1,0 +1,35 @@
+[PROJECT]
+Target=Hardware_Controller.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.059
+Compiler=PCH
+[Target Data]
+FileList=Hardware_Controller.c
+[Hardware_Controller.c]
+Type=4
+[mru-list]
+1=Hardware_Controller.c
+[Units]
+Count=1
+1=Hardware_Controller (main)
+
+[defines]
+buildcount=1
+
+[Opened Files]
+1=Hardware_Controller.c
+t1=301
+Count=1
+
+[ProjectLog]
+Days=1
+D1=17-04-2018
+D1_L=4
+D1_L1=[48814]Stopped Editing.
+D1_L2=[53454]Started Editing.
+D1_L3=[53754]Stopped Editing.
+TotalEdit=2
+TotalDebug=0
+D1_E=2
+D1_D=0
+D1_L4=[60033]Project Closed.

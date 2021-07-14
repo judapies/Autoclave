@@ -1,0 +1,8 @@
+>>> Warning 202 "GLCD_Controller.c" Line 45(6,17): Variable never used:   ByteConfig1
+>>> Warning 202 "GLCD_Controller.c" Line 45(20,31): Variable never used:   ByteConfig2
+>>> Warning 202 "GLCD_Controller.c" Line 45(34,45): Variable never used:   ByteConfig3
+>>> Warning 202 "GLCD_Controller.c" Line 52(73,84): Variable never used:   disp_Guarda
+>>> Warning 202 "GLCD_Controller.c" Line 79(28,45): Variable never used:   flagPersonalizado
+>>> Warning 202 "GLCD_Controller.c" Line 90(63,68): Variable never used:   dowTx
+      Memory usage:   ROM=60%      RAM=56% - 58%
+      0 Errors,  6 Warnings.

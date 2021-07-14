@@ -1,0 +1,19 @@
+ÀÄFirmware V4
+   ÃÄMAIN  0/346  Ram=2
+   ³  ÃÄ??0??
+   ³  ÃÄLee_Vector  0/10  Ram=0
+   ³  ÃÄLee_Vector  0/10  Ram=0
+   ³  ÃÄCargaVector  0/12  Ram=0
+   ³  ÃÄsubePuerta  0/96  Ram=0
+   ³  ³  ÀÄ@MUL1616  0/30  Ram=5
+   ³  ÃÄbajaPuerta  0/96  Ram=0
+   ³  ³  ÀÄ@MUL1616  0/30  Ram=5
+   ³  ÃÄborraBajaPuerta  0/14  Ram=0
+   ³  ÃÄborraSubePuerta  0/14  Ram=0
+   ³  ÃÄborraBajaPuerta  0/14  Ram=0
+   ³  ÃÄborraSubePuerta  0/14  Ram=0
+   ³  ÃÄborraBajaPuerta  0/14  Ram=0
+   ³  ÀÄborraSubePuerta  0/14  Ram=0
+   ÃÄtemp1s  0/74  Ram=0
+   ÀÄssp_interupt  0/100  Ram=3
+      ÀÄ@I2C_WRITE_1  0/24  Ram=1

@@ -1,0 +1,12 @@
+# Writing all output to: D:\Laboratorio\Autoclave\Autoclaves Vertical\Con Precamara\2020\Autoclave 160L Sociedad Integral Suministros OP202055 #0045881XX\Schematic\Puente_H.log
+set pad_wire_necking on
+bus diagonal
+fanout 5
+route 50
+clean 2
+route 50 16
+clean 2
+filter 5
+recorner diagonal
+status_file
+

@@ -1,0 +1,8 @@
+>>> Warning 203 "H:\JP\JP\Laboratorio\Autoclave\Autoclave Horizontal\Con Precamara\2017\Autoclave 110L\Autoclave Avantika\Firmware V3\Hardware_Controller\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "Hardware_Controller.c" Line 715(0,1): Interrupts disabled during call to prevent re-entrancy:  (@MUL1616)
+>>> Warning 216 "Hardware_Controller.c" Line 715(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "Hardware_Controller.c" Line 715(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "Hardware_Controller.c" Line 715(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "Hardware_Controller.c" Line 715(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+      Memory usage:   ROM=44%      RAM=50% - 52%
+      0 Errors,  6 Warnings.

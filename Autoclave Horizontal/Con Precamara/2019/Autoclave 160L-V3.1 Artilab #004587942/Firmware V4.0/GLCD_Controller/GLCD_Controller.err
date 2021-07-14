@@ -1,0 +1,26 @@
+>>> Warning 202 "GLCD_Controller.c" Line 57(6,24): Variable never used:   RX_Buffer_Overflow
+>>> Warning 202 "GLCD_Controller.c" Line 62(6,17): Variable never used:   TX_Rd_Index
+>>> Warning 202 "GLCD_Controller.c" Line 67(6,11): Variable never used:   txbuf
+>>> Warning 202 "GLCD_Controller.c" Line 72(6,17): Variable never used:   ByteConfig1
+>>> Warning 202 "GLCD_Controller.c" Line 72(20,31): Variable never used:   ByteConfig2
+>>> Warning 202 "GLCD_Controller.c" Line 72(34,45): Variable never used:   ByteConfig3
+>>> Warning 202 "GLCD_Controller.c" Line 87(73,84): Variable never used:   disp_Guarda
+>>> Warning 202 "GLCD_Controller.c" Line 103(14,16): Variable never used:   R2
+>>> Warning 202 "GLCD_Controller.c" Line 103(22,24): Variable never used:   R3
+>>> Warning 202 "GLCD_Controller.c" Line 103(29,31): Variable never used:   R4
+>>> Warning 202 "GLCD_Controller.c" Line 103(37,39): Variable never used:   R5
+>>> Warning 202 "GLCD_Controller.c" Line 103(44,46): Variable never used:   R6
+>>> Warning 202 "GLCD_Controller.c" Line 106(57,58): Variable never used:   n
+>>> Warning 202 "GLCD_Controller.c" Line 109(35,37): Variable never used:   Pc
+>>> Warning 202 "GLCD_Controller.c" Line 109(42,44): Variable never used:   Pp
+>>> Warning 202 "GLCD_Controller.c" Line 114(6,9): Variable never used:   kpa
+>>> Warning 202 "GLCD_Controller.c" Line 115(7,13): Variable never used:   Flanco
+>>> Warning 202 "GLCD_Controller.c" Line 115(16,23): Variable never used:   Flanco1
+>>> Warning 202 "GLCD_Controller.c" Line 115(26,33): Variable never used:   Flanco2
+>>> Warning 202 "GLCD_Controller.c" Line 115(36,42): Variable never used:   visual
+>>> Warning 202 "GLCD_Controller.c" Line 116(28,45): Variable never used:   flagPersonalizado
+>>> Warning 202 "GLCD_Controller.c" Line 118(37,43): Variable never used:   unidad
+>>> Warning 202 "GLCD_Controller.c" Line 123(7,12): Variable never used:   passw
+>>> Warning 202 "GLCD_Controller.c" Line 136(7,12): Variable never used:   Menus
+      Memory usage:   ROM=45%      RAM=31% - 32%
+      0 Errors,  24 Warnings.

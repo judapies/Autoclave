@@ -1,0 +1,12 @@
+>>> Warning 203 "H:\JP\JP\Laboratorio\Autoclave\Autoclaves Vertical\Sin Precamara\2018\Autoclave 55L Labservis #004587747\Firmware V3.1\Hardware_Controller\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "Hardware_Controller.c" Line 752(0,1): Interrupts disabled during call to prevent re-entrancy:  (@MUL1616)
+>>> Warning 216 "Hardware_Controller.c" Line 752(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "Hardware_Controller.c" Line 752(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "Hardware_Controller.c" Line 752(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "Hardware_Controller.c" Line 752(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "Hardware_Controller.c" Line 59(85,100): Variable never used:   flag_presostato
+>>> Warning 202 "Hardware_Controller.c" Line 60(44,48): Variable never used:   Frio
+>>> Warning 202 "Hardware_Controller.c" Line 60(51,56): Variable never used:   llena
+>>> Warning 202 "Hardware_Controller.c" Line 62(110,119): Variable never used:   flagvacio
+      Memory usage:   ROM=45%      RAM=51% - 53%
+      0 Errors,  10 Warnings.

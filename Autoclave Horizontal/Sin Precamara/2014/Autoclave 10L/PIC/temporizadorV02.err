@@ -1,0 +1,12 @@
+>>> Warning 208 "temporizadorV02.c" Line 64(1,7): Function not void and does not return a value  tempo1
+>>> Warning 216 "temporizadorV02.c" Line 785(0,1): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "temporizadorV02.c" Line 785(0,1): Interrupts disabled during call to prevent re-entrancy:  (lcd_enviar)
+>>> Warning 216 "temporizadorV02.c" Line 785(0,1): Interrupts disabled during call to prevent re-entrancy:  (lcd_putc)
+>>> Warning 216 "temporizadorV02.c" Line 785(0,1): Interrupts disabled during call to prevent re-entrancy:  (lcd_gotoxy)
+>>> Warning 216 "temporizadorV02.c" Line 785(0,1): Interrupts disabled during call to prevent re-entrancy:  (@PRINTF_D_85)
+>>> Warning 216 "temporizadorV02.c" Line 785(0,1): Interrupts disabled during call to prevent re-entrancy:  (@DIVS88)
+>>> Warning 202 "temporizadorV02.c" Line 49(19,22): Variable never used:   tmp
+>>> Warning 202 "temporizadorV02.c" Line 53(14,26): Variable never used:   cont_trampas
+>>> Warning 202 "temporizadorV02.c" Line 363(5,6): Variable never used:   x
+      Memory usage:   ROM=30%      RAM=4% - 5%
+      0 Errors,  10 Warnings.

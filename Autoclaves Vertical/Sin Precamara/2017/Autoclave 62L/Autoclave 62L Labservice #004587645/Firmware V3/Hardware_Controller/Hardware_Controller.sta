@@ -1,0 +1,128 @@
+
+ROM used: 18456 (56%)
+          18456 (56%) including unused fragments
+
+          3 Average locations per line
+          15 Average locations per statement
+
+RAM used: 1009 (49%) at main() level
+          1092 (53%) worst case
+
+Stack used: 15 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  676   410  34  Hardware_Controller.c
+  451     0   0  C:\Program Files (x86)\PICC\Devices\18F4550.h
+ 2172   260  22  MATH.h
+  222     0   0  pic18_usb.h
+  328     0   0  usb_hw_layer.h
+  156     0   0  header.h
+ 1063     0   0  usb.h
+  808   218  18  usb.c
+ 1281   320  26  pic18_usb.c
+----- -----
+ 7157  1208 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     42   0   1             @delay_ms1
+0     24   0   1             @I2C_WRITE_1
+0    864   2  20  1124 10.7  CEIL_FLOOR
+0    122   0  10             @FLT
+0     60   0   4             @SFTOI
+0     54   0   2             @ITOF
+0    350   1  14             @DIVFF
+0    632   2  16             @ADDFF
+0    246   1  11             @MULFF
+0     28   0   4    43  2.1  floor
+0     30   0   4    44  1.9  ceil
+0    354   1  16   257  7.2  fmod
+0   1034   3  22  1071  8.0  exp
+0     80   0   2             @SITOF
+0   1244   3  25  1228  9.9  log
+0    780   2  12   556  7.5  pow
+0     32   0   0             @const297
+0     66   0   0             @const301
+0     48   0   0             @const305
+0     18   0   0             @const307
+0     34   0   0             @const309
+0     20   0   0             @const311
+0     70   0   0             @const313
+0     60   0   3   133  4.3  usb_kbhit
+0     68   0   3   133  4.3  usb_tbe
+0     40   0   1   134  2.5  usb_detach
+0     34   0   0   136  2.2  usb_attach
+0      6   0   0    16  1.0  usb_init_cs
+0     34   0   1   346  4.6  usb_task
+0     14   0   0    61  2.5  usb_init
+0    220   1   7  1083  5.4  usb_flush_in
+0    176   0  10   320  5.5  usb_put_packet
+0    202   1   7   899  4.9  usb_flush_out
+0    202   1  12   632  5.7  usb_get_packet_buffer
+0     74   0   5   145  3.5  usb_get_packet
+0     74   0   4   251  4.6  usb_stall_ep
+0     72   0   4   258  4.6  usb_unstall_ep
+0     90   0   5   360  5.8  usb_endpoint_stalled
+0     26   0   1    88  2.7  usb_set_address
+0    466   1  10  1722  9.8  usb_set_configured
+0     84   0   3   192  3.2  usb_disable_endpoint
+0     30   0   1    93  2.9  usb_disable_endpoints
+0      4   0   0    39  2.0  usb_clear_trn
+0    136   0   2   638  6.6  usb_isr
+0      6   0   0    43  2.0  usb_isr_sof
+0     42   0   0   357  4.2  usb_isr_rst
+0     32   0   0   508  4.0  usb_init_ep0_setup
+0      8   0   0    74  2.8  usb_isr_uerr
+0     10   0   0    82  2.8  usb_isr_uidle
+0     16   0   0   102  3.3  usb_isr_activity
+0     14   0   0   151  3.9  usb_isr_stall
+0      6   0   1    30  1.7  usb_request_send_response
+0      6   0   0    22  1.2  usb_request_stall
+0    378   1   5  2031  7.9  usb_isr_tok_dne
+0      8   0   0    29  1.9  usb_enumerated
+0     40   0   3   231  4.0  usb_token_reset
+0    100   0   3   267  5.9  usb_endpoint_is_valid
+0     34   0   1   152  3.0  usb_isr_tok_in_dne
+0     10   0   1    48  1.9  usb_isr_tok_out_dne
+0     44   0   0   285  5.4  usb_isr_tok_setup_dne
+0    184   0   0  1454  8.3  usb_isr_tkn_setup_StandardDevice
+0    170   0   3   930  7.7  usb_isr_tkn_setup_StandardInterface
+0    106   0   0   753  5.8  usb_isr_tkn_setup_StandardEndpoint
+0    126   0   1   790  7.7  usb_Get_Descriptor
+0     14   0   0    76  1.8  usb_finish_set_address
+0    154   0   4   591  8.6  usb_copy_desc_seg_to_ep
+0    116   0   3   255  3.6  ssp_interupt
+0    108   0   2   142  3.9  ActualizaRecta
+0     84   0   5   100  2.1  sensores
+0    894   2   9   710  7.4  Leer_Sensor
+0     34   0   5             @MUL1616
+0    892   2  11   730  8.5  Leer_Sensor_Presion
+0     88   0   0   354  2.4  Carga_Vector
+0     82   0   0   409  2.4  Lee_Vector
+0    138   0   0   524  6.7  temp0s
+0    102   0   1   388  3.7  temp1s
+0    922   2   4  1041  8.3  Controla
+0   4962  13   2 12169 12.0  MAIN
+
+Program metrics:
+    Functions               61
+    Statements              1208
+    Comments                2386
+    Volume (V)              65990
+    Difficilty (D)          304.5
+    Effort to implement (E) 20093215
+    Time to implement (T)   310 hours, 5 minutes
+    Est Delivered Bugs (B)  25
+    Cyclomatic Complexity   180
+    Maintainability (MI)    73
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     4  0  
+00008-000B8   178  0  
+000BA-07FFE  18270  14312  
+
+
+

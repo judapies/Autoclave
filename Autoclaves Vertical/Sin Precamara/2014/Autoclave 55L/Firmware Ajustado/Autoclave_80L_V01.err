@@ -1,0 +1,8 @@
+>>> Warning 203 "H:\JP\JP\Laboratorio\Autoclave\Autoclaves Vertical\Sin Precamara\2014\Autoclave 55L\Firmware Ajustado\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "Autoclave_80L_V01.c" Line 1088(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "Autoclave_80L_V01.c" Line 1088(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+>>> Warning 216 "Autoclave_80L_V01.c" Line 1088(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "Autoclave_80L_V01.c" Line 1088(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 202 "Autoclave_80L_V01.c" Line 74(66,67): Variable never used:   P
+      Memory usage:   ROM=97%      RAM=57% - 60%
+      0 Errors,  6 Warnings.

@@ -1,0 +1,150 @@
+
+ROM used: 29206 (89%)
+          29206 (89%) including unused fragments
+
+          9 Average locations per line
+          17 Average locations per statement
+
+RAM used: 1294 (63%) at main() level
+          1348 (66%) worst case
+
+Stack used: 6 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+ 1727  1492  86  GLCD_Controller.c
+  451     0   0  C:\Program Files (x86)\PICC\Devices\18F4550.h
+  354    78   4  HDM64GS12.c
+  556   167  10  GRAPHICS.c
+   69     0   0  imagen.h
+----- -----
+ 3157  1737 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     42   0   1             @delay_ms1
+0    108   0   3             @I2C_READ_1
+0    118   0   1             @I2C_WRITE_1
+0    168   0   1   580  3.2  glcd_init
+0    184   0   7   609  5.4  glcd_update
+0    188   0   9   466  7.8  glcd_pixel
+0     90   0  10   317  4.7  glcd_fillScreen
+0     64   0   2   257  2.8  glcd_writeByte
+0    282   0   0             @const99
+0    246   0   0             @const102
+0    318   1  17  1475  8.8  glcd_line
+0    194   0   6  1036  5.8  glcd_rect
+0    554   1  12  1822  8.6  glcd_circle
+0     78   0   2             @MUL88
+0    440   1  20  1550 11.2  glcd_text57
+0   1048   2   0             @const178
+0    250   0   8   868  5.1  displayMenu
+0    336   1  16  1180  5.1  displayTiempo
+0     32   0   1             @SPRINTF
+0     44   0   3             @DIV88
+0    134   0   2             @PRINTF_U_281
+0    174   0   6   483  7.8  glcd_imagen
+0     36   0   5             @MUL1616
+0    206   0   0  1458  5.4  temp1s
+0     36   0   4   110  2.5  Limpia
+0    118   0  18   330  3.4  displayT
+0    248   0  11             @MULFF
+0     68   0   5             @FTOSD
+0    128   0  13             @DIV3232
+0    434   1  13             @PRINTF_L32D_281FPFPF
+0    122   0  18   330  3.4  displayTT
+0    320   1   2  1018  2.9  MuestraTiemposProgramados
+0     28   0   0             @const329
+0    182   0  15   603  4.5  displayContrasena
+0    224   0   6             @PRINTF_D_281
+0     90   0   3   100  1.8  Envio_I2C
+ Inline        4   188  3.5  Lectura_I2C
+0     60   0   0   450  2.4  Carga_Vector
+0    202   0   4   629  3.9  Lee_Vector
+0     54   0   2             @ITOF
+0    352   1  14             @DIVFF
+0    632   1  16             @ADDFF
+0     60   0   1   153  3.9  Envio_Esclavos
+0    200   0   2   211  4.1  Lectura_Esclavos
+0  17774  30   4 94960 12.0  MAIN
+0     38   0   0             @const363
+0     46   0   0             @const364
+0     40   0   0             @const365
+0     32   0   0             @const366
+0     36   0   0             @const368
+0     38   0   0             @const370
+0     42   0   0             @const371
+0     34   0   0             @const372
+0     36   0   0             @const374
+0     46   0   0             @const376
+0     48   0   0             @const378
+0     40   0   0             @const380
+0     40   0   0             @const382
+0     40   0   0             @const384
+0     38   0   0             @const386
+0     44   0   0             @const393
+0     48   0   0             @const394
+0     42   0   0             @const395
+0     38   0   0             @const396
+0     34   0   0             @const397
+0     34   0   0             @const398
+0     28   0   0             @const399
+0     48   0   0             @const403
+0     42   0   0             @const404
+0     38   0   0             @const405
+0     36   0   0             @const410
+0     48   0   0             @const413
+0     42   0   0             @const414
+0     48   0   0             @const419
+0     44   0   0             @const420
+0     36   0   0             @const422
+0     38   0   0             @const424
+0     44   0   0             @const426
+0     36   0   0             @const428
+0     38   0   0             @const435
+0     36   0   0             @const436
+0     30   0   0             @const437
+0     36   0   0             @const438
+0     34   0   0             @const440
+0     36   0   0             @const443
+0     30   0   0             @const449
+0     30   0   0             @const450
+0     38   0   0             @const456
+0     38   0   0             @const457
+0     38   0   0             @const458
+0     38   0   0             @const459
+0     42   0   0             @const460
+0     36   0   0             @const461
+0     36   0   0             @const462
+0     40   0   0             @const464
+0     42   0   0             @const465
+0     34   0   0             @const466
+0    122   0  10             @FLT
+0     44   0   0             @const475
+0     62   0   4             @SFTOI
+0     38   0   0             @const478
+0     38   0   0             @const479
+0     38   0   0             @const480
+0     38   0   0             @const481
+
+Program metrics:
+    Functions               25
+    Statements              1737
+    Comments                643
+    Volume (V)              131324
+    Difficilty (D)          129.2
+    Effort to implement (E) 16961818
+    Time to implement (T)   261 hours, 45 minutes
+    Est Delivered Bugs (B)  22
+    Cyclomatic Complexity   267
+    Maintainability (MI)    105
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE  29060  3558  
+
+
+

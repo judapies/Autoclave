@@ -1,0 +1,54 @@
+
+ROM used: 974 (3%)
+          974 (3%) including unused fragments
+
+          2 Average locations per line
+          7 Average locations per statement
+
+RAM used: 137 (7%) at main() level
+          143 (7%) worst case
+
+Stack used: 4 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  225   143 100  I2C_MotorDriver_V1.0.0.c
+  392     0   0  18F2550.h
+----- -----
+  617   143 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     24   1   1             @I2C_WRITE_1
+0     96   5   0   538  5.3  subePuerta
+0     30   2   5             @MUL1616
+0     14   1   0    69  1.6  borraSubePuerta
+0     96   5   0   538  5.3  bajaPuerta
+0     14   1   0    69  1.6  borraBajaPuerta
+0     74   4   0   204  3.1  temp1s
+0    100   5   3   255  3.6  ssp_interupt
+0     10   1   0    57  1.9  Lee_Vector
+0     12   1   0    57  1.9  CargaVector
+0    346  18   2  2304  6.9  MAIN
+
+Program metrics:
+    Functions               9
+    Statements              143
+    Comments                122
+    Volume (V)              5691
+    Difficilty (D)          32.3
+    Effort to implement (E) 183601
+    Time to implement (T)   2 hours, 50 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   20
+    Maintainability (MI)    65
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000A0   154  0  
+000A2-07FFE   816  31790  
+
+
+
